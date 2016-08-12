@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.chengsi.weightcalc.activity.MyHospitalActivity">
+
+    <TextView
+        android:id="@+id/tv_my_hospital_title"
+        android:text="当前就诊中心"
+        android:textColor="@color/text_d9"
+        android:textSize="14dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/item_my_hospital"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:accessStyle="arrow"
+        app:divider_location="bottom"
+        app:prefrence_title="" />
+
+    <Button
+        android:id="@+id/btn_bind"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/red_btn_sel"
+        android:duplicateParentState="false"
+        android:gravity="center"
+        android:text="绑定"
+        android:textColor="@color/white"
+        android:textSize="19dp" />
+</LinearLayout>

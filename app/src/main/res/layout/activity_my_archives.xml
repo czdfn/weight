@@ -1,0 +1,187 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chengsi.weightcalc.activity.MyArchivesActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:paddingBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:orientation="horizontal"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp">
+
+                <LinearLayout
+                    android:id="@+id/panel_wife_area"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tab_girl_sel" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:includeFontPadding="false"
+                        android:text="妻子"
+                        android:textColor="@color/tab_text_sel"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/panel_husband_area"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tab_boy_sel" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:includeFontPadding="false"
+                        android:text="丈夫"
+                        android:textColor="@color/tab_blue_text_sel"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_name"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="both"
+                app:prefrence_title="姓名" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_id_card"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="身份证号" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_birthPlace"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="籍贯" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_international"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:content="中国"
+                app:accessStyle="none"
+                app:divider_location="bottom"
+                app:prefrence_title="国籍" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_nation"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="民族" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_marriage"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="婚姻状况" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_profession"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="职业" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_education"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="教育程度" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_address"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="通信地址" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_postCode"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="邮政编码" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_phone"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="手机号码" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_tel"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="家庭电话" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

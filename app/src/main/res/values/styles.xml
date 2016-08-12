@@ -1,0 +1,105 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.NoActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        <item name="colorControlNormal">@color/color_theme</item>
+        <item name="colorControlActivated">@color/color_theme</item>
+        <item name="colorControlHighlight">@color/color_theme</item>
+        <item name="colorPrimary">@color/color_theme</item>
+        <item name="colorPrimaryDark">@color/color_theme</item>
+        <!-- colorAccent 为 colorControlActivated 的默认值，该值用户显示控件的高亮状态 -->
+        <item name="colorAccent">@color/color_theme</item>
+        <item name="android:cursorVisible">true</item>
+        <item name="android:editTextStyle">@style/AppTheme.EditText</item>
+        <item name="android:textViewStyle">@style/AppTheme.TextView</item>
+
+        <!-- <item name="android:actionDropDownStyle">@style/MyDropDownNav</item>  -->
+
+
+
+    </style>
+
+
+    <!-- <style name="MyDropDownNav" parent="android:style/Widget.Holo.Light.Spinner.DropDown.ActionBar"> -->
+    <style name="MyDropDownNav" parent="Widget.AppCompat.Spinner.DropDown.ActionBar">
+        <item name="android:background">@drawable/list_item_bg</item>
+        <item name="android:popupBackground">@drawable/list_item_bg</item>
+        <item name="android:dropDownSelector">@drawable/list_item_bg</item>
+        <item name="android:width">200dp</item>
+        <item name="android:dropDownWidth">200dp</item>
+
+    </style>
+
+
+
+
+    <style name="AppTheme.NoTitleBar" parent="@style/AppBaseTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="AppTheme.FullScreen" parent="@style/AppTheme.NoTitleBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="AppTheme.EditText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:textCursorDrawable">@drawable/shape_edit_cursor</item>
+        <item name="android:cursorVisible">true</item>
+        <item name="android:textColorHint">@color/text_d9</item>
+    </style>
+    <style name="LoginEditText" parent="@style/AppTheme.EditText">
+        <item name="android:textCursorDrawable">@drawable/shape_edit_cursor</item>
+        <item name="android:cursorVisible">true</item>
+        <item name="android:paddingLeft">19dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColorHint">#c2c2c2</item>
+        <item name="android:textColor">#5e5e5e</item>
+        <item name="android:background">@drawable/round_corners_shape_sel</item>
+    </style>
+    <style name="AppTheme.TextView" parent="android:Widget.TextView">
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="tipsDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popup_in</item>
+        <item name="android:windowExitAnimation">@anim/popup_out</item>
+    </style>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@drawable/fill_box</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="myDialogTheme" parent="android:Theme.Dialog">
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowIsTranslucent">false</item>
+    <item name="android:windowNoTitle">true</item><!--除去title-->
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:backgroundDimEnabled">false</item>
+    <item name="android:windowBackground">@null</item>
+    </style>
+</resources>

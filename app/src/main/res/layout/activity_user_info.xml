@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/default_bg"
+    android:orientation="vertical"
+    tools:context="com.chengsi.weightcalc.activity.UserInfoActivity">
+
+    <RelativeLayout
+        android:id="@+id/panel_user_head"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@drawable/list_item_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="头像"
+            android:textColor="@color/text_74"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/setting_right_arrow" />
+
+        <ImageView
+            android:id="@+id/iv_user_head"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="4dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/arrow"
+            android:src="@drawable/avatar_def" />
+    </RelativeLayout>
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/item_my_nickname"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="both"
+        app:prefrence_title="昵称" />
+
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/item_my_sex"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="bottom"
+        app:prefrence_title="性别" />
+
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/item_my_realname"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="bottom"
+        app:prefrence_title="姓名" />
+
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/item_my_idcard"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="bottom"
+        app:prefrence_title="证件号码" />
+</LinearLayout>

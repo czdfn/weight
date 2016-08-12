@@ -1,0 +1,52 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <color name="green">#ff336699</color>
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="red">#ffff0000</color>
+    <color name="light_gray">#c2c2c2</color>
+    <color name="default_bg">#f2f2f2</color>
+    <color name="gray_ripple_color">#cccccc</color>
+    <color name="ripple_color">#f7f7f7</color>
+    <color name="blue">#4169E1</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+	<color name="divider_color">#e1e1e1</color>
+	<color name="title_bg_color">#f8f8f8</color>
+	<color name="title_text_color">#2c2c2c</color>
+	<color name="btn_red_nor">#fa82a0</color>
+	<color name="btn_red_pre">#fcbacb</color>
+	<color name="color_theme">#20B2AA</color>
+	<color name="color_theme_light">#d56f88</color>
+    <color name="transparent">#00000000</color>
+    <color name="pull_refresh_color_1">#67cdb7</color>
+    <color name="pull_refresh_color_2">#9b73e6</color>
+    <color name="pull_refresh_color_3">#ff9292</color>
+    <color name="list_divider_color">#c4c4c4</color>
+    <color name="normal_text_color">#5e5e5e</color>
+    <color name="back_yel">#FFFFAA</color>
+
+    <color name="list_bg_color_pre">#d9d9d9</color>
+
+    <color name="tab_col_pre">#fa82a0</color>
+    <color name="tab_col_nor">#bdb5b5</color>
+    <color name="item_title_color">#5e5e5e</color>
+
+    <color name="text_btn_nor">#67cdb7</color>
+    <color name="text_btn_pre">#aeded3</color>
+    <color name="text_err_color">#cd6767</color>
+    <color name="text_a3">#a3a3a3</color>
+    <color name="text_5e">#5e5e5e</color>
+    <color name="text_88">#888888</color>
+    <color name="text_d9">#d9d9d9</color>
+    <color name="text_74">#747474</color>
+    <color name="text_bb">#bbbbbb</color>
+    <color name="color_album_btn_bg_pre">#184f7f</color>
+    <color name="color_album_btn_bg_nor">#1f5a9d</color>
+    <color name="color_white_alpha55">#8cffffff</color>
+    <color name="black_55_translucent">#8c000000</color>
+    <color name="black_20_translucent">#30000000</color>
+    <color name="text_reservation_num">#8290fa</color>
+    <color name="color_theme_blue">#8290fa</color>
+    <color name="shadow_start">#80000000</color>
+    <color name="shadow_end">#00000000</color>
+</resources>

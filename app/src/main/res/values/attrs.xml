@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PreferenceRightDetailView">
+        <!-- 标题文本内容 -->
+        <attr name="prefrence_title" format="string" />
+        <!-- 内容文本文字内容 -->
+        <attr name="content" format="string" />
+        <!-- 标题文本字体大小 -->
+        <attr name="titleSize" format="dimension"></attr>
+        <!-- 内容文本文字大小 -->
+        <attr name="contentSize" format="dimension"></attr>
+        <!-- 标题文本颜色 -->
+        <attr name="titleColor" format="color"></attr>
+        <!-- 内容文本颜色 -->
+        <attr name="contentColor" format="color"></attr>
+        <!-- 内容显示行数 -->
+        <attr name="contentLine" format="integer"></attr>
+        <!-- 分割线的位置 -->
+        <attr name="divider_location" format="integer">
+            <enum name="none" value="0"></enum>
+            <enum name="top" value="1"></enum>
+            <enum name="bottom" value="2"></enum>
+            <enum name="both" value="3"></enum>
+        </attr>
+        <attr name="content_gravity" format="integer">
+            <enum name="right" value="0"></enum>
+            <enum name="left" value="1"></enum>
+            <enum name="center" value="2"></enum>
+        </attr>
+        <!-- 设置右侧类型, 默认为arrow, none为没有图标 -->
+        <attr name="accessStyle" format="integer">
+            <enum name="none" value="0"></enum>
+            <enum name="arrow" value="1"></enum>
+        </attr>
+        <!-- 定制右侧的小图标, 可以选择不设置 -->
+        <attr name="accessImage" format="reference"></attr>
+    </declare-styleable>
+</resources>

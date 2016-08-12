@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chengsi.weightcalc.fragment.notification.CheckFragment">
+
+    <com.chengsi.weightcalc.widget.FanrRefreshListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/checknotificationlist">
+
+
+    </com.chengsi.weightcalc.widget.FanrRefreshListView>
+
+</FrameLayout>

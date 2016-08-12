@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/inputPanelParent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <EditText
+        android:id="@+id/inputEt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/white"
+        android:gravity="left|center_vertical"
+        android:hint=""
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:shadowColor="@android:color/white"
+        android:shadowDy="1"
+        android:textColorHint="@color/text_d9"
+        android:singleLine="true"
+        android:textColor="@color/text_5e"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tips"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider"
+        android:background="#f0f0f0"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="6dp"
+        android:textColor="#b4adaa"
+        android:textSize="12dp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/inputEt"
+        android:background="#e1e1e1" />
+    <ImageView
+        android:id="@+id/input_clear_iv"
+        android:layout_width="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_height="48dp"
+        android:layout_toLeftOf="@+id/NumberTip"
+        android:src="@drawable/search_close"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/NumberTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/inputEt"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:text="111"
+        android:textColor="@color/text_d9"
+        android:textSize="14dp" />
+
+</RelativeLayout>

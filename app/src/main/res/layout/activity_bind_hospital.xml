@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.chengsi.weightcalc.activity.BindHospitalActivity">
+
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/item_hospital"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="bottom"
+        app:prefrence_title="生殖中心" />
+
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/item_id_card"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="bottom"
+        app:prefrence_title="身份证号" />
+
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/item_medCard"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="bottom"
+        app:prefrence_title="就诊卡号" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="27dp">
+        <Button
+            android:id="@+id/btn_bind"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/red_btn_sel"
+            android:duplicateParentState="false"
+            android:gravity="center"
+            android:text="绑定"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+        <Button
+            android:id="@+id/btn_unbind"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/red_btn_sel"
+            android:duplicateParentState="false"
+            android:gravity="center"
+            android:text="解除绑定"
+            android:textColor="@color/white"
+            android:textSize="19dp" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btn_back2_home"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/red_btn_sel"
+        android:duplicateParentState="false"
+        android:gravity="center"
+        android:text="返回主页面"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="@color/white"
+        android:textSize="19dp" />
+</LinearLayout>

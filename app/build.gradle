@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion '22.0.0'
+    productFlavors {
+        Beta {}
+//        AnZhi {}
+//        AnZhuo {}
+//        AppChina {}
+//        Baidu {}
+//        Lianxiang {}
+//        Mogu {}
+//        Mumayi {}
+//        Nineone {}
+//        XiaoMi {}
+//        Qihu {}
+//        Wangyi {}
+//        WanDoujia {}
+//        YingYB {}
+//        BD91 {}
+//        TaoBao {}
+//        NearMe {}
+    }
+
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [CHANNEL_NAME: name]
+    }
+    android.applicationVariants.all { variant ->
+        def file = variant.outputs[0].outputFile
+        if (file != null && file.name.endsWith('.apk')) {
+            def fileName = "WEIGHTCALC_${variant.productFlavors[0].name}_${releaseTime()}_${defaultConfig.versionName}.apk"
+            variant.outputs[0].outputFile = new File(file.parent, fileName)
+        }
+    }
+    defaultConfig {
+        applicationId "com.chengsi.weightcalc"
+        minSdkVersion 16
+        targetSdkVersion 21
+        versionCode 102
+        versionName "1.02"
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias 'jclick'
+            keyPassword 'love123'
+            storeFile file('jclick.jks')
+            storePassword 'love123'
+        }
+        release {
+            keyAlias 'jclick'
+            keyPassword 'love123'
+            storeFile file('jclick.jks')
+            storePassword 'love123'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            // 是否进行混淆
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            res.srcDirs = ['src/main/res']
+        }
+    }
+}
+
+
+dependencies {
+    provided fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':corelibs')
+    compile project(':umeng')
+    compile project(':williamChart')
+    compile files('libs/jpush-android-2.0.6.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/itextpdf-5.5.8.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile 'com.alibaba:fastjson:1.2.6'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.loopj.android:android-async-http:1.4.7'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:support-v4:22.2.1'
+}

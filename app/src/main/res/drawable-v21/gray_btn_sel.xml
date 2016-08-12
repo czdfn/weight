@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <ripple android:color="@color/ripple_color">
+            <item android:drawable="@drawable/gray_btn_nor" />
+        </ripple>
+    </item>
+</selector>

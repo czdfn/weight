@@ -1,0 +1,134 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_bg"
+    tools:context="com.chengsi.weightcalc.fragment.index.MeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/panel_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="@drawable/list_item_bg"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ImageView
+                    android:id="@+id/iv_user_head"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/avatar_def" />
+
+                <TextView
+                    android:id="@+id/tv_user_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@id/iv_user_head"
+                    android:textColor="@color/text_74"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/iv_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toRightOf="@id/tv_user_nickname"
+                    android:src="@drawable/icon_boy" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/setting_right_arrow" />
+            </RelativeLayout>
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_my_doctor"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="收货企业" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_my_hospital_list"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="矿石" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_my_hospital"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="用户中心" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_my_doctor_list"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="数据统计" />
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_sync"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="同步设置" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_my_settings"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="软件设置" />
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_my_notification"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:contentColor="@color/gray_ripple_color"
+                app:prefrence_title="消息中心" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_version"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:accessStyle="none"
+                app:divider_location="bottom"
+                app:prefrence_title="版本更新" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

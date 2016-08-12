@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/default_bg"
+    tools:context="com.chengsi.weightcalc.activity.SynActivity">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+        android:background="@color/white">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="6dp"
+        android:textSize="17sp"
+        android:padding="10dp"
+        android:textColor="@color/normal_text_color"
+        android:text="是否开启自动同步"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/switch1"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:checked="false" />
+</RelativeLayout>
+
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/time_sync"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="bottom"
+        app:prefrence_title="设置同步时间"
+        android:layout_marginTop="1dp"/>
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/manual_sync"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="bottom"
+        app:prefrence_title="手动同步"
+        app:accessStyle="none"
+        android:layout_marginTop="1dp" />
+
+</LinearLayout>

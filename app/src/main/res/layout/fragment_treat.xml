@@ -1,0 +1,83 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chengsi.weightcalc.fragment.index.TreatFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/default_bg">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="240dp" />
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/viewpager"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/slide_page" />
+        </RelativeLayout>
+        <com.chengsi.weightcalc.widget.ItemIndicator
+            android:id="@+id/item_my_tasks"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/list_item_bg"
+            app:dividerType="both"
+            app:indicator_showText="今日任务"
+            app:showIcon="@drawable/icon_item_task"
+            android:visibility="gone"/>
+
+        <com.chengsi.weightcalc.widget.ItemIndicator
+            android:id="@+id/item_my_prescription"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/list_item_bg"
+            app:dividerType="bottom"
+            app:indicator_showText="医嘱处方"
+            android:visibility="gone"
+            app:showIcon="@drawable/icon_item_treat" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <com.chengsi.weightcalc.widget.ItemIndicator
+        android:id="@+id/item_my_check"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:background="@drawable/list_item_bg"
+        app:dividerType="bottom"
+        app:indicator_showText="检查化验"
+        app:showIcon="@drawable/icon_item_check_result_zy" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/gray_ripple_color"/>
+
+    <com.chengsi.weightcalc.widget.ItemIndicator
+        android:id="@+id/item_my_treat_history"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:background="@drawable/list_item_bg"
+        app:dividerType="bottom"
+        app:indicator_showText="治疗历史"
+        app:showIcon="@drawable/icon_item_history_zy" />
+</LinearLayout>
+
+
+    </LinearLayout>
+</FrameLayout>

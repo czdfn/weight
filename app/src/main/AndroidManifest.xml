@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.chengsi.weightcalc">
+
+    <permission
+        android:name="${applicationId}.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="cn.jiadao.driver.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:name="com.chengsi.weightcalc.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.NoTitleBar">
+        <activity
+            android:name="com.chengsi.weightcalc.activity.WelcomeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.chengsi.weightcalc.activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.UploadProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.SelectPhotoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.AlbumListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ReservationActivity"
+            android:label="@string/title_activity_reservation" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ReservationDoctorActivity"
+            android:label="@string/title_activity_reservation_doctor" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.HospitalListActivity"
+            android:label="@string/title_activity_reservation_doctor" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ReservationDateActivity"
+            android:label="@string/title_activity_reservation_date" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ReservationHistoryActivity"
+            android:label="@string/title_activity_reservation_history" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.DoctorListActivity"
+            android:label="@string/title_activity_doctor_list" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ConsultListActivity"
+            android:label="@string/title_activity_consult_list" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.HeadPhotoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.UserInfoActivity"
+            android:label="@string/title_activity_user_info" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.HospitalPageActivity"
+            android:label="@string/title_activity_hospital_page" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.AttendedHospitalActivity"
+            android:label="@string/title_activity_attended_hospital" />
+
+        <!-- umeng -->
+        <!-- Update Activitys Start -->
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- Update Activitys End -->
+
+
+        <!-- Caution! Do not change this app key. It is only for demo usage. -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="56f8d2e967e58e69cf000d4e" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Yj6zU2PYD0Mz3SSMWtmcNPiX" />
+
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" />
+
+        <activity
+            android:name="com.chengsi.weightcalc.activity.AttentDoctorListActivity"
+            android:label="@string/title_activity_attent_doctor_list"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.DoctorDetailActivity"
+            android:label="@string/title_activity_doctor_detail" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.IdCardActivity"
+            android:label="@string/title_activity_id_card" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.NameActivity"
+            android:label="@string/title_activity_real_name"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ConsultDetailActivity"
+            android:label="@string/title_activity_consult_detail"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ArchivesActivity"
+            android:label="@string/title_activity_archives"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.TreatHistoryActivity"
+            android:label="@string/title_activity_treat_history"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.DailyTasksActivity"
+            android:label="@string/title_activity_daily_tasks"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.DoctorAdviceActivity"
+            android:label="@string/title_activity_doctor_advice"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.CheckListActivity"
+            android:label="@string/title_activity_check_list"
+            android:launchMode="singleTop" />
+        <activity android:name="com.chengsi.weightcalc.activity.BindHospitalActivity" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.MyArchivesActivity"
+            android:label="@string/title_activity_my_archives"
+            android:launchMode="singleTop" />
+        <activity android:name="com.chengsi.weightcalc.activity.ContentInputActivity" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.MyCaseActivity"
+            android:label="@string/title_activity_my_case"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ModifyPwdActivity"
+            android:label="@string/title_activity_modify_pwd"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.TodayTaskActivity"
+            android:label="@string/title_activity_today_task"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.MyHospitalActivity"
+            android:label="@string/title_activity_my_hospital"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.TaskDetailActivity"
+            android:label="@string/title_activity_task_detail"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.AdviceDetailActivity"
+            android:label="@string/title_activity_advice_detail"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.GoodNewsActivity"
+            android:label="@string/title_activity_good_news"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.DynamicDetailActivity"
+            android:label="@string/title_activity_dynamic_detail"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.CollectDetailActivity"
+            android:label="@string/title_activity_collect_detail"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.FeedBackActivity"
+            android:label="@string/title_feedback"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ConsultDoctorListActivity"
+            android:label="@string/title_activity_consult_doctor_list"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ImagePreviewActivity"
+            android:label="@string/title_activity_image_preview"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.CheckDetailActivity"
+            android:label="@string/title_activity_check_detail"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ExitDialogActivity"
+            android:label="@string/title_activity_exit_dialog"
+            android:parentActivityName="com.chengsi.weightcalc.activity.BaseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.KnowledgeActivity"
+            android:label="@string/title_activity_knowledge"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.OutReservationHistoryActivity"
+            android:label="@string/title_activity_out_reservation_history"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.OutReservationDetailActivity"
+            android:label="@string/title_activity_out_reservation_detail"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.SendArchiveHistoryActivity"
+            android:label="@string/title_activity_send_archive_history"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.measure.FrontMeasureActivity"
+            android:label="@string/title_activity_reservation_tips"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.GuidePageActivity"
+            android:label="@string/title_activity_guide_page" />
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ShareActivity"
+            android:label="@string/title_activity_share" />
+        <activity
+            android:name="com.umeng.socialize.view.ShareActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDialog"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 100424468，如果你使用的公用账号，则不需要修改；否则修改成你在QQ开放平台申请的 APP ID -->
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name="com.chengsi.weightcalc.activity.HospitalQuestionActivity" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.ReservationWebActivity"
+            android:label="@string/title_activity_reservation_web"
+            android:parentActivityName="com.chengsi.weightcalc.activity.BaseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chengsi.weightcalc.activity.BaseActivity" />
+        </activity>
+        <activity
+            android:name="com.chengsi.weightcalc.activity.TreatHistoryWebActivity"
+            android:label="@string/title_activity_treat_history_web"
+            android:parentActivityName="com.chengsi.weightcalc.activity.BaseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chengsi.weightcalc.activity.BaseActivity" />
+        </activity>
+        <activity
+            android:name="com.chengsi.weightcalc.activity.CheckInforWebActivity"
+            android:label="@string/title_activity_check_infor_web" />
+        <!-- JPUSH required -->
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </activity>
+        <!-- Required  SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </service>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <!-- Required  显示通知栏 -->
+                <category android:name="${applicationId}" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
+
+        <!-- User defined.  For test only  用户自定义的广播接收器 -->
+        <receiver
+            android:name="com.chengsi.weightcalc.receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" />
+                <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="862cf1314f0cb82be7986b9d" />
+        <!-- </>值来自开发者平台取得的AppKey -->
+        <activity
+            android:name="com.chengsi.weightcalc.activity.MyNotificationActivity"
+            android:label="@string/title_activity_my_notification" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.NotificationDetailActivity"
+            android:label="@string/title_activity_notification_detail" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.AddUserDetailActivity"
+            android:label="@string/title_activity_add_user_detail"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.measure.MidMeasureActivity"
+            android:label="@string/title_activity_mid_measure"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.measure.BackMeasureActivity"
+            android:label="@string/title_activity_back_measure"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.AddUserActivity"
+            android:label="@string/title_activity_add_user"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.chengsi.weightcalc.activity.AddCompanyActivity"
+            android:label="@string/title_activity_add_company"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name="com.chengsi.weightcalc.activity.AddMaterialActivity"
+            android:label="@string/title_activity_add_material"></activity>
+        <activity
+            android:name="com.chengsi.weightcalc.activity.SynActivity"
+            android:label="@string/title_activity_syn"></activity>
+        <activity
+            android:name="com.chengsi.weightcalc.activity.search.GroupActivity"
+            android:label="@string/title_activity_group"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name="com.chengsi.weightcalc.activity.search.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name="com.chengsi.weightcalc.activity.measure.ConstantActivity" android:screenOrientation="landscape"></activity>
+    </application>
+
+</manifest>

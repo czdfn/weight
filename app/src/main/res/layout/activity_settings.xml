@@ -1,0 +1,95 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.chengsi.weightcalc.activity.SettingsActivity">
+
+    <RelativeLayout
+        android:background="@drawable/list_item_bg"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:id="@+id/panel_not_disturb"
+        android:layout_height="48dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:text="消息免打扰"
+            android:textColor="@color/text_5e"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/cb_not_disturb"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="16dp"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:checked="true"
+            android:textColor="@color/text_5e" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@drawable/list_item_bg"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:id="@+id/panel_not_notify"
+        android:layout_height="48dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:text="不接收系统消息"
+            android:textColor="@color/text_5e"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/cb_not_notify"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="16dp"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:checked="false"
+            android:textColor="@color/text_5e" />
+    </RelativeLayout>
+    <View
+        android:background="@color/divider_color"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/item_mod_pwd"
+        android:layout_marginTop="8dp"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/list_item_bg"
+        app:content_gravity="right"
+        app:divider_location="both"
+        app:prefrence_title="修改密码" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/red_btn_sel"
+        android:duplicateParentState="false"
+        android:gravity="center"
+        android:text="退出当前账号"
+        android:textColor="@color/white"
+        android:textSize="19dp" />
+</LinearLayout>

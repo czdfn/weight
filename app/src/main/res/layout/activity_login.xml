@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:scrollbars="none">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="128dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <EditText
+                    android:id="@+id/et_login_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/hint_phone"
+                    android:drawablePadding="12dp"
+                    android:hint="@string/text_login_phone_hint"
+                    android:maxLength="11"
+                    android:singleLine="true"
+                    android:textColor="@color/text_5e"
+                    android:textColorHint="@color/text_d9"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/divider_color" />
+
+                <EditText
+                    android:id="@+id/et_login_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/hint_pwd"
+                    android:drawablePadding="12dp"
+                    android:hint="@string/text_login_pwd_hint"
+                    android:inputType="textPassword"
+                    android:maxLength="18"
+                    android:singleLine="true"
+                    android:textColor="@color/text_5e"
+                    android:textColorHint="@color/text_d9"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/divider_color" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="29dp"
+                android:background="@drawable/red_btn_sel"
+                android:duplicateParentState="false"
+                android:gravity="center"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:textSize="19dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

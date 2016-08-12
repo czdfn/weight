@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.chengsi.weightcalc.activity.ShareActivity">
+
+        <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+            android:id="@+id/share_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/list_item_bg"
+            app:prefrence_title="发送邀请给好友"
+            android:minHeight="44dp"
+            android:layout_marginTop="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout"
+            android:layout_below="@+id/share_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/white"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/scan_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="扫描一下二维码，即可安装软件"
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <ImageView
+                android:id="@+id/qr_code"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zhongyiqr"
+                android:layout_below="@+id/scan_tv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="10dp"/>
+        </RelativeLayout>
+
+
+
+</RelativeLayout>

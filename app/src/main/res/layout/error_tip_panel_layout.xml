@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/error_tip_panel"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/error_tip_msg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/list_item_bg"
+        android:gravity="center"
+        android:tag="no_network"
+        android:text="@string/error_tip_no_network"
+        android:textColor="@color/normal_text_color"
+        android:textSize="16dp" />
+
+    
+    <View android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:background="@color/divider_color" 
+        android:layout_alignParentBottom="true"/>
+<!--     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="12dp"
+        android:src="@drawable/setting_right_arrow" /> -->
+
+</RelativeLayout>

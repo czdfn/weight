@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.chengsi.weightcalc.activity.ArchivesActivity">
+    <item
+        android:id="@+id/action_calc"
+        android:orderInCategory="100"
+        android:title="计算"
+        app:showAsAction="always" />
+    <item
+    android:id="@+id/action_save"
+    android:orderInCategory="200"
+    android:title="保存"
+    app:showAsAction="always" />
+</menu>

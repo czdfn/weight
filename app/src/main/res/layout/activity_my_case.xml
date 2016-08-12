@@ -1,0 +1,159 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chengsi.weightcalc.activity.MyCaseActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="15dp">
+
+                <LinearLayout
+                    android:id="@+id/panel_wife_area"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tab_girl_sel" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:includeFontPadding="false"
+                        android:text="妻子"
+                        android:textColor="@color/tab_text_sel"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/panel_husband_area"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tab_boy_sel" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:includeFontPadding="false"
+                        android:text="丈夫"
+                        android:textColor="@color/tab_blue_text_sel"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_name"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="both"
+                app:prefrence_title="就诊人" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_zhusu"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="主诉" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_medical_history"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="现病史" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_intermarriage"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:accessStyle="none"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="婚育史（近亲结婚）" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_exist_children"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="婚育史（现有子女）" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_adopted_children"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="婚育史（领养子女）" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_end_time"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="婚育史（末次妊娠时间）" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_menarche"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="月经史（初潮）" />
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/item_menstrual_cycle"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/list_item_bg"
+                app:content_gravity="right"
+                app:divider_location="bottom"
+                app:prefrence_title="月经史（月经周期）" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_bg"
+    tools:context="com.chengsi.weightcalc.fragment.group.DynamicFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="160dp">
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/tv_consult_doctor"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/list_item_bg"
+                app:contentLine="2"
+                app:divider_location="both"
+                app:prefrence_title="医生" />
+
+
+            <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+                android:id="@+id/tv_consult_privacy"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/list_item_bg"
+                app:content="公开"
+                app:contentLine="2"
+                app:divider_location="both"
+                app:prefrence_title="问题是否公开" />
+            <EditText
+                android:id="@+id/et_consult_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="请输入咨询标题"
+                android:paddingBottom="12dp"
+                android:maxLength="100"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/text_5e"
+                android:textColorHint="@color/text_d9"
+                android:textSize="16dp" />
+            <EditText
+                android:id="@+id/et_consult_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="请输入咨询内容"
+                android:minHeight="100dp"
+                android:paddingBottom="8dp"
+                android:maxLength="500"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                android:textColor="@color/text_5e"
+                android:textColorHint="@color/text_d9"
+                android:textSize="16dp" />
+
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@id/et_consult_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/red_btn_sel"
+                android:duplicateParentState="false"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="19dp" />
+
+            <TextView
+                android:id="@+id/tv_show_history"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:paddingRight="30dp"
+                android:text="咨询记录"
+                android:visibility="gone"
+                android:textColor="@color/blue_btn_sel"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.chengsi.weightcalc.widget.PreferenceRightDetailView
+        android:id="@+id/inputEt"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/list_item_bg"
+        app:divider_location="bottom" />
+
+    <TextView
+        android:id="@+id/tips"
+        android:layout_below="@id/inputEt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0f0f0"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="6dp"
+        android:textColor="#b4adaa"
+        android:textSize="12dp" />
+
+</RelativeLayout>

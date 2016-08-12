@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.chengsi.weightcalc.activity.ReservationActivity">
+    <item
+        android:id="@+id/menu_group_detail"
+        android:icon="@drawable/tab_group_nor"
+        android:title="群资料"
+        app:showAsAction="always" />
+</menu>
