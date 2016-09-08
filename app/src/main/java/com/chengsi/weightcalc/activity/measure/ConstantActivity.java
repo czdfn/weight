@@ -235,7 +235,7 @@ public class ConstantActivity extends BaseActivity implements TextWatcher,TextVi
             new Thread(mQuery).start();
         }
         ButterKnife.inject(this);
-        editText3.setText(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(System.currentTimeMillis()));
+        editText3.setText(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis()));
         editText4.addTextChangedListener(this);
         editText5.addTextChangedListener(this);
         editText6.addTextChangedListener(this);
