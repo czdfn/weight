@@ -191,6 +191,7 @@
     <string name="content_label">000.000</string>
     <string name="mt_label">000.0</string>
     <string name="mi">米</string>
+    <string name="mi_eng">M</string>
     <string name="mt">M/T</string>
     <string name="limi">厘米</string>
     <string name="pszz">纵倾较正后对应的排水量/载重量</string>

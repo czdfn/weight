@@ -549,7 +549,7 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
             chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
             chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
             shijishuichi = jiaozhenghou_average;
-            shijipaishuizaizhong = Double.valueOf(near_weight) + chaezhongliang;
+            shijipaishuizaizhong = Double.valueOf(near_weight) + Double.valueOf(new DecimalFormat("0.0").format(chaezhongliang));
             jianchuanyongwuliao = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
             if (checkbox.isChecked()) {
                 zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);

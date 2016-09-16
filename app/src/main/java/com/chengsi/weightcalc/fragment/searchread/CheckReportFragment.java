@@ -21,6 +21,7 @@ import com.chengsi.weightcalc.listener.OnContinuousClickListener;
 import com.chengsi.weightcalc.utils.print.PrintPDF;
 import com.chengsi.weightcalc.R;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,6 +37,7 @@ public class CheckReportFragment extends BaseFragment {
     SQLiteDatabase db;
     Cursor cursor;
     Cursor cursor1;
+    Cursor cursor2;
     double average_front;
     double average_mid;
     double average_back;
@@ -117,9 +119,10 @@ public class CheckReportFragment extends BaseFragment {
             db = dbHelper.getReadableDatabase();
             cursor = db.rawQuery("select * from weightcalc where ship_name=? And check_id=? And check_type=?", new String[]{SearchActivity.shipName, measureId + "", 1 + ""});
             cursor1 = db.rawQuery("select * from weightcalc where ship_name=? And check_id=? And check_type=?", new String[]{SearchActivity.shipName, measureId + "", 3 + ""});
+            cursor2 = db.rawQuery("select * from weightcalc where ship_name=? And check_id=? And check_type=?", new String[]{SearchActivity.shipName, measureId + "", 2 + ""});
             mData = new HashMap<>();
 
-            if (cursor != null && cursor1 != null) {
+            if (cursor != null && cursor1 != null && cursor2 !=null) {
                 while (cursor.moveToNext()) {
                     check_time = cursor.getString(cursor.getColumnIndex("check_time"));
                     ceshishuichi_frontLeft = cursor.getString(cursor.getColumnIndex("ceshishuichi_frontLeft"));
@@ -161,9 +164,9 @@ public class CheckReportFragment extends BaseFragment {
                     chishuicha_after = afteralter_back - afteralter_front;
                     jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
                     chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
-                    chaezhongliang = chaeshuichi * Double.valueOf(tpc);
+                    chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
                     shijishuichi = jiaozhenghou_average;
-                    shijipaishuizaizhong = Double.valueOf(near_weight) + chaezhongliang;
+                    shijipaishuizaizhong = Double.valueOf(near_weight) + Double.valueOf(new DecimalFormat("0.0").format(chaezhongliang));
                     jianchuanyongwuliao = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
                     if (cursor.getString(cursor.getColumnIndex("scmd")).equals("1")) {
                         zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
@@ -184,10 +187,10 @@ public class CheckReportFragment extends BaseFragment {
                     mData.put("alter_h_qian", new DecimalFormat("0.000").format(afteralter_back));
                     mData.put("jiaozhenghou_average_qian", new DecimalFormat("0.000").format(jiaozhenghou_average));
                     mData.put("scmd_qian", scmd);
-                    mData.put("shijipaishuizaizhong_qian", new DecimalFormat("0.000").format(shijipaishuizaizhong));
-                    mData.put("alterpaishui_qian", new DecimalFormat("0.000").format(alterpaishui));
-                    mData.put("weight_after_qian", new DecimalFormat("0.000").format(weight_after));
-                    mData.put("oil_qian", new DecimalFormat("0.000").format(Double.parseDouble(qy) + Double.parseDouble(zy) + Double.parseDouble(rhy)));
+                    mData.put("shijipaishuizaizhong_qian", new DecimalFormat("0.0").format(shijipaishuizaizhong));
+                    mData.put("alterpaishui_qian", new DecimalFormat("0.0").format(alterpaishui));
+                    mData.put("weight_after_qian", new DecimalFormat("0.0").format(weight_after));
+                    mData.put("oil_qian", new DecimalFormat("0.0").format(Double.parseDouble(qy) + Double.parseDouble(zy) + Double.parseDouble(rhy)));
                     mData.put("ds_qian", ds);
                     mData.put("ycs_qian", ycs);
                     mData.put("other_qian", "/");
@@ -205,7 +208,7 @@ public class CheckReportFragment extends BaseFragment {
                     biaojijuli_back = cursor1.getString(cursor1.getColumnIndex("biaojijuli_back"));
                     ship_length = cursor1.getString(cursor1.getColumnIndex("ship_length"));
                     near_shuichi = cursor1.getString(cursor1.getColumnIndex("near_shuichi"));
-                    near_weight = cursor1.getString(cursor1.getColumnIndex("near_weight"));
+                    near_weight = new DecimalFormat("0.0").format(Double.valueOf(cursor1.getString(cursor1.getColumnIndex("near_weight"))));
                     tpc = cursor1.getString(cursor1.getColumnIndex("tpc"));
                     LCF = cursor1.getString(cursor1.getColumnIndex("LCF"));
                     DZ = cursor1.getString(cursor1.getColumnIndex("DZ"));
@@ -231,12 +234,12 @@ public class CheckReportFragment extends BaseFragment {
                     afteralter_front = average_front + alter_front;
                     afteralter_mid = average_mid + alter_mid;
                     afteralter_back = average_back + alter_back;
-                    chishuicha_after = afteralter_back - afteralter_front;
+                    chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
                     jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
                     chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
-                    chaezhongliang = chaeshuichi * Double.valueOf(tpc);
+                    chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
                     shijishuichi = jiaozhenghou_average;
-                    shijipaishuizaizhong = Double.valueOf(near_weight) + chaezhongliang;
+                    shijipaishuizaizhong = Double.valueOf(near_weight) + Double.valueOf(new DecimalFormat("0.0").format(chaezhongliang));
 
                     jianchuanyongwuliao_back = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
                     if (cursor1.getString(cursor1.getColumnIndex("check_status")).equals("1")) {
@@ -262,13 +265,92 @@ public class CheckReportFragment extends BaseFragment {
                     mData.put("alter_h_hou", new DecimalFormat("0.000").format(afteralter_back));
                     mData.put("jiaozhenghou_average_hou", new DecimalFormat("0.000").format(jiaozhenghou_average));
                     mData.put("scmd_hou", scmd);
-                    mData.put("shijipaishuizaizhong_hou", new DecimalFormat("0.000").format(shijipaishuizaizhong));
-                    mData.put("alterpaishui_hou", new DecimalFormat("0.000").format(alterpaishui));
-                    mData.put("weight_after_hou", new DecimalFormat("0.000").format(weight_after));
-                    mData.put("oil_hou", new DecimalFormat("0.000").format(Double.parseDouble(qy) + Double.parseDouble(zy) + Double.parseDouble(rhy)));
+                    mData.put("shijipaishuizaizhong_hou", new DecimalFormat("0.0").format(shijipaishuizaizhong));
+                    mData.put("alterpaishui_hou", new DecimalFormat("0.0").format(alterpaishui));
+                    mData.put("weight_after_hou", new DecimalFormat("0.0").format(weight_after));
+                    mData.put("oil_hou", new DecimalFormat("0.0").format(Double.parseDouble(qy) + Double.parseDouble(zy) + Double.parseDouble(rhy)));
                     mData.put("ds_hou", ds);
                     mData.put("ycs_hou", ycs);
                     mData.put("other_hou", "/");
+                    mData.put("weight_package", new DecimalFormat("0").format(weight_package));
+                }
+
+                while (cursor2.moveToNext()) {
+//                    check_time = cursor2.getString(cursor2.getColumnIndex("check_time"));
+                    ceshishuichi_frontLeft = cursor2.getString(cursor2.getColumnIndex("ceshishuichi_frontLeft"));
+                    ceshishuichi_frontRight = cursor2.getString(cursor2.getColumnIndex("ceshishuichi_frontRight"));
+                    ceshishuichi_midLeft = cursor2.getString(cursor2.getColumnIndex("ceshishuichi_midLeft"));
+                    ceshishuichi_midRight = cursor2.getString(cursor2.getColumnIndex("ceshishuichi_midRight"));
+                    ceshishuichi_backLeft = cursor2.getString(cursor2.getColumnIndex("ceshishuichi_backLeft"));
+                    ceshishuichi_backRight = cursor2.getString(cursor2.getColumnIndex("ceshishuichi_backRight"));
+                    biaojijuli_front = cursor2.getString(cursor2.getColumnIndex("biaojijuli_front"));
+                    biaojijuli_mid = cursor2.getString(cursor2.getColumnIndex("biaojijuli_mid"));
+                    biaojijuli_back = cursor2.getString(cursor2.getColumnIndex("biaojijuli_back"));
+                    ship_length = cursor2.getString(cursor2.getColumnIndex("ship_length"));
+                    near_shuichi = cursor2.getString(cursor2.getColumnIndex("near_shuichi"));
+                    near_weight = new DecimalFormat("0.0").format(Double.valueOf(cursor2.getString(cursor2.getColumnIndex("near_weight"))));
+                    tpc = cursor2.getString(cursor2.getColumnIndex("tpc"));
+                    LCF = cursor2.getString(cursor2.getColumnIndex("LCF"));
+                    DZ = cursor2.getString(cursor2.getColumnIndex("DZ"));
+                    M1 = cursor2.getString(cursor2.getColumnIndex("M1"));
+                    M2 = cursor2.getString(cursor2.getColumnIndex("M2"));
+                    zy = cursor2.getString(cursor2.getColumnIndex("zy"));
+                    qy = cursor2.getString(cursor2.getColumnIndex("qy"));
+                    rhy = cursor2.getString(cursor2.getColumnIndex("rhy"));
+                    ds = cursor2.getString(cursor2.getColumnIndex("ds"));
+                    ycs = cursor2.getString(cursor2.getColumnIndex("ycs"));
+                    bzmd = cursor2.getString(cursor2.getColumnIndex("bzmd"));
+                    scmd = cursor2.getString(cursor2.getColumnIndex("scmd"));
+                    qiancepaishiuliang = cursor2.getString(cursor2.getColumnIndex("qiancepaishiuliang"));
+                    qiancechuanyongwuliao = cursor2.getString(cursor2.getColumnIndex("qiancechuanyongwuliao"));
+
+                    average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
+                    average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
+                    average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
+                    chishuicha_before = average_back - average_front;
+                    alter_front = chishuicha_before * Double.valueOf(biaojijuli_front) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
+                    alter_mid = chishuicha_before * Double.valueOf(biaojijuli_mid) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
+                    alter_back = chishuicha_before * Double.valueOf(biaojijuli_back) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
+                    afteralter_front = average_front + alter_front;
+                    afteralter_mid = average_mid + alter_mid;
+                    afteralter_back = average_back + alter_back;
+                    chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
+                    jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
+                    chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
+                    chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
+                    shijishuichi = jiaozhenghou_average;
+                    shijipaishuizaizhong = Double.valueOf(near_weight) + Double.valueOf(new DecimalFormat("0.0").format(chaezhongliang));
+
+                    jianchuanyongwuliao_back = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
+                    if (cursor2.getString(cursor2.getColumnIndex("check_status")).equals("1")) {
+                        zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
+                        jiaozhi = (100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length);
+                    } else {
+                        zongqingliju = 0;
+                        jiaozhi = 0;
+                    }
+                    alterpaishui = shijipaishuizaizhong + jiaozhi;
+                    weight_before = shijipaishuizaizhong + jiaozhi;
+                    weight_after = (shijipaishuizaizhong + jiaozhi) * Double.valueOf(scmd) / Double.valueOf(bzmd);
+                    shijipaishuiliang_back = weight_after;
+                    qingzaijidingliangbeiliao = shijipaishuiliang_back - jianchuanyongwuliao_back;
+                    jianqingzai_beiliao = qingzaijidingliangbeiliao;
+                    qiancepsl = Double.valueOf(qiancepaishiuliang);
+                    qiancecywl = Double.valueOf(qiancechuanyongwuliao);
+//                    weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao;
+
+                    mData.put("alter_f_zhong", new DecimalFormat("0.000").format(afteralter_front));
+                    mData.put("alter_m_zhong", new DecimalFormat("0.000").format(afteralter_mid));
+                    mData.put("alter_h_zhong", new DecimalFormat("0.000").format(afteralter_back));
+                    mData.put("jiaozhenghou_average_zhong", new DecimalFormat("0.000").format(jiaozhenghou_average));
+                    mData.put("scmd_zhong", scmd);
+                    mData.put("shijipaishuizaizhong_zhong", new DecimalFormat("0.0").format(shijipaishuizaizhong));
+                    mData.put("alterpaishui_zhong", new DecimalFormat("0.0").format(alterpaishui));
+                    mData.put("weight_after_zhong", new DecimalFormat("0.0").format(weight_after));
+                    mData.put("oil_zhong", new DecimalFormat("0.0").format(Double.parseDouble(qy) + Double.parseDouble(zy) + Double.parseDouble(rhy)));
+                    mData.put("ds_zhong", ds);
+                    mData.put("ycs_zhong", ycs);
+                    mData.put("other_zhong", "/");
                 }
                 msg.what = 0;
             } else {
@@ -300,6 +382,7 @@ public class CheckReportFragment extends BaseFragment {
         db.close();
         cursor.close();
         cursor1.close();
+        cursor2.close();
     }
 
     public CheckReportFragment() {
@@ -312,13 +395,24 @@ public class CheckReportFragment extends BaseFragment {
 
     private void initView() {
         ((EditText) view.findViewById(R.id.shipname_report)).setText(mData.get("ship_name"));
-        ((EditText) view.findViewById(R.id.date_report)).setText(mData.get("check_time_f")+" - "+mData.get("check_time_b"));
+        String duration,from,to;
+        if(mData.get("check_time_f") != null){
+            from = mData.get("check_time_f").substring(0,10);
+        }else{
+            from = "unknown";
+        }
+        if(mData.get("check_time_b") != null){
+            to = mData.get("check_time_b").substring(0,10);
+        }else{
+            to = "unknown";
+        }
+        ((EditText) view.findViewById(R.id.date_report)).setText(from+" - "+to);
         ((EditText) view.findViewById(R.id.souqian_report)).setText(mData.get("alter_f_qian") == null ? "000.000" : mData.get("alter_f_qian"));
         ((EditText) view.findViewById(R.id.weiqian_report)).setText(mData.get("alter_h_qian") == null ? "000.000" : mData.get("alter_h_qian"));
         ((EditText) view.findViewById(R.id.zhongqian_report)).setText(mData.get("alter_m_qian") == null ? "000.000" : mData.get("alter_m_qian"));
         ((EditText) view.findViewById(R.id.pingjunqian_report)).setText(mData.get("jiaozhenghou_average_qian") == null ? "000.000" : mData.get("jiaozhenghou_average_qian"));
         ((TextView) view.findViewById(R.id.md_f_report)).setText(mData.get("scmd_qian") == null ? "000.000" : mData.get("scmd_qian"));
-        ((EditText) view.findViewById(R.id.sjpsl_qian_report)).setText(mData.get("shijipaishuizaizhong_qian") == null ? "000.000" : mData.get("shijipaishuizaizhong_qian"));
+        ((EditText) view.findViewById(R.id.sjpsl_qian_report)).setText(mData.get("shijipaishuizaizhong_qian") == null ? "000.0" : mData.get("shijipaishuizaizhong_qian"));
         ((EditText) view.findViewById(R.id.jzhpsl_qian_report)).setText(mData.get("alterpaishui_qian") == null ? "000.000" : mData.get("alterpaishui_qian"));
         ((EditText) view.findViewById(R.id.mdjzhpsl_qian_report)).setText(mData.get("weight_after_qian") == null ? "000.000" : mData.get("weight_after_qian"));
         ((EditText) view.findViewById(R.id.you_qian_report)).setText(mData.get("oil_qian") == null ? "000.000" : mData.get("oil_qian"));
@@ -338,6 +432,20 @@ public class CheckReportFragment extends BaseFragment {
         ((EditText) view.findViewById(R.id.danshui_b_report)).setText(mData.get("ds_hou") == null ? "000.000" : mData.get("ds_hou"));
         ((TextView) view.findViewById(R.id.ycs_b_report)).setText(mData.get("ycs_hou") == null ? "000.000" : mData.get("ycs_hou"));
         ((TextView) view.findViewById(R.id.other_b_report)).setText(mData.get("other_hou"));
+
+        ((EditText) view.findViewById(R.id.souzhong_report)).setText(mData.get("alter_f_zhong") == null ? "000.000" : mData.get("alter_f_zhong"));
+        ((EditText) view.findViewById(R.id.weizhong_report)).setText(mData.get("alter_h_zhong") == null ? "000.000" : mData.get("alter_h_zhong"));
+        ((EditText) view.findViewById(R.id.zhongzhong_report)).setText(mData.get("alter_m_zhong") == null ? "000.000" : mData.get("alter_m_zhong"));
+        ((EditText) view.findViewById(R.id.pingjunzhong_report)).setText(mData.get("jiaozhenghou_average_zhong") == null ? "000.000" : mData.get("jiaozhenghou_average_zhong"));
+        ((TextView) view.findViewById(R.id.md_z_report)).setText(mData.get("scmd_zhong") == null ? "000.000" : mData.get("scmd_zhong"));
+        ((EditText) view.findViewById(R.id.sjpsl_zhong_report)).setText(mData.get("shijipaishuizaizhong_zhong") == null ? "000.000" : mData.get("shijipaishuizaizhong_zhong"));
+        ((EditText) view.findViewById(R.id.jzhpsl_zhong_report)).setText(mData.get("alterpaishui_zhong") == null ? "000.000" : mData.get("alterpaishui_zhong"));
+        ((EditText) view.findViewById(R.id.mdjzhpsl_zhong_report)).setText(mData.get("weight_after_zhong") == null ? "000.000" : mData.get("weight_after_zhong"));
+        ((EditText) view.findViewById(R.id.you_zhong_report)).setText(mData.get("oil_zhong") == null ? "000.000" : mData.get("oil_zhong"));
+        ((EditText) view.findViewById(R.id.danshui_zhong_report)).setText(mData.get("ds_zhong") == null ? "000.000" : mData.get("ds_zhong"));
+        ((TextView) view.findViewById(R.id.ycs_zhong_report)).setText(mData.get("ycs_zhong") == null ? "000.000" : mData.get("ycs_zhong"));
+        ((TextView) view.findViewById(R.id.other_zhong_report)).setText(mData.get("other_zhong"));
+        ((TextView) view.findViewById(R.id.weight_package)).setText(mData.get("weight_package"));
     }
 
 

@@ -20,6 +20,7 @@ import com.chengsi.weightcalc.fragment.BaseFragment;
 import com.chengsi.weightcalc.utils.print.PrintMeasure;
 import com.chengsi.weightcalc.R;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -182,9 +183,9 @@ public class ConstantMeasureFragment extends BaseFragment {
                     chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
                     jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
                     chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
-                    chaezhongliang = chaeshuichi * Double.valueOf(tpc);
+                    chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
                     shijishuichi = jiaozhenghou_average;
-                    shijipaishuizaizhong = Double.valueOf(near_weight) + chaezhongliang;
+                    shijipaishuizaizhong = Double.valueOf(near_weight) + Double.valueOf(new DecimalFormat("0.0").format(chaezhongliang));
                     jianchuanyongwuliao = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
                     if (mData.get("check_status").equals("1")) {
                         zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
@@ -327,9 +328,9 @@ public class ConstantMeasureFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tvv16)).setText(new DecimalFormat("0.000").format(zongqingliju));
         ((TextView) view.findViewById(R.id.tvv17)).setText(new DecimalFormat("0.000").format(jiaozhi));
         ((TextView) view.findViewById(R.id.tvv18)).setText(new DecimalFormat("0.0").format(weight_before));
-        ((TextView) view.findViewById(R.id.tvv19)).setText(new DecimalFormat("0.000").format(alterpaishui));
-        ((TextView) view.findViewById(R.id.tvv20)).setText(new DecimalFormat("0.000").format(weight_after));
-        ((TextView) view.findViewById(R.id.tvv21)).setText(new DecimalFormat("0.000").format(jianchuanyongwuliao));
+        ((TextView) view.findViewById(R.id.tvv19)).setText(new DecimalFormat("0.0").format(alterpaishui));
+        ((TextView) view.findViewById(R.id.tvv20)).setText(new DecimalFormat("0.0").format(weight_after));
+        ((TextView) view.findViewById(R.id.tvv21)).setText(new DecimalFormat("0.0").format(jianchuanyongwuliao));
         ((TextView) view.findViewById(R.id.tvv22)).setText(new DecimalFormat("0").format(weight_package));
         ((TextView) view.findViewById(R.id.tvv23)).setText(new DecimalFormat("0.000").format(jiaozhenghou_average));
     }

@@ -541,7 +541,7 @@ public class FrontMeasureActivity extends BaseActivity implements TextWatcher,Te
             chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
             chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
             shijishuichi = jiaozhenghou_average;
-            shijipaishuizaizhong = Double.valueOf(near_weight) + chaezhongliang;
+            shijipaishuizaizhong = Double.valueOf(near_weight) + Double.valueOf(new DecimalFormat("0.0").format(chaezhongliang));
             jianchuanyongwuliao = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
             if (checkbox.isChecked()) {
                 zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
@@ -687,12 +687,12 @@ public class FrontMeasureActivity extends BaseActivity implements TextWatcher,Te
             textView13.setText(String.valueOf(new DecimalFormat("0.0").format(chaezhongliang)));
             textView14.setText(String.valueOf(new DecimalFormat("0.000").format(shijishuichi)));
             textView15.setText(String.valueOf(new DecimalFormat("0.0").format(shijipaishuizaizhong)));
-            textView21.setText(String.valueOf(new DecimalFormat("0.000").format(jianchuanyongwuliao)));
+            textView21.setText(String.valueOf(new DecimalFormat("0.0").format(jianchuanyongwuliao)));
             textView16.setText(String.valueOf(new DecimalFormat("0.000").format(zongqingliju)));
             textView17.setText(String.valueOf(new DecimalFormat("0.0").format(jiaozhi)));
-            textView19.setText(String.valueOf(new DecimalFormat("0.000").format(alterpaishui)));
+            textView19.setText(String.valueOf(new DecimalFormat("0.0").format(alterpaishui)));
             textView18.setText(String.valueOf(new DecimalFormat("0.0").format(weight_before)));
-            textView20.setText(String.valueOf(new DecimalFormat("0.000").format(weight_after)));
+            textView20.setText(String.valueOf(new DecimalFormat("0.0").format(weight_after)));
             textView22.setText(String.valueOf(new DecimalFormat("0").format(weight_package)));
             editText1.setText(ship_name);
             editText2.setText(check_id);
