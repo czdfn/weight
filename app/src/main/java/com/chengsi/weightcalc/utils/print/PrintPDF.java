@@ -841,7 +841,7 @@ public class PrintPDF {
                                 table23.addCell(cell231);
                                 break;
                             case 2:
-                                Chunk chunk_row233 = new Chunk(map.get("other_qian"),normal);
+                                Chunk chunk_row233 = new Chunk(map.get("other_qian") == null ? "000.000" : map.get("other_qian"),normal);
                                 Chunk chunk_row234 = new Chunk("M",normal);
                                 Paragraph phrase_row232 = new Paragraph();
                                 phrase_row232.add(chunk_row233);
@@ -860,7 +860,7 @@ public class PrintPDF {
                                 table23.addCell(cell233);
                                 break;
                             case 4:
-                                Chunk chunk_row235 = new Chunk(map.get("other_qian"),normal);
+                                Chunk chunk_row235 = new Chunk(map.get("other_hou") == null ? "000.000" : map.get("other_hou"),normal);
                                 Chunk chunk_row236 = new Chunk("M",normal);
                                 Paragraph phrase_row233 = new Paragraph();
                                 phrase_row233.add(chunk_row235);
@@ -896,7 +896,7 @@ public class PrintPDF {
                                 table24.addCell(cell241);
                                 break;
                             case 2:
-                                Chunk chunk_row243 = new Chunk("17.06",normal);
+                                Chunk chunk_row243 = new Chunk(map.get("weight_package") == null ? "000.000" : map.get("weight_package"),normal);
                                 Chunk chunk_row244 = new Chunk("M/T",normal);
                                 Paragraph phrase_row242 = new Paragraph();
                                 phrase_row242.add(chunk_row243);
