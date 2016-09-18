@@ -1,1 +1,1 @@
-include ':app', ':corelibs', ':umeng', ':williamChart'
+include ':app', ':corelibs', ':umeng'

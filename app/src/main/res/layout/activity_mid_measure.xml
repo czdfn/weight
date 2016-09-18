@@ -1545,7 +1545,6 @@
             android:gravity="center"
             android:background="@color/white"
             android:hint="@string/content_label"
-            android:text="1.0111111"
             android:inputType="numberDecimal"
             android:textColor="@color/black"
             android:textSize="15sp"

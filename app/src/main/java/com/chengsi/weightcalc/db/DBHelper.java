@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.chengsi.weightcalc.activity.measure.FrontMeasureActivity;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -169,9 +170,9 @@ public class DBHelper extends SQLiteOpenHelper {
             chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
             jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
             chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
-            chaezhongliang = chaeshuichi * Double.valueOf(tpc);
+            chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
             shijishuichi = jiaozhenghou_average;
-            shijipaishuizaizhong = Double.valueOf(near_weight) + chaezhongliang;
+            shijipaishuizaizhong = Double.valueOf(near_weight) + Double.valueOf(new DecimalFormat("0.0").format(chaezhongliang));
             if (cursor.getString(cursor.getColumnIndex("check_status")).equals("1")) {
                 zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
                 jiaozhi = (100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length);
@@ -284,7 +285,7 @@ public class DBHelper extends SQLiteOpenHelper {
             mData.put("shijishuichi", new DecimalFormat("0.000").format(shijishuichi));
             mData.put("shijipaishuizaizhong", new DecimalFormat("0.0").format(shijipaishuizaizhong));
             mData.put("zongqingliju", new DecimalFormat("0.000").format(zongqingliju));
-            mData.put("jiaozhi", new DecimalFormat("0.000").format(jiaozhi));
+            mData.put("jiaozhi", new DecimalFormat("0.0").format(jiaozhi));
             mData.put("alterpaishui", new DecimalFormat("0.000").format(alterpaishui));
             mData.put("weight_before", new DecimalFormat("0.0").format(weight_before));
             mData.put("weight_after", new DecimalFormat("0.000").format(weight_after));
