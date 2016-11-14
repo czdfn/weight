@@ -103,8 +103,8 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
     EditText editText35;
     @InjectView(R.id.et36)
     EditText editText36;
-    @InjectView(R.id.et37)
-    EditText editText37;
+//    @InjectView(R.id.et37)
+//    EditText editText37;
     @InjectView(R.id.et38)
     EditText editText38;
     @InjectView(R.id.et39)
@@ -330,7 +330,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
         editText34.setOnEditorActionListener(this);
         editText35.setOnEditorActionListener(this);
         editText36.setOnEditorActionListener(this);
-        editText37.setOnEditorActionListener(this);
+//        editText37.setOnEditorActionListener(this);
         editText38.setOnEditorActionListener(this);
         editText39.setOnEditorActionListener(this);
         editText40.setOnEditorActionListener(this);
@@ -405,15 +405,15 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
                         editText36.requestFocus();
                         break;
                     case R.id.et36:
-                        editText37.setFocusable(true);
-                        editText37.setFocusableInTouchMode(true);
-                        editText37.requestFocus();
-                        break;
-                    case R.id.et37:
                         editText38.setFocusable(true);
                         editText38.setFocusableInTouchMode(true);
                         editText38.requestFocus();
                         break;
+//                    case R.id.et37:
+//                        editText38.setFocusable(true);
+//                        editText38.setFocusableInTouchMode(true);
+//                        editText38.requestFocus();
+//                        break;
                     case R.id.et38:
                         editText39.setFocusable(true);
                         editText39.setFocusableInTouchMode(true);
@@ -610,7 +610,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
         editText34.setText(mData.get("tihuoliang"));
         editText35.setText(mData.get("paiwuliang"));
         editText36.setText(mData.get("dianzichengliang"));
-        editText37.setText(mData.get("kongzhizongliang"));
+//        editText37.setText(mData.get("kongzhizongliang"));
         editText38.setText(mData.get("qiancejiandinghuoliang"));
         editText39.setText(mData.get("qiancepaishiuliang"));
         editText40.setText(mData.get("qiancechuanyongwuliao"));
@@ -686,16 +686,16 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
             tihuoliang = new DecimalFormat("0.000").format(Double.valueOf(editText34.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText34.getText().toString().trim())));
             paiwuliang = new DecimalFormat("0.000").format(Double.valueOf(editText35.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText35.getText().toString().trim())));
             dianzichengliang = new DecimalFormat("0.000").format(Double.valueOf(editText36.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText36.getText().toString().trim())));
-            kongzhizongliang = new DecimalFormat("0.000").format(Double.valueOf(editText37.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText37.getText().toString().trim())));
+//            kongzhizongliang = new DecimalFormat("0.000").format(Double.valueOf(editText37.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText37.getText().toString().trim())));
             qiancejiandinghuoliang = new DecimalFormat("0.000").format(Double.valueOf(editText38.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText38.getText().toString().trim())));
             qiancepaishiuliang = new DecimalFormat("0.000").format(Double.valueOf(editText39.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText39.getText().toString().trim())));
             qiancechuanyongwuliao = new DecimalFormat("0.000").format(Double.valueOf(editText40.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText40.getText().toString().trim())));
-            ceshishuichi_frontLeft = new DecimalFormat("0.000").format(Double.valueOf(editText4.getText().toString().trim()));
-            ceshishuichi_frontRight = new DecimalFormat("0.000").format(Double.valueOf(editText5.getText().toString().trim()));
-            ceshishuichi_midLeft = new DecimalFormat("0.000").format(Double.valueOf(editText6.getText().toString().trim()));
-            ceshishuichi_midRight = new DecimalFormat("0.000").format(Double.valueOf(editText7.getText().toString().trim()));
-            ceshishuichi_backLeft = new DecimalFormat("0.000").format(Double.valueOf(editText8.getText().toString().trim()));
-            ceshishuichi_backRight = new DecimalFormat("0.000").format(Double.valueOf(editText9.getText().toString().trim()));
+            ceshishuichi_frontLeft = new DecimalFormat("0.00").format(Double.valueOf(editText4.getText().toString().trim()));
+            ceshishuichi_frontRight = new DecimalFormat("0.00").format(Double.valueOf(editText5.getText().toString().trim()));
+            ceshishuichi_midLeft = new DecimalFormat("0.00").format(Double.valueOf(editText6.getText().toString().trim()));
+            ceshishuichi_midRight = new DecimalFormat("0.00").format(Double.valueOf(editText7.getText().toString().trim()));
+            ceshishuichi_backLeft = new DecimalFormat("0.00").format(Double.valueOf(editText8.getText().toString().trim()));
+            ceshishuichi_backRight = new DecimalFormat("0.00").format(Double.valueOf(editText9.getText().toString().trim()));
             biaojijuli_front = new DecimalFormat("0.000").format(Double.valueOf(editText10.getText().toString().trim()));
             biaojijuli_mid = new DecimalFormat("0.000").format(Double.valueOf(editText11.getText().toString().trim()));
             biaojijuli_back = new DecimalFormat("0.000").format(Double.valueOf(editText12.getText().toString().trim()));
@@ -945,7 +945,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
             editText34.setText(tihuoliang);
             editText35.setText(paiwuliang);
             editText36.setText(dianzichengliang);
-            editText37.setText(kongzhizongliang);
+//            editText37.setText(kongzhizongliang);
             editText38.setText(qiancejiandinghuoliang);
             editText39.setText(qiancepaishiuliang);
             editText40.setText(qiancechuanyongwuliao);
@@ -966,12 +966,12 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
     @Override
     public void afterTextChanged(Editable s) {
 
-        ceshishuichi_frontLeft = new DecimalFormat("0.000").format(Double.valueOf(editText4.getText().toString().trim().equals("") ? "0" : editText4.getText().toString().trim()));
-        ceshishuichi_frontRight = new DecimalFormat("0.000").format(Double.valueOf(editText5.getText().toString().trim().equals("") ? "0" : editText5.getText().toString().trim()));
-        ceshishuichi_midLeft = new DecimalFormat("0.000").format(Double.valueOf(editText6.getText().toString().trim().equals("") ? "0" : editText6.getText().toString().trim()));
-        ceshishuichi_midRight = new DecimalFormat("0.000").format(Double.valueOf(editText7.getText().toString().trim().equals("") ? "0" : editText7.getText().toString().trim()));
-        ceshishuichi_backLeft = new DecimalFormat("0.000").format(Double.valueOf(editText8.getText().toString().trim().equals("") ? "0" : editText8.getText().toString().trim()));
-        ceshishuichi_backRight = new DecimalFormat("0.000").format(Double.valueOf(editText9.getText().toString().trim().equals("") ? "0" : editText9.getText().toString().trim()));
+        ceshishuichi_frontLeft = new DecimalFormat("0.00").format(Double.valueOf(editText4.getText().toString().trim().equals("") ? "0" : editText4.getText().toString().trim()));
+        ceshishuichi_frontRight = new DecimalFormat("0.00").format(Double.valueOf(editText5.getText().toString().trim().equals("") ? "0" : editText5.getText().toString().trim()));
+        ceshishuichi_midLeft = new DecimalFormat("0.00").format(Double.valueOf(editText6.getText().toString().trim().equals("") ? "0" : editText6.getText().toString().trim()));
+        ceshishuichi_midRight = new DecimalFormat("0.00").format(Double.valueOf(editText7.getText().toString().trim().equals("") ? "0" : editText7.getText().toString().trim()));
+        ceshishuichi_backLeft = new DecimalFormat("0.00").format(Double.valueOf(editText8.getText().toString().trim().equals("") ? "0" : editText8.getText().toString().trim()));
+        ceshishuichi_backRight = new DecimalFormat("0.00").format(Double.valueOf(editText9.getText().toString().trim().equals("") ? "0" : editText9.getText().toString().trim()));
         average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
         average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
         average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
@@ -1011,4 +1011,11 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
         textView2.setText(new DecimalFormat("0.000").format(average_mid));
         textView3.setText(new DecimalFormat("0.000").format(average_back));
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.showUpdateDialog();
+    }
+
 }

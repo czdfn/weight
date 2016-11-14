@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager.OnActivityResultListener;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -28,6 +29,7 @@ import android.widget.Toast;
 import com.chengsi.weightcalc.MyApplication;
 import com.chengsi.weightcalc.R;
 import com.chengsi.weightcalc.constants.StorageConstants;
+import com.chengsi.weightcalc.listener.OnContinuousClickListener;
 import com.chengsi.weightcalc.listener.StartActivityForResultInterface;
 //import com.chengsi.pregnancy.manager.UserManager;
 import com.chengsi.weightcalc.storage.JDStorage;
@@ -37,6 +39,7 @@ import com.chengsi.weightcalc.utils.UIUtils;
 import com.chengsi.weightcalc.widget.FanrRefreshListView;
 import com.chengsi.weightcalc.widget.JDLoadingView;
 import com.chengsi.weightcalc.widget.JDToast;
+import com.chengsi.weightcalc.widget.dialog.FanrAlertDialog;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
@@ -557,4 +560,22 @@ public class BaseActivity extends AppCompatActivity implements StartActivityForR
 //		if (userBean == null)
 //			finish();
 //	}
+
+
+	public void showUpdateDialog() {
+
+		final FanrAlertDialog dialog = FanrAlertDialog.getInstance();
+		dialog.setCancelable(true);
+		dialog.showAlertContent(getSupportFragmentManager(), "确定","取消","确定返回到之前页面？", new OnContinuousClickListener() {
+			@Override
+			public void onContinuousClick(View v) {
+				finish();
+			}
+		}, new OnContinuousClickListener() {
+			@Override
+			public void onContinuousClick(View v) {
+				dialog.dismiss();
+			}
+		});
+	}
 }

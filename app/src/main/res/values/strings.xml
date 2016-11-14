@@ -189,12 +189,13 @@
     <string name="shuichibiaojiyuzhongliang_title">水尺标记与艏艉距离</string>
     <string name="jqzbl">减轻载、备料</string>
     <string name="content_label">000.000</string>
+    <string name="content_label2">000.00</string>
     <string name="mt_label">000.0</string>
     <string name="mi">米</string>
     <string name="mi_eng">M</string>
     <string name="mt">M/T</string>
     <string name="limi">厘米</string>
-    <string name="pszz">纵倾较正后对应的排水量/载重量</string>
+    <string name="pszz">纵倾校正后对应的排水量/载重量</string>
     <string name="sou">艏</string>
     <string name="zhong">舯</string>
     <string name="wei">艉</string>
@@ -208,7 +209,7 @@
     <string name="jzhpszz">校正后排水载重</string>
     <string name="default0">0</string>
     <string name="lcf">LCF</string>
-    <string name="zqjz">纵倾较正</string>
+    <string name="zqjz">纵倾校正</string>
     <string name="sjpszz">实际水尺数据对应的排水量/载重量</string>
     <string name="sjsc">实际水尺</string>
     <string name="cezl">差额重量</string>
@@ -217,7 +218,7 @@
     <string name="cesc">差额水尺</string>
     <string name="jjpszz">接近平均水尺对应的排水量/载重量</string>
     <string name="jjpjsc">接近平均水尺</string>
-    <string name="gxjzsc">拱陷较正水后平均水尺</string>
+    <string name="gxjzsc">拱陷校正后平均水尺</string>
     <string name="hwzl">货物重量</string>
     <string name="cs">常数</string>
     <string name="qz">轻载</string>
@@ -226,7 +227,7 @@
     <string name="jzhzl">校正后重量</string>
     <string name="scmd">实测密度</string>
     <string name="bzmd">表载密度</string>
-    <string name="gsmdjz">港水密度较正</string>
+    <string name="gsmdjz">港水密度校正</string>
     <string name="ycs">压 舱 水</string>
     <string name="ds">淡    水</string>
     <string name="rhy">润滑油</string>
@@ -242,7 +243,7 @@
     <string name="kszl">矿石种类</string>
     <string name="sfdz">是否短重</string>
     <string name="jzl">及重量</string>
-    <string name="thl">提货量</string>
+    <string name="thl">提单量</string>
     <string name="pwl">排污量</string>
     <string name="dzcl">电子称量</string>
     <string name="kzzl">控制总量</string>

@@ -508,12 +508,12 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
             ship_name = editText1.getText().toString().trim();
             check_id = editText2.getText().toString().trim();
             check_time = editText3.getText().toString().trim();
-            ceshishuichi_frontLeft = new DecimalFormat("0.000").format(Double.valueOf(editText4.getText().toString().trim()));
-            ceshishuichi_frontRight = new DecimalFormat("0.000").format(Double.valueOf(editText5.getText().toString().trim()));
-            ceshishuichi_midLeft = new DecimalFormat("0.000").format(Double.valueOf(editText6.getText().toString().trim()));
-            ceshishuichi_midRight = new DecimalFormat("0.000").format(Double.valueOf(editText7.getText().toString().trim()));
-            ceshishuichi_backLeft = new DecimalFormat("0.000").format(Double.valueOf(editText8.getText().toString().trim()));
-            ceshishuichi_backRight = new DecimalFormat("0.000").format(Double.valueOf(editText9.getText().toString().trim()));
+            ceshishuichi_frontLeft = new DecimalFormat("0.00").format(Double.valueOf(editText4.getText().toString().trim()));
+            ceshishuichi_frontRight = new DecimalFormat("0.00").format(Double.valueOf(editText5.getText().toString().trim()));
+            ceshishuichi_midLeft = new DecimalFormat("0.00").format(Double.valueOf(editText6.getText().toString().trim()));
+            ceshishuichi_midRight = new DecimalFormat("0.00").format(Double.valueOf(editText7.getText().toString().trim()));
+            ceshishuichi_backLeft = new DecimalFormat("0.00").format(Double.valueOf(editText8.getText().toString().trim()));
+            ceshishuichi_backRight = new DecimalFormat("0.00").format(Double.valueOf(editText9.getText().toString().trim()));
             biaojijuli_front = new DecimalFormat("0.000").format(Double.valueOf(editText10.getText().toString().trim()));
             biaojijuli_mid = new DecimalFormat("0.000").format(Double.valueOf(editText11.getText().toString().trim()));
             biaojijuli_back = new DecimalFormat("0.000").format(Double.valueOf(editText12.getText().toString().trim()));
@@ -532,8 +532,8 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
             ycs = new DecimalFormat("0.0").format(Double.valueOf(editText25.getText().toString().trim().equals("")?0:Double.valueOf(editText25.getText().toString().trim())));
             bzmd = new DecimalFormat("0.0000").format(Double.valueOf(editText26.getText().toString().trim().equals("")?0:Double.valueOf(editText26.getText().toString().trim())));
             scmd = new DecimalFormat("0.0000").format(Double.valueOf(editText27.getText().toString().trim().equals("")?0:Double.valueOf(editText27.getText().toString().trim())));
-            shijipaishuiliang_front = new DecimalFormat("0.000").format(Double.valueOf(editText28.getText().toString().trim().equals("")?0:Double.valueOf(editText28.getText().toString().trim())));
-            jianchuanyongwuliao_front = new DecimalFormat("0.000").format(Double.valueOf(editText29.getText().toString().trim().equals("")?0:Double.valueOf(editText29.getText().toString().trim())));
+            shijipaishuiliang_front = new DecimalFormat("0.0").format(Double.valueOf(editText28.getText().toString().trim().equals("")?0:Double.valueOf(editText28.getText().toString().trim())));
+            jianchuanyongwuliao_front = new DecimalFormat("0.0").format(Double.valueOf(editText29.getText().toString().trim().equals("")?0:Double.valueOf(editText29.getText().toString().trim())));
             average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
             average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
             average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
@@ -758,12 +758,12 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
 
     @Override
     public void afterTextChanged(Editable s) {
-            ceshishuichi_frontLeft = new DecimalFormat("0.000").format(Double.valueOf(editText4.getText().toString().trim().equals("")? "0" : editText4.getText().toString().trim()));
-            ceshishuichi_frontRight = new DecimalFormat("0.000").format(Double.valueOf(editText5.getText().toString().trim().equals("")?"0":editText5.getText().toString().trim()));
-            ceshishuichi_midLeft = new DecimalFormat("0.000").format(Double.valueOf(editText6.getText().toString().trim().equals("")?"0":editText6.getText().toString().trim()));
-            ceshishuichi_midRight = new DecimalFormat("0.000").format(Double.valueOf(editText7.getText().toString().trim().equals("")?"0":editText7.getText().toString().trim()));
-            ceshishuichi_backLeft = new DecimalFormat("0.000").format(Double.valueOf(editText8.getText().toString().trim().equals("")?"0":editText8.getText().toString().trim()));
-            ceshishuichi_backRight = new DecimalFormat("0.000").format(Double.valueOf(editText9.getText().toString().trim().equals("")?"0":editText9.getText().toString().trim()));
+            ceshishuichi_frontLeft = new DecimalFormat("0.00").format(Double.valueOf(editText4.getText().toString().trim().equals("")? "0" : editText4.getText().toString().trim()));
+            ceshishuichi_frontRight = new DecimalFormat("0.00").format(Double.valueOf(editText5.getText().toString().trim().equals("")?"0":editText5.getText().toString().trim()));
+            ceshishuichi_midLeft = new DecimalFormat("0.00").format(Double.valueOf(editText6.getText().toString().trim().equals("")?"0":editText6.getText().toString().trim()));
+            ceshishuichi_midRight = new DecimalFormat("0.00").format(Double.valueOf(editText7.getText().toString().trim().equals("")?"0":editText7.getText().toString().trim()));
+            ceshishuichi_backLeft = new DecimalFormat("0.00").format(Double.valueOf(editText8.getText().toString().trim().equals("")?"0":editText8.getText().toString().trim()));
+            ceshishuichi_backRight = new DecimalFormat("0.00").format(Double.valueOf(editText9.getText().toString().trim().equals("")?"0":editText9.getText().toString().trim()));
         average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
         average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
         average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
@@ -803,5 +803,13 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
         textView2.setText(new DecimalFormat("0.000").format(average_mid));
         textView3.setText(new DecimalFormat("0.000").format(average_back));
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.showUpdateDialog();
+    }
+
+
 
 }

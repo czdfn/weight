@@ -52,13 +52,6 @@
                     android:textSize="18sp" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="船名"
-                android:textColor="@color/blue" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,7 +143,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="艏校正后水尺Fore. Corrected"
+                    android:text="Fore. Corrected"
                     android:textColor="@color/black"
                     android:textSize="13sp"
                     android:layout_marginLeft="25dp"
@@ -224,81 +217,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="艉校正后水尺Aft. Corrected"
-                    android:textColor="@color/black"
-                    android:textSize="13sp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_gravity="center_vertical"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="@color/black"
-                        android:minWidth="150dp"
-                        android:editable="false"
-                        android:gravity="center"
-                        android:layout_gravity="center_vertical"
-                        android:textSize="13sp"
-                        android:id="@+id/weiqian_report" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mi_eng"
-                        android:textColor="@color/black"
-                        android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
-                        android:minWidth="150dp"
-                        android:editable="false"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:layout_gravity="center_vertical"
-                        android:textSize="13sp"
-                        android:id="@+id/weizhong_report" />
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:minWidth="150dp"
-                        android:editable="false"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:layout_gravity="center_vertical"
-                        android:textSize="13sp"
-                        android:id="@+id/weihou_report" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mi_eng"
-                        android:textColor="@color/black"
-                        android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="舯校正后水尺Mid. Averaged"
+                    android:text="Mid. Averaged"
                     android:textColor="@color/black"
                     android:textSize="13sp"
                     android:layout_marginLeft="25dp"
@@ -364,6 +283,81 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aft. Corrected"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@color/black"
+                        android:minWidth="150dp"
+                        android:editable="false"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp"
+                        android:id="@+id/weiqian_report" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mi_eng"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="35dp"
+                        android:minWidth="150dp"
+                        android:editable="false"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp"
+                        android:id="@+id/weizhong_report" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:minWidth="150dp"
+                        android:editable="false"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp"
+                        android:id="@+id/weihou_report" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mi_eng"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -379,9 +373,9 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="65dp"
                     android:layout_height="wrap_content"
-                    android:text="拱陷校正后平均吃水D/M"
+                    android:text="D/M"
                     android:textColor="@color/blue"
                     android:textSize="13sp"
                     android:layout_marginLeft="25dp"
@@ -559,26 +553,18 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="Corresponding displacement"
                         android:textColor="@color/black"
                         android:textSize="13sp"
                         android:layout_marginLeft="25dp"
                         android:layout_marginTop="5dp"
-                        android:layout_gravity="center_vertical"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="实际水尺数据对应的排水量"
-                        android:textColor="@color/blue"
-                        android:textSize="13sp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -649,24 +635,17 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="After correction for the trim"
                         android:textColor="@color/black"
                         android:textSize="13sp"
                         android:layout_marginLeft="25dp"
-                        android:layout_gravity="center_vertical"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="纵倾校正后排水量"
-                        android:textColor="@color/blue"
-                        android:textSize="13sp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -731,7 +710,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:orientation="horizontal">
 
 
@@ -740,26 +719,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="163dp"
                         android:layout_height="wrap_content"
-                        android:text="After correction for density"
+                        android:text="After correction for density Of harbour water"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_gravity="center_vertical"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Of harbour water"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_gravity="center_vertical"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="密度校正后排水量"
-                        android:textColor="@color/blue"
                         android:textSize="13sp"
                         android:layout_marginLeft="25dp"
                         android:layout_gravity="center_vertical"/>
@@ -773,7 +736,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="23dp"
+                        android:layout_marginLeft="20dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -842,9 +805,9 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Bunkers 油料"
+                    android:text="Bunkers"
                     android:textColor="@color/black"
                     android:textSize="13sp"
                     android:layout_marginLeft="25dp"
@@ -858,7 +821,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="105dp"
+                        android:layout_marginLeft="80dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -918,7 +881,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fresh water 淡水"
+                    android:text="Fresh water"
                     android:textColor="@color/black"
                     android:textSize="13sp"
                     android:layout_marginLeft="25dp"
@@ -932,7 +895,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="83dp"
+                        android:layout_marginLeft="112dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -992,7 +955,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ballast water 压舱水"
+                    android:text="Ballast water"
                     android:textColor="@color/black"
                     android:textSize="13sp"
                     android:layout_marginLeft="25dp"
@@ -1006,7 +969,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="63dp"
+                        android:layout_marginLeft="105dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -1066,7 +1029,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="other cargo其它货物"
+                    android:text="other cargo"
                     android:textColor="@color/black"
                     android:textSize="13sp"
                     android:layout_marginLeft="25dp"
@@ -1080,7 +1043,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="63dp"
+                        android:layout_marginLeft="112dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -1138,7 +1101,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5 WEIGHT OF CARGO LOAD/ DISCHARGED 货物卸载量"
+                    android:text="5 WEIGHT OF CARGO LOAD/ DISCHARGED"
                     android:textColor="@color/black"
                     android:textSize="13sp"
                     android:textStyle="bold"
@@ -1148,7 +1111,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
+                    android:layout_marginLeft="150dp"
                     android:minWidth="150dp"
                     android:editable="false"
                     android:gravity="center"
@@ -1190,7 +1153,8 @@
                     android:editable="false"
                     android:gravity="center"
                     android:layout_gravity="center_vertical"
-                    android:textSize="13sp"/>
+                    android:textSize="13sp"
+                    android:text="***" />
             </LinearLayout>
 
             <LinearLayout
@@ -1251,7 +1215,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="200dp"
                 android:id="@+id/doprint"
-                android:text="打   印"
+                android:text="Print"
                 android:layout_marginRight="200dp"
                 android:layout_marginBottom="100dp"
                 android:layout_marginTop="20dp"

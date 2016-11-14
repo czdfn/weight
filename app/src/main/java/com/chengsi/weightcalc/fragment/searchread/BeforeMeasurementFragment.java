@@ -269,12 +269,12 @@ public class BeforeMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tv1)).setText(mData.get("ship_name"));
         ((TextView) view.findViewById(R.id.tv2)).setText(mData.get("check_id"));
         ((TextView) view.findViewById(R.id.tv3)).setText(mData.get("check_time"));
-        ((TextView) view.findViewById(R.id.tv4)).setText(mData.get("ceshishuichi_frontLeft") == null ? "000.000" : mData.get("ceshishuichi_frontLeft"));
-        ((TextView) view.findViewById(R.id.tv5)).setText(mData.get("ceshishuichi_frontRight") == null ? "000.000" : mData.get("ceshishuichi_frontRight"));
-        ((TextView) view.findViewById(R.id.tv6)).setText(mData.get("ceshishuichi_midLeft") == null ? "000.000" : mData.get("ceshishuichi_midLeft"));
-        ((TextView) view.findViewById(R.id.tv7)).setText(mData.get("ceshishuichi_midRight") == null ? "000.000" : mData.get("ceshishuichi_midRight"));
-        ((TextView) view.findViewById(R.id.tv8)).setText(mData.get("ceshishuichi_backLeft") == null ? "000.000" : mData.get("ceshishuichi_backLeft"));
-        ((TextView) view.findViewById(R.id.tv9)).setText(mData.get("ceshishuichi_backRight") == null ? "000.000" : mData.get("ceshishuichi_backRight"));
+        ((TextView) view.findViewById(R.id.tv4)).setText(mData.get("ceshishuichi_frontLeft") == null ? "000.00" : mData.get("ceshishuichi_frontLeft"));
+        ((TextView) view.findViewById(R.id.tv5)).setText(mData.get("ceshishuichi_frontRight") == null ? "000.00" : mData.get("ceshishuichi_frontRight"));
+        ((TextView) view.findViewById(R.id.tv6)).setText(mData.get("ceshishuichi_midLeft") == null ? "000.00" : mData.get("ceshishuichi_midLeft"));
+        ((TextView) view.findViewById(R.id.tv7)).setText(mData.get("ceshishuichi_midRight") == null ? "000.00" : mData.get("ceshishuichi_midRight"));
+        ((TextView) view.findViewById(R.id.tv8)).setText(mData.get("ceshishuichi_backLeft") == null ? "000.00" : mData.get("ceshishuichi_backLeft"));
+        ((TextView) view.findViewById(R.id.tv9)).setText(mData.get("ceshishuichi_backRight") == null ? "000.00" : mData.get("ceshishuichi_backRight"));
         ((TextView) view.findViewById(R.id.tv10)).setText(mData.get("biaojijuli_front") == null ? "000.000" : mData.get("biaojijuli_front"));
         ((TextView) view.findViewById(R.id.tv11)).setText(mData.get("biaojijuli_mid") == null ? "000.000" : mData.get("biaojijuli_mid"));
         ((TextView) view.findViewById(R.id.tv12)).setText(mData.get("biaojijuli_back") == null ? "000.000" : mData.get("biaojijuli_back"));
@@ -326,7 +326,7 @@ public class BeforeMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tvv14)).setText(new DecimalFormat("0.000").format(shijishuichi));
         ((TextView) view.findViewById(R.id.tvv15)).setText(new DecimalFormat("0.0").format(shijipaishuizaizhong));
         ((TextView) view.findViewById(R.id.tvv16)).setText(new DecimalFormat("0.000").format(zongqingliju));
-        ((TextView) view.findViewById(R.id.tvv17)).setText(new DecimalFormat("0.000").format(jiaozhi));
+        ((TextView) view.findViewById(R.id.tvv17)).setText(new DecimalFormat("0.0").format(jiaozhi));
         ((TextView) view.findViewById(R.id.tvv18)).setText(new DecimalFormat("0.0").format(weight_before));
         ((TextView) view.findViewById(R.id.tvv19)).setText(new DecimalFormat("0.0").format(alterpaishui));
         ((TextView) view.findViewById(R.id.tvv20)).setText(new DecimalFormat("0.0").format(weight_after));

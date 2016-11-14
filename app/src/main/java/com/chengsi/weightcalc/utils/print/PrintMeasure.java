@@ -166,7 +166,7 @@ public class PrintMeasure {
                         doc.add(table);
                         break;
                     case 4:
-                        Paragraph title = new Paragraph("拱陷校正后平均吃水D/M = (Fm + Am +6MPS)/8 = "+new DecimalFormat("0.000").format(Double.valueOf(map.get("jiaozhenghou_average"))), bold_chinese);// 设置标题
+                        Paragraph title = new Paragraph("拱陷校正后平均吃水D/M = (Fm + Am +6Mm)/8 = "+new DecimalFormat("0.000").format(Double.valueOf(map.get("jiaozhenghou_average"))), bold_chinese);// 设置标题
                         title.setAlignment(Element.ALIGN_LEFT);// 设置对齐方式
                         title.setLeading(1f);// 设置行间距
                         title.setSpacingBefore(5f);
@@ -187,7 +187,7 @@ public class PrintMeasure {
                         doc.add(table);
                         break;
                     case 7:
-                        title = new Paragraph("三、排水量纵倾较正", bold_chinese);// 设置标题
+                        title = new Paragraph("三、排水量纵倾校正", bold_chinese);// 设置标题
                         title.setAlignment(Element.ALIGN_LEFT);// 设置对齐方式
                         title.setLeading(1f);// 设置行间距
                         title.setSpacingBefore(15f);
@@ -201,7 +201,7 @@ public class PrintMeasure {
                         doc.add(table);
                         break;
                     case 9:
-                        title = new Paragraph("纵倾较正后排水量/载重量 = "+ new DecimalFormat("0.000").format(Double.valueOf(map.get("weight_before"))), bold_chinese);// 设置标题
+                        title = new Paragraph("纵倾校正后排水量/载重量 = "+ new DecimalFormat("0.000").format(Double.valueOf(map.get("weight_before"))), bold_chinese);// 设置标题
                         title.setAlignment(Element.ALIGN_LEFT);// 设置对齐方式
                         title.setLeading(1f);// 设置行间距
                         title.setSpacingBefore(15f);
@@ -266,7 +266,7 @@ public class PrintMeasure {
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("zy"))+Double.valueOf(map.get("qy")) + Double.valueOf(map.get("rhy")))));
+                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("zy"))+Double.valueOf(map.get("qy")) + Double.valueOf(map.get("rhy")))));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
@@ -298,7 +298,7 @@ public class PrintMeasure {
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("ds")))));
+                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("ds")))));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
@@ -330,7 +330,7 @@ public class PrintMeasure {
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("ycs")))));
+                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("ycs")))));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -396,7 +396,7 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
+                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -477,7 +477,7 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("alterpaishui")))));
+                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("alterpaishui")))));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -509,7 +509,7 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("bzmd")))));
+                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0000").format(Double.valueOf(map.get("bzmd")))));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -541,7 +541,7 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("scmd")))));
+                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0000").format(Double.valueOf(map.get("scmd")))));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -573,7 +573,7 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("weight_after")))));
+                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")))));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -703,7 +703,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("chaeshuichi")))+"厘米", normal_chinese));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("chaeshuichi")))+"厘米", normal_chinese));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
@@ -723,7 +723,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("chaezhongliang")))+"M/T", normal_chinese));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("chaezhongliang")))+"M/T", normal_chinese));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
@@ -743,7 +743,7 @@ public class PrintMeasure {
         cell.setPadding(2f);
         cell.setColspan(3);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("shijipaishuizaizhong")))+"M/T", normal_chinese));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("shijipaishuizaizhong")))+"M/T", normal_chinese));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
@@ -770,7 +770,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase("测试水尺", bold_chinese));
+        cell = new PdfPCell(new Phrase("测视水尺", bold_chinese));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
@@ -815,7 +815,7 @@ public class PrintMeasure {
         cell.setPadding(0);//设置表格与上一个表格的填充为10
         table1.addCell(cell);
 
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("ceshishuichi_frontLeft")))));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("ceshishuichi_frontLeft")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
@@ -825,7 +825,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(map.get("biaojijuli_front")));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("biaojijuli_front")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
@@ -840,7 +840,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("ceshishuichi_frontRight")))));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("ceshishuichi_frontRight")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
@@ -868,7 +868,7 @@ public class PrintMeasure {
         cell.setPadding(0);//设置表格与上一个表格的填充为10
         table1.addCell(cell);
 
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("ceshishuichi_midLeft")))));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("ceshishuichi_midLeft")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
@@ -878,7 +878,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(map.get("biaojijuli_mid")));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("biaojijuli_mid")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
@@ -893,7 +893,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("ceshishuichi_midRight")))));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("ceshishuichi_midRight")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
@@ -922,7 +922,7 @@ public class PrintMeasure {
         table1.addCell(cell);
 
 
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("ceshishuichi_backLeft")))));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("ceshishuichi_backLeft")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);
@@ -932,7 +932,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(map.get("biaojijuli_back")));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("biaojijuli_back")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
@@ -947,7 +947,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("ceshishuichi_backRight")))));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("ceshishuichi_backRight")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setPadding(2f);

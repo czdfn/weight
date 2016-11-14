@@ -346,31 +346,6 @@
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:layout_weight="1"
-                     android:orientation="horizontal">
-
-                     <TextView
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:layout_gravity="center"
-                         android:text="@string/kzzl"
-                         android:textColor="@color/black" />
-
-                     <EditText
-                         android:id="@+id/et37"
-                         android:layout_width="180dp"
-                         android:maxWidth="300dp"
-                         android:gravity="center"
-                         android:layout_height="wrap_content"
-                         android:textColor="@color/black"
-                         android:hint="@string/content_label"
-                         android:textSize="13sp"
-                         android:singleLine="true"
-                         android:inputType="numberDecimal" />
-                 </LinearLayout>
-                 <LinearLayout
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_weight="1"
                      android:orientation="horizontal"
                      android:weightSum="1">
 
@@ -638,7 +613,7 @@
                  android:layout_weight="1"
                  android:background="@color/white"
                  android:gravity="center"
-                 android:hint="@string/content_label"
+                 android:hint="@string/content_label2"
                  android:inputType="numberDecimal"
                  android:textColor="@color/black"
                  android:textSize="15sp"
@@ -654,7 +629,7 @@
                  android:layout_weight="1"
                  android:background="@color/white"
                  android:gravity="center"
-                 android:hint="@string/content_label"
+                 android:hint="@string/content_label2"
                  android:inputType="numberDecimal"
                  android:textColor="@color/black"
                  android:textSize="15sp"
@@ -670,7 +645,7 @@
                  android:layout_weight="1"
                  android:background="@color/white"
                  android:gravity="center"
-                 android:hint="@string/content_label"
+                 android:hint="@string/content_label2"
                  android:inputType="numberDecimal"
                  android:textColor="@color/black"
                  android:textSize="15sp"
@@ -686,7 +661,7 @@
                  android:layout_weight="1"
                  android:background="@color/white"
                  android:gravity="center"
-                 android:hint="@string/content_label"
+                 android:hint="@string/content_label2"
                  android:inputType="numberDecimal"
                  android:textColor="@color/black"
                  android:textSize="15sp"
@@ -702,7 +677,7 @@
                  android:layout_weight="1"
                  android:background="@color/white"
                  android:gravity="center"
-                 android:hint="@string/content_label"
+                 android:hint="@string/content_label2"
                  android:inputType="numberDecimal"
                  android:textColor="@color/black"
                  android:textSize="15sp"
@@ -718,7 +693,7 @@
                  android:layout_weight="1"
                  android:background="@color/white"
                  android:gravity="center"
-                 android:hint="@string/content_label"
+                 android:hint="@string/content_label2"
                  android:inputType="numberDecimal"
                  android:textColor="@color/black"
                  android:textSize="15sp"
@@ -809,6 +784,7 @@
                  android:background="@color/white"
                  android:gravity="center"
                  android:hint="@string/content_label"
+                 android:text="@string/default0"
                  android:textColor="@color/black"
                  android:textSize="15sp"
                  android:layout_row="4"
@@ -825,6 +801,7 @@
                  android:background="@color/white"
                  android:gravity="center"
                  android:hint="@string/content_label"
+                 android:text="@string/default0"
                  android:textColor="@color/black"
                  android:textSize="15sp"
                  android:layout_row="4"
@@ -843,6 +820,7 @@
                  android:background="@color/white"
                  android:gravity="center"
                  android:hint="@string/content_label"
+                 android:text="@string/default0"
                  android:textColor="@color/black"
                  android:textSize="15sp"
                  android:layout_row="4"
@@ -1880,7 +1858,9 @@
                  android:textColor="@color/black"
                  android:textSize="15sp"
                  android:layout_row="6"
-                 android:layout_column="2" />
+                 android:layout_column="2"
+                 android:imeOptions="actionNext"
+                 android:inputType="numberDecimal" />
 
              <TextView
                  android:layout_width="100dp"
