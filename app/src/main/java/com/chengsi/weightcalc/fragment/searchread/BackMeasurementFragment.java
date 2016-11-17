@@ -255,6 +255,8 @@ public class BackMeasurementFragment extends BaseFragment {
                     mData.put("weight_before", String.valueOf(weight_before));
                     mData.put("weight_after", String.valueOf(weight_after));
                     mData.put("weight_package", String.valueOf(weight_package));
+                    mData.put("qiancepaishuiliang", String.valueOf(qiancepaishiuliang));
+                    mData.put("qiancechuanyongwuliao", String.valueOf(qiancechuanyongwuliao));
                 }
                 msg.what = 0;
             } else {
@@ -295,7 +297,7 @@ public class BackMeasurementFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 try {
-                    new PrintMeasure(mData).print();
+                    new PrintMeasure(mData,"BACK").print();
                 }catch(Exception e){
                     e.printStackTrace();
                 }

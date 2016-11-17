@@ -260,7 +260,7 @@ public class BeforeMeasurementFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 try {
-                    new PrintMeasure(mData).print();
+                    new PrintMeasure(mData,"FRONT").print();
                 }catch(Exception e){
                     e.printStackTrace();
                 }

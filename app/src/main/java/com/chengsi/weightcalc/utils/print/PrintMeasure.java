@@ -37,13 +37,15 @@ public class PrintMeasure {
 
     public static Phrase spaceline = new Phrase(Chunk.NEWLINE);
     Map<String, String> map = new HashMap<>();
+    String type;
 
     public PrintMeasure() {
 
     }
 
-    public PrintMeasure(Map<String, String> map) {
+    public PrintMeasure(Map<String, String> map, String type) {
         this.map = map;
+        this.type = type;
     }
 
     public void print() throws IOException, DocumentException {
@@ -281,7 +283,20 @@ public class PrintMeasure {
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(""));
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                            case "MID":
+
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")))));
+                                break;
+                            case "CONSTANT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                        }
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
@@ -313,7 +328,21 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(""));
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                            case "MID":
+
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
+                                break;
+                            case "CONSTANT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                        }
+
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
@@ -347,7 +376,20 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(""));
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                            case "MID":
+
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")) - Double.valueOf(map.get("jianchuanyongwuliao")))));
+                                break;
+                            case "CONSTANT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                        }
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -379,7 +421,20 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(""));
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                            case "MID":
+
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                            case "CONSTANT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                        }
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -411,7 +466,20 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(""));
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                            case "MID":
+
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                            case "CONSTANT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                        }
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -492,7 +560,21 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("shijipaishuizaizhong")))));
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")))));
+                                break;
+                            case "MID":
+//                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("shijipaishuizaizhong")))));
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qiancepaishuiliang")))));
+                                break;
+                            case "CONSTANT":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")))));
+                                break;
+                        }
+
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -524,7 +606,22 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
+
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
+                                break;
+                            case "MID":
+//                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("shijipaishuizaizhong")))));
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qiancechuanyongwuliao")))));
+                                break;
+                            case "CONSTANT":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
+                                break;
+                        }
+
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -556,8 +653,20 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("alterpaishui")))));
-                        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("qz")) + Double.valueOf(map.get("cs")))));
+                                break;
+                            case "MID":
+
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")) - Double.valueOf(map.get("jianchuanyongwuliao")))));
+                                break;
+                            case "CONSTANT":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                        }cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
                         cell.setColspan(2);
@@ -588,7 +697,7 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("weight_package")))));
+                        cell = new PdfPCell(new Phrase(new DecimalFormat("0").format(Double.valueOf(map.get("weight_package")))));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -654,7 +763,7 @@ public class PrintMeasure {
         table1.addCell(cell);
         cell = new PdfPCell(new Phrase("校正值Z=(Tc*LCF*TPC*100)/LBP+(50*Tc*Tc/LBP)*dM/dZ", normal_chinese));
         cell.setHorizontalAlignment(Element.ALIGN_LEFT);
-        cell.setVerticalAlignment(Element.ALIGN_CENTER);
+        cell.setVerticalAlignment(Element.ALIGN_LEFT);
         cell.setPadding(20);
         cell.setColspan(6);
         table1.addCell(cell);

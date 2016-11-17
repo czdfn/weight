@@ -260,7 +260,7 @@ public class ConstantMeasureFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 try {
-                    new PrintMeasure(mData).print();
+                    new PrintMeasure(mData,"CONSTANT").print();
                 }catch(Exception e){
                     e.printStackTrace();
                 }
