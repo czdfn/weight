@@ -8,6 +8,7 @@ import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import com.chengsi.weightcalc.activity.search.SearchActivity;
 import com.chengsi.weightcalc.db.DBHelper;
 import com.chengsi.weightcalc.fragment.BaseFragment;
 import com.chengsi.weightcalc.R;
+import com.chengsi.weightcalc.utils.print.PrintMeasure;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -84,6 +86,7 @@ public class MidMeasurementFragment extends BaseFragment {
     String ycs;
     String bzmd;
     String scmd;
+    String jianwuyoupaifang_mid;
 
     private String shijipaishuiliang_front;
     private String jianchuanyongwuliao_front;
@@ -91,6 +94,7 @@ public class MidMeasurementFragment extends BaseFragment {
     private double shijipaishuiliang;
     private double jianqingzai_beiliao;
 
+    private Button button;
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -136,6 +140,7 @@ public class MidMeasurementFragment extends BaseFragment {
                     ycs = cursor.getString(cursor.getColumnIndex("ycs"));
                     bzmd = cursor.getString(cursor.getColumnIndex("bzmd"));
                     scmd = cursor.getString(cursor.getColumnIndex("scmd"));
+                    jianwuyoupaifang_mid = cursor.getString(cursor.getColumnIndex("jianwuyoupaifang_mid"));
                     shijipaishuiliang_front = cursor.getString(cursor.getColumnIndex("qiancepaishiuliang"));
                     jianchuanyongwuliao_front = cursor.getString(cursor.getColumnIndex("qiancechuanyongwuliao"));
                     mData.put("check_time", check_time);
@@ -165,6 +170,7 @@ public class MidMeasurementFragment extends BaseFragment {
                     mData.put("ycs", ycs);
                     mData.put("bzmd", bzmd);
                     mData.put("scmd", scmd);
+                    mData.put("jianwuyoupaifang_mid", jianwuyoupaifang_mid);
                     mData.put("shijipaishuiliang", shijipaishuiliang_front);
                     mData.put("jianchuanyongwuliao", jianchuanyongwuliao_front);
                     mData.put("check_status", cursor.getString(cursor.getColumnIndex("check_status")));
@@ -199,7 +205,30 @@ public class MidMeasurementFragment extends BaseFragment {
                     shijipaishuiliang = weight_after;
                     qingzaijidingliangbeiliao = shijipaishuiliang - jianchuanyongwuliao;
                     jianqingzai_beiliao = qingzaijidingliangbeiliao;
-                    weight_package = Double.valueOf(shijipaishuiliang_front) - Double.valueOf(jianchuanyongwuliao_front) - qingzaijidingliangbeiliao;
+                    weight_package = Double.valueOf(shijipaishuiliang_front) - Double.valueOf(jianchuanyongwuliao_front) - qingzaijidingliangbeiliao - Double.valueOf(jianwuyoupaifang_mid);
+                    mData.put("average_front", String.valueOf(average_front));
+                    mData.put("average_mid", String.valueOf(average_mid));
+                    mData.put("average_back", String.valueOf(average_back));
+                    mData.put("chishuicha_before", String.valueOf(chishuicha_before));
+                    mData.put("alter_front", String.valueOf(alter_front));
+                    mData.put("alter_mid", String.valueOf(alter_mid));
+                    mData.put("alter_back", String.valueOf(alter_back));
+                    mData.put("afteralter_front", String.valueOf(afteralter_front));
+                    mData.put("afteralter_mid", String.valueOf(afteralter_mid));
+                    mData.put("afteralter_back", String.valueOf(afteralter_back));
+                    mData.put("chishuicha_after", String.valueOf(chishuicha_after));
+                    mData.put("jiaozhenghou_average", String.valueOf(jiaozhenghou_average));
+                    mData.put("chaeshuichi", String.valueOf(chaeshuichi));
+                    mData.put("chaezhongliang", String.valueOf(chaezhongliang));
+                    mData.put("shijishuichi", String.valueOf(shijishuichi));
+                    mData.put("shijipaishuizaizhong", String.valueOf(shijipaishuizaizhong));
+                    mData.put("jianchuanyongwuliao", String.valueOf(jianchuanyongwuliao));
+                    mData.put("zongqingliju", String.valueOf(zongqingliju));
+                    mData.put("jiaozhi", String.valueOf(jiaozhi));
+                    mData.put("alterpaishui", String.valueOf(alterpaishui));
+                    mData.put("weight_before", String.valueOf(weight_before));
+                    mData.put("weight_after", String.valueOf(weight_after));
+                    mData.put("weight_package", String.valueOf(weight_package));
                 }
                 msg.what = 0;
             } else {
@@ -233,6 +262,17 @@ public class MidMeasurementFragment extends BaseFragment {
     }
 
     private void initView() {
+        button = (Button)view.findViewById(R.id.btn_print);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    new PrintMeasure(mData,"MID").print();
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
         ((TextView) view.findViewById(R.id.tv1)).setText(mData.get("ship_name"));
         ((TextView) view.findViewById(R.id.tv2)).setText(mData.get("check_id"));
         ((TextView) view.findViewById(R.id.tv3)).setText(mData.get("check_time"));
@@ -297,6 +337,7 @@ public class MidMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tvv20)).setText(new DecimalFormat("0.0").format(weight_after));
         ((TextView) view.findViewById(R.id.tv28)).setText(new DecimalFormat("0.0").format(Double.valueOf(shijipaishuiliang_front==null?"0":shijipaishuiliang_front)));
         ((TextView) view.findViewById(R.id.tv29)).setText(new DecimalFormat("0.0").format(Double.valueOf(jianchuanyongwuliao_front==null?"0":jianchuanyongwuliao_front)));
+        ((TextView) view.findViewById(R.id.tv50)).setText(new DecimalFormat("0.0").format(Double.valueOf(jianwuyoupaifang_mid)));
         ((TextView) view.findViewById(R.id.tvv22)).setText(new DecimalFormat("0").format(weight_package));
         ((TextView) view.findViewById(R.id.tvv23)).setText(new DecimalFormat("0.000").format(jiaozhenghou_average));
         ((TextView) view.findViewById(R.id.tvv24)).setText(new DecimalFormat("0.0").format(weight_after));

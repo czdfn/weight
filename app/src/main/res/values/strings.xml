@@ -190,6 +190,7 @@
     <string name="jqzbl">减轻载、备料</string>
     <string name="content_label">000.000</string>
     <string name="content_label2">000.00</string>
+    <string name="content_label3">000.0000</string>
     <string name="mt_label">000.0</string>
     <string name="mi">米</string>
     <string name="mi_eng">M</string>
@@ -225,6 +226,7 @@
     <string name="jcywl">减船用物料</string>
     <string name="yjshz">预计算货重</string>
     <string name="jzhzl">校正后重量</string>
+    <string name="jwypf">减污油排放</string>
     <string name="scmd">实测密度</string>
     <string name="bzmd">表载密度</string>
     <string name="gsmdjz">港水密度校正</string>

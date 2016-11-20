@@ -111,6 +111,8 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
     EditText editText39;
     @InjectView(R.id.et40)
     EditText editText40;
+    @InjectView(R.id.et50)
+    EditText editText50;
     @InjectView(R.id.tvv1)
     TextView textView1;
     @InjectView(R.id.tvv2)
@@ -248,6 +250,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
     private String qiancepaishiuliang;
     private String qiancechuanyongwuliao;
     private String jizhongliang;
+    private String jianwuyoupaifang_back;
 
     private Pattern pattern = Pattern.compile("^[+-]?([1-9]\\d*|0)(\\.\\d{1,3})?$");
     private int data_id;
@@ -334,6 +337,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
         editText38.setOnEditorActionListener(this);
         editText39.setOnEditorActionListener(this);
         editText40.setOnEditorActionListener(this);
+        editText50.setOnEditorActionListener(this);
     }
 
     @Override
@@ -544,6 +548,11 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
                         editText27.setFocusableInTouchMode(true);
                         editText27.requestFocus();
                         break;
+                    case R.id.et27:
+                        editText50.setFocusable(true);
+                        editText50.setFocusableInTouchMode(true);
+                        editText50.requestFocus();
+                        break;
                 }
                 break;
             case EditorInfo.IME_ACTION_NONE:
@@ -614,6 +623,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
         editText38.setText(mData.get("qiancejiandinghuoliang"));
         editText39.setText(mData.get("qiancepaishiuliang"));
         editText40.setText(mData.get("qiancechuanyongwuliao"));
+        editText50.setText(mData.get("jianwuyoupaifang_back"));
         textView1.setText(mData.get("average_front"));
         textView2.setText(mData.get("average_mid"));
         textView3.setText(mData.get("average_back"));
@@ -714,6 +724,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
             ycs = new DecimalFormat("0.0").format(Double.valueOf(editText25.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText25.getText().toString().trim())));
             bzmd = new DecimalFormat("0.0000").format(Double.valueOf(editText26.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText26.getText().toString().trim())));
             scmd = new DecimalFormat("0.0000").format(Double.valueOf(editText27.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText27.getText().toString().trim())));
+            jianwuyoupaifang_back = new DecimalFormat("0.0").format(Double.valueOf(editText50.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText50.getText().toString().trim())));
 //            editText4.setText(ceshishuichi_frontLeft);
 //            editText5.setText(ceshishuichi_frontRight);
 //            editText6.setText(ceshishuichi_midLeft);
@@ -781,7 +792,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
             jianqingzai_beiliao = qingzaijidingliangbeiliao;
             qiancepsl = Double.valueOf(qiancepaishiuliang);
             qiancecywl = Double.valueOf(qiancechuanyongwuliao);
-            weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao;
+            weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao - Double.valueOf(jianwuyoupaifang_back);
         }
         return true;
     }
@@ -829,6 +840,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
             cv.put("ycs", ycs);
             cv.put("bzmd", bzmd);
             cv.put("scmd", scmd);
+            cv.put("jianwuyoupaifang_back", jianwuyoupaifang_back);
 //            cv.put("average_front", new DecimalFormat("0.000").format(average_front));
 //            cv.put("average_mid", new DecimalFormat("0.000").format(average_mid));
 //            cv.put("average_back", new DecimalFormat("0.000").format(average_back));
@@ -949,6 +961,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
             editText38.setText(qiancejiandinghuoliang);
             editText39.setText(qiancepaishiuliang);
             editText40.setText(qiancechuanyongwuliao);
+            editText50.setText(jianwuyoupaifang_back);
         }
     }
 

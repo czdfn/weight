@@ -81,6 +81,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private String scmd;
     private String qz;
     private String cs;
+    private String jianwuyoupaifang_mid;
+    private String jianwuyoupaifang_back;
 
     private String jizhongliang;
     private String qiancepaishiuliang;
@@ -107,7 +109,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "ship_length VARCHAR,near_shuichi VARCHAR,near_weight VARCHAR,tpc VARCHAR,LCF VARCHAR,DZ VARCHAR,M1 VARCHAR,M2 VARCHAR,zy VARCHAR,qy VARCHAR," +
                 "rhy VARCHAR,ds VARCHAR,ycs VARCHAR,bzmd VARCHAR,scmd VARCHAR,qz VARCHAR,cs VARCHAR,check_status BOOLEAN,check_type Integer,jinkouguobie VARCHAR,shouhuoqiye VARCHAR,kuangming VARCHAR," +
                 "kuangshizhonglei VARCHAR,tihuoliang VARCHAR,paiwuliang VARCHAR,dianzichengliang VARCHAR,kongzhizongliang VARCHAR,jiandingmoshi Boolean,shifouduanzhong Boolean,jizhongliang VARCHAR," +
-                "qiancepaishiuliang VARCHAR,qiancejiandinghuoliang VARCHAR,qiancechuanyongwuliao VARCHAR,shijipaishuiliang VARCAHR,jianchuanyongwuliao VARCHAR)";
+                "qiancepaishiuliang VARCHAR,qiancejiandinghuoliang VARCHAR,qiancechuanyongwuliao VARCHAR,shijipaishuiliang VARCAHR,jianchuanyongwuliao VARCHAR,jianwuyoupaifang_mid VARCHAR,jianwuyoupaifang_back VARCHAR)";
         String user_sql = "CREATE TABLE user (_id Integer PRIMARY KEY AUTOINCREMENT NOT NULL,nickname VARCHAR,username VARCHAR,authority VARCHAR,password VARCHAR,createtime DATE)";
         String company_sql = "CREATE TABLE company (_id Integer PRIMARY KEY AUTOINCREMENT NOT NULL,companyname VARCHAR,createtime DATE)";
         String material_sql = "CREATE TABLE material (_id Integer PRIMARY KEY AUTOINCREMENT NOT NULL,materialname VARCHAR,materialtype VARCHAR,createtime DATE)";
@@ -119,7 +121,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        String sql = "alter table FrontMeasureActivity.MEASURE_TABLE add jianwuyoupaifang_back VARCHAR(20)";
+        db.execSQL(sql);
     }
 
     public Map queryData(int id, int checkType) {
@@ -191,6 +194,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 mData.put("jianchuanyongwuliao", new DecimalFormat("0.000").format(jianchuanyongwuliao));
                 weight_package = (shijipaishuizaizhong + jiaozhi) * Double.valueOf(scmd) / Double.valueOf(bzmd) - jianchuanyongwuliao - Double.valueOf(qz) - Double.valueOf(cs);
             } else if (checkType == 3) {
+                jianwuyoupaifang_back = cursor.getString(cursor.getColumnIndex("jianwuyoupaifang_back"));
                 jinkouguobie = cursor.getString(cursor.getColumnIndex("jinkouguobie"));
                 shouhuoqiye = cursor.getString(cursor.getColumnIndex("shouhuoqiye"));
                 kuangming = cursor.getString(cursor.getColumnIndex("kuangming"));
@@ -218,20 +222,22 @@ public class DBHelper extends SQLiteOpenHelper {
                 jianqingzai_beiliao = qingzaijidingliangbeiliao;
                 mData.put("qingzaijidingliangbeiliang", new DecimalFormat("0.000").format(qingzaijidingliangbeiliao));
                 mData.put("shijipaishuiliang_back", new DecimalFormat("0.000").format(shijipaishuiliang));
-                jianqingzai_beiliao = qingzaijidingliangbeiliao;
+//                jianqingzai_beiliao = qingzaijidingliangbeiliao;
                 qiancepsl = Double.valueOf(qiancepaishiuliang);
                 qiancecywl = Double.valueOf(qiancechuanyongwuliao);
                 mData.put("qingzaijidingliangbeiliao", new DecimalFormat("0.000").format(qingzaijidingliangbeiliao));
                 mData.put("qiancepsl", new DecimalFormat("0.000").format(qiancepsl));
                 mData.put("qiancecywl", new DecimalFormat("0.000").format(qiancecywl));
+                mData.put("jianwuyoupaifang_back",new DecimalFormat("0.0").format(Double.valueOf(jianwuyoupaifang_back)));
                 mData.put("jianchuanyongwuliao_back", new DecimalFormat("0.000").format(jianchuanyongwuliao));
-                weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao;
+                weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao - Double.valueOf(jianwuyoupaifang_back);
             } else {
+                jianwuyoupaifang_mid = cursor.getString(cursor.getColumnIndex("jianwuyoupaifang_mid"));
                 qiancepaishiuliang = cursor.getString(cursor.getColumnIndex("qiancepaishiuliang"));
                 qiancechuanyongwuliao = cursor.getString(cursor.getColumnIndex("qiancechuanyongwuliao"));
                 qingzaijidingliangbeiliao = shijipaishuiliang - jianchuanyongwuliao;
                 jianqingzai_beiliao = qingzaijidingliangbeiliao;
-                weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao;
+                weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao - Double.valueOf(jianwuyoupaifang_mid);
                 mData.put("qingzaijidingliangbeiliao", new DecimalFormat("0.000").format(qingzaijidingliangbeiliao));
                 mData.put("jianchuanyongwuliao", new DecimalFormat("0.000").format(jianchuanyongwuliao));
                 mData.put("qiancepaishiuliang", new DecimalFormat("0.000").format(Double.valueOf(qiancepaishiuliang)));

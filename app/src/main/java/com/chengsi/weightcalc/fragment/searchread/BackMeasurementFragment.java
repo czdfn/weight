@@ -101,6 +101,7 @@ public class BackMeasurementFragment extends BaseFragment {
     private String jiandingmoshi;
     private String shifouduanzhong;
     private String jizhongliang;
+    private String jianwuyoupaifang_back;
     public SQLiteDatabase db;
     public DBHelper dbHelper;
     private Cursor cursor;
@@ -169,6 +170,7 @@ public class BackMeasurementFragment extends BaseFragment {
                     ycs = cursor.getString(cursor.getColumnIndex("ycs"));
                     bzmd = cursor.getString(cursor.getColumnIndex("bzmd"));
                     scmd = cursor.getString(cursor.getColumnIndex("scmd"));
+                    jianwuyoupaifang_back = cursor.getString(cursor.getColumnIndex("jianwuyoupaifang_back"));
 
                     mData.put("check_time", check_time);
                     mData.put("check_id", measureId);
@@ -197,6 +199,7 @@ public class BackMeasurementFragment extends BaseFragment {
                     mData.put("ycs", ycs);
                     mData.put("bzmd", bzmd);
                     mData.put("scmd", scmd);
+                    mData.put("jianwuyoupaifang_back", jianwuyoupaifang_back);
                     mData.put("check_status", cursor.getString(cursor.getColumnIndex("check_status")));
                     mData.put("check_type", cursor.getString(cursor.getColumnIndex("check_type")));
                     average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
@@ -231,7 +234,7 @@ public class BackMeasurementFragment extends BaseFragment {
                     jianqingzai_beiliao = qingzaijidingliangbeiliao;
                     qiancepsl = Double.valueOf(qiancepaishiuliang);
                     qiancecywl = Double.valueOf(qiancechuanyongwuliao);
-                    weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao;
+                    weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao - Double.valueOf(jianwuyoupaifang_back);
                     mData.put("average_front", String.valueOf(average_front));
                     mData.put("average_mid", String.valueOf(average_mid));
                     mData.put("average_back", String.valueOf(average_back));
@@ -318,7 +321,7 @@ public class BackMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tv13)).setText(mData.get("ship_length") == null ? "0.000" : mData.get("ship_length"));
         ((TextView) view.findViewById(R.id.tv14)).setText(mData.get("near_shuichi") == null ? "0.000" : mData.get("near_shuichi"));
         ((TextView) view.findViewById(R.id.tv15)).setText(mData.get("near_weight") == null ? "0.0" : mData.get("near_weight"));
-        ((TextView) view.findViewById(R.id.tv16)).setText(mData.get("near_weight") == null ? "0.000" : mData.get("tpc"));
+        ((TextView) view.findViewById(R.id.tv16)).setText(mData.get("tpc") == null ? "0.000" : mData.get("tpc"));
         if (mData.get("check_status") != null) {
             if (mData.get("check_status").equals("1")) {
                 CheckBox cb_jiaozhi = ((CheckBox) view.findViewById(R.id.checkBox));
@@ -385,6 +388,7 @@ public class BackMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tvv27)).setText(new DecimalFormat("0.0").format(qingzaijidingliangbeiliao));
         ((TextView) view.findViewById(R.id.tvv28)).setText(new DecimalFormat("0.0").format(qiancepsl));
         ((TextView) view.findViewById(R.id.tvv29)).setText(new DecimalFormat("0.0").format(qiancecywl));
+        ((TextView) view.findViewById(R.id.tvv50)).setText(new DecimalFormat("0.0").format(Double.valueOf(jianwuyoupaifang_back)));
 //        ((TextView) view.findViewById(R.id.tv_jizhongliang)).setText(jizhongliang);
         ((CheckBox) view.findViewById(R.id.jdms_cb)).setChecked(Boolean.valueOf(jiandingmoshi));
         ((CheckBox) view.findViewById(R.id.sfdz_cb)).setChecked(Boolean.valueOf(shifouduanzhong));

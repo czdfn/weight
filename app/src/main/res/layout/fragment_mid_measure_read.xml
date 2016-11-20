@@ -1659,7 +1659,7 @@
         <TextView
             android:id="@+id/textView11"
             android:layout_width="40dp"
-            android:layout_height="121.5dp"
+            android:layout_height="152dp"
             android:layout_marginLeft="1dp"
             android:layout_marginTop="1dp"
             android:background="@color/divider_color"
@@ -1670,7 +1670,7 @@
             android:textSize="15sp"
             android:layout_row="13"
             android:layout_column="0"
-            android:layout_rowSpan="4" />
+            android:layout_rowSpan="5" />
 
         <TextView
             android:id="@+id/tvv25"
@@ -1790,11 +1790,40 @@
             android:layout_marginTop="1dp"
             android:background="@color/divider_color"
             android:gravity="center"
+            android:text="@string/jwypf"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_row="16"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/tv50"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:hint="@string/content_label"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_row="16"
+            android:layout_column="2"
+            android:text="@string/content_label" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/divider_color"
+            android:gravity="center"
             android:padding="5dp"
             android:text="@string/hwzl"
             android:textColor="@color/red"
             android:textSize="15sp"
-            android:layout_row="16"
+            android:layout_row="17"
             android:layout_column="1" />
 
         <TextView
@@ -1809,10 +1838,20 @@
             android:text="@string/content_label"
             android:textColor="@color/red"
             android:textSize="15sp"
-            android:layout_row="16"
+            android:layout_row="17"
             android:layout_column="2" />
 
     </GridLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打印"
+        android:id="@+id/btn_print"
+        android:layout_below="@+id/rlli"
+        android:layout_toRightOf="@+id/rlli"
+        android:layout_toEndOf="@+id/rlli" />
 
 
 </RelativeLayout>

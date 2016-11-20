@@ -288,7 +288,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(""));
                                 break;
                             case "MID":
-
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")))));
                                 break;
                             case "BACK":
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")))));
@@ -333,7 +333,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(""));
                                 break;
                             case "MID":
-
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
                                 break;
                             case "BACK":
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
@@ -381,7 +381,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(""));
                                 break;
                             case "MID":
-
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")) - Double.valueOf(map.get("jianchuanyongwuliao")))));
                                 break;
                             case "BACK":
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")) - Double.valueOf(map.get("jianchuanyongwuliao")))));
@@ -397,50 +397,6 @@ public class PrintMeasure {
                         table.addCell(cell);
                         doc.add(table);
 
-                        table = new PdfPTable(9);
-                        table.setWidthPercentage(100f);
-                        table.setHorizontalAlignment(Element.ALIGN_LEFT);
-                        cell = new PdfPCell(new Phrase("其它", bold_chinese));
-                        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-                        cell.setPadding(2f);
-                        cell.setVerticalAlignment(Element.ALIGN_CENTER);
-                        cell.setColspan(2);
-                        table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(""));
-                        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-                        cell.setVerticalAlignment(Element.ALIGN_CENTER);
-                        cell.setPadding(2f);
-                        cell.setColspan(2);
-                        table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(""));
-                        cell.setBorder(Rectangle.NO_BORDER);
-                        table.addCell(cell);
-                        cell = new PdfPCell(new Phrase("减轻载", bold_chinese));
-                        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-                        cell.setVerticalAlignment(Element.ALIGN_CENTER);
-                        cell.setPadding(2f);
-                        cell.setColspan(2);
-                        table.addCell(cell);
-                        switch (type){
-                            case "FRONT":
-                                cell = new PdfPCell(new Phrase(""));
-                                break;
-                            case "MID":
-
-                                break;
-                            case "BACK":
-                                cell = new PdfPCell(new Phrase(""));
-                                break;
-                            case "CONSTANT":
-                                cell = new PdfPCell(new Phrase(""));
-                                break;
-                        }
-                        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-                        cell.setVerticalAlignment(Element.ALIGN_CENTER);
-                        cell.setPadding(2f);
-                        cell.setColspan(2);
-                        table.addCell(cell);
-                        doc.add(table);
 
                         table = new PdfPTable(9);
                         table.setWidthPercentage(100f);
@@ -460,7 +416,7 @@ public class PrintMeasure {
                         cell = new PdfPCell(new Phrase(""));
                         cell.setBorder(Rectangle.NO_BORDER);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase("定量备料", bold_chinese));
+                        cell = new PdfPCell(new Phrase("", bold_chinese));
                         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
@@ -471,7 +427,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(""));
                                 break;
                             case "MID":
-
+                                cell = new PdfPCell(new Phrase(""));
                                 break;
                             case "BACK":
                                 cell = new PdfPCell(new Phrase(""));
@@ -565,7 +521,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")))));
                                 break;
                             case "MID":
-//                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("shijipaishuizaizhong")))));
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("shijipaishuizaizhong")))));
                                 break;
                             case "BACK":
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qiancepaishuiliang")))));
@@ -612,7 +568,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
                                 break;
                             case "MID":
-//                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("shijipaishuizaizhong")))));
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianchuanyongwuliao")))));
                                 break;
                             case "BACK":
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qiancechuanyongwuliao")))));
@@ -658,7 +614,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("qz")) + Double.valueOf(map.get("cs")))));
                                 break;
                             case "MID":
-
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")) - Double.valueOf(map.get("jianchuanyongwuliao")))));
                                 break;
                             case "BACK":
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")) - Double.valueOf(map.get("jianchuanyongwuliao")))));
@@ -691,19 +647,107 @@ public class PrintMeasure {
                         cell = new PdfPCell(new Phrase(""));
                         cell.setBorder(Rectangle.NO_BORDER);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase("货物重量", bold_chinese));
-                        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-                        cell.setVerticalAlignment(Element.ALIGN_CENTER);
-                        cell.setPadding(2f);
-                        cell.setColspan(2);
-                        table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0").format(Double.valueOf(map.get("weight_package")))));
-                        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-                        cell.setVerticalAlignment(Element.ALIGN_CENTER);
-                        cell.setPadding(2f);
-                        cell.setColspan(2);
-                        table.addCell(cell);
-                        doc.add(table);
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase("卸载重量", bold_chinese));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0").format(Double.valueOf(map.get("weight_package")))));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                doc.add(table);
+                                break;
+                            case "MID":
+                                cell = new PdfPCell(new Phrase("减污油排放", bold_chinese));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianwuyoupaifang_mid")))));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(""));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(""));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(""));
+                                cell.setBorder(Rectangle.NO_BORDER);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase("卸载重量", bold_chinese));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0").format(Double.valueOf(map.get("weight_package")))));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                doc.add(table);
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase("减污油排放", bold_chinese));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("jianwuyoupaifang_back")))));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(""));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(""));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(""));
+                                cell.setBorder(Rectangle.NO_BORDER);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase("卸载重量", bold_chinese));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0").format(Double.valueOf(map.get("weight_package")))));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                doc.add(table);
+                                break;
+                        }
                         break;
                     case 14:
                         table = new PdfPTable(10);

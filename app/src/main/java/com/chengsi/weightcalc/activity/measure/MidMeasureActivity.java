@@ -92,6 +92,8 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
     EditText editText28;
     @InjectView(R.id.et29)
     EditText editText29;
+    @InjectView(R.id.et50)
+    EditText editText50;
     @InjectView(R.id.tvv1)
     TextView textView1;
     @InjectView(R.id.tvv2)
@@ -208,6 +210,7 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
     private String scmd;
     private String shijipaishuiliang_front;
     private String jianchuanyongwuliao_front;
+    private String jianwuyoupaifang_mid;
     private Pattern pattern = Pattern.compile("^[+-]?([1-9]\\d*|0)(\\.\\d{1,3})?$");
 
     private static int data_id;
@@ -284,6 +287,7 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
         editText27.setOnEditorActionListener(this);
         editText28.setOnEditorActionListener(this);
         editText29.setOnEditorActionListener(this);
+        editText50.setOnEditorActionListener(this);
     }
 
     @Override
@@ -449,6 +453,11 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
                         editText29.setFocusableInTouchMode(true);
                         editText29.requestFocus();
                         break;
+                    case R.id.et29:
+                        editText50.setFocusable(true);
+                        editText50.setFocusableInTouchMode(true);
+                        editText50.requestFocus();
+                        break;
                 }
                 break;
             case EditorInfo.IME_ACTION_NONE:
@@ -534,6 +543,7 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
             scmd = new DecimalFormat("0.0000").format(Double.valueOf(editText27.getText().toString().trim().equals("")?0:Double.valueOf(editText27.getText().toString().trim())));
             shijipaishuiliang_front = new DecimalFormat("0.0").format(Double.valueOf(editText28.getText().toString().trim().equals("")?0:Double.valueOf(editText28.getText().toString().trim())));
             jianchuanyongwuliao_front = new DecimalFormat("0.0").format(Double.valueOf(editText29.getText().toString().trim().equals("")?0:Double.valueOf(editText29.getText().toString().trim())));
+            jianwuyoupaifang_mid = new DecimalFormat("0.0").format(Double.valueOf(editText50.getText().toString().trim().equals("")?0:Double.valueOf(editText50.getText().toString().trim())));
             average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
             average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
             average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
@@ -561,7 +571,8 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
             alterpaishui = shijipaishuizaizhong + jiaozhi;
             weight_before = shijipaishuizaizhong + jiaozhi;
             weight_after = (shijipaishuizaizhong + jiaozhi) * Double.valueOf(scmd) / Double.valueOf(bzmd);
-            weight_package = Double.valueOf(shijipaishuiliang_front) - Double.valueOf(jianchuanyongwuliao_front) - (weight_after-jianchuanyongwuliao);
+            weight_package = Double.valueOf(shijipaishuiliang_front) - Double.valueOf(jianchuanyongwuliao_front)
+                    - (weight_after-jianchuanyongwuliao) - Double.valueOf(jianwuyoupaifang_mid);
         }
         return true;
     }
@@ -599,6 +610,7 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
         editText27.setText(mData.get("scmd"));
         editText28.setText(mData.get("qiancepaishiuliang"));
         editText29.setText(mData.get("qiancechuanyongwuliao"));
+        editText50.setText(mData.get("jianwuyoupaifang_mid"));
         textView1.setText(mData.get("average_front"));
         textView2.setText(mData.get("average_mid"));
         textView3.setText(mData.get("average_back"));
@@ -661,6 +673,7 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
             cv.put("scmd", scmd);
             cv.put("qiancepaishiuliang", shijipaishuiliang_front);
             cv.put("qiancechuanyongwuliao", jianchuanyongwuliao_front);
+            cv.put("jianwuyoupaifang_mid", jianwuyoupaifang_mid);
             cv.put("check_type", 2);
             if (checkbox.isChecked()) {
                 cv.put("check_status", true);
