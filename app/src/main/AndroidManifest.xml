@@ -82,9 +82,6 @@
             android:name="com.chengsi.weightcalc.activity.ReservationDoctorActivity"
             android:label="@string/title_activity_reservation_doctor" />
         <activity
-            android:name="com.chengsi.weightcalc.activity.HospitalListActivity"
-            android:label="@string/title_activity_reservation_doctor" />
-        <activity
             android:name="com.chengsi.weightcalc.activity.ReservationDateActivity"
             android:label="@string/title_activity_reservation_date" />
         <activity
@@ -111,9 +108,6 @@
 
         <!-- umeng -->
         <!-- Update Activitys Start -->
-        <activity
-            android:name="com.umeng.update.UpdateDialogActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <!-- Update Activitys End -->
 
@@ -129,9 +123,6 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="Yj6zU2PYD0Mz3SSMWtmcNPiX" />
 
-        <service
-            android:name="com.umeng.update.net.DownloadingService"
-            android:process=":DownloadingService" />
 
         <activity
             android:name="com.chengsi.weightcalc.activity.AttentDoctorListActivity"
@@ -160,10 +151,6 @@
             android:label="@string/title_activity_archives"
             android:launchMode="singleTop" />
         <activity
-            android:name="com.chengsi.weightcalc.activity.TreatHistoryActivity"
-            android:label="@string/title_activity_treat_history"
-            android:launchMode="singleTop" />
-        <activity
             android:name="com.chengsi.weightcalc.activity.DailyTasksActivity"
             android:label="@string/title_activity_daily_tasks"
             android:launchMode="singleTop" />
@@ -171,11 +158,6 @@
             android:name="com.chengsi.weightcalc.activity.DoctorAdviceActivity"
             android:label="@string/title_activity_doctor_advice"
             android:launchMode="singleTop" />
-        <activity
-            android:name="com.chengsi.weightcalc.activity.CheckListActivity"
-            android:label="@string/title_activity_check_list"
-            android:launchMode="singleTop" />
-        <activity android:name="com.chengsi.weightcalc.activity.BindHospitalActivity" />
         <activity
             android:name="com.chengsi.weightcalc.activity.MyArchivesActivity"
             android:label="@string/title_activity_my_archives"
@@ -218,10 +200,6 @@
             android:label="@string/title_activity_collect_detail"
             android:launchMode="singleTop" />
         <activity
-            android:name="com.chengsi.weightcalc.activity.FeedBackActivity"
-            android:label="@string/title_feedback"
-            android:launchMode="singleTop" />
-        <activity
             android:name="com.chengsi.weightcalc.activity.ConsultDoctorListActivity"
             android:label="@string/title_activity_consult_doctor_list"
             android:launchMode="singleTop"
@@ -229,10 +207,6 @@
         <activity
             android:name="com.chengsi.weightcalc.activity.ImagePreviewActivity"
             android:label="@string/title_activity_image_preview"
-            android:launchMode="singleTop" />
-        <activity
-            android:name="com.chengsi.weightcalc.activity.CheckDetailActivity"
-            android:label="@string/title_activity_check_detail"
             android:launchMode="singleTop" />
         <activity
             android:name="com.chengsi.weightcalc.activity.ExitDialogActivity"
@@ -269,34 +243,6 @@
             android:name="com.chengsi.weightcalc.activity.GuidePageActivity"
             android:label="@string/title_activity_guide_page" />
 
-        <!-- 微信分享回调 -->
-        <activity
-            android:name="com.chengsi.weightcalc.activity.ShareActivity"
-            android:label="@string/title_activity_share" />
-        <activity
-            android:name="com.umeng.socialize.view.ShareActivity"
-            android:configChanges="orientation|keyboard"
-            android:launchMode="singleTask"
-            android:noHistory="true"
-            android:theme="@style/Theme.UMDialog"
-            android:windowSoftInputMode="stateVisible|adjustResize" />
-        <activity
-            android:name="com.tencent.tauth.AuthActivity"
-            android:launchMode="singleTask"
-            android:noHistory="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <!-- 100424468，如果你使用的公用账号，则不需要修改；否则修改成你在QQ开放平台申请的 APP ID -->
-                <data android:scheme="tencent100424468" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.tencent.connect.common.AssistActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name="com.chengsi.weightcalc.activity.HospitalQuestionActivity" />
         <activity
             android:name="com.chengsi.weightcalc.activity.ReservationWebActivity"
@@ -314,9 +260,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.chengsi.weightcalc.activity.BaseActivity" />
         </activity>
-        <activity
-            android:name="com.chengsi.weightcalc.activity.CheckInforWebActivity"
-            android:label="@string/title_activity_check_infor_web" />
         <!-- JPUSH required -->
         <!-- Required SDK核心功能 -->
         <activity

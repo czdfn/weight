@@ -73,7 +73,6 @@ public class UploadProfileActivity extends BaseActivity implements CaptureImageF
 		getSupportActionBar().setTitle(getString(R.string.finish_profile));
 		
 		initViews();
-		new Position(getApplicationContext());
 
 	}
 

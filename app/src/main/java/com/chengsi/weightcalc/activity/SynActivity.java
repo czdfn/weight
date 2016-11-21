@@ -7,9 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Switch;
 
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVObject;
-import com.avos.avoscloud.SaveCallback;
 import com.chengsi.weightcalc.db.DBHelper;
 import com.chengsi.weightcalc.widget.PreferenceRightDetailView;
 import com.chengsi.weightcalc.R;
@@ -66,26 +63,26 @@ public class SynActivity extends BaseActivity implements View.OnClickListener{
 
                 break;
             case R.id.manual_sync:
-                cr = db.rawQuery("select * from "+COMPANY_TABLE,null);
-                AVObject company = new AVObject("company");
-                cr.moveToFirst();
-                for(int i = 1;i<=cr.getCount();i++){
-
-                    company.put("id1",cr.getString(0));
-                    company.put("companyname",cr.getString(1));
-                    company.put("createtime", cr.getString(2));
-                    company.saveInBackground(new SaveCallback() {
-                        @Override
-                        public void done(AVException e) {
-                            if (e == null) {
-                                ToastUtils.show(SynActivity.this, "ok");
-                            } else {
-                                ToastUtils.show(SynActivity.this, "error");
-                                Log.i("ERROR", e.toString());
-                            }
-                        }
-                    });
-                }
+//                cr = db.rawQuery("select * from "+COMPANY_TABLE,null);
+//                AVObject company = new AVObject("company");
+//                cr.moveToFirst();
+//                for(int i = 1;i<=cr.getCount();i++){
+//
+//                    company.put("id1",cr.getString(0));
+//                    company.put("companyname",cr.getString(1));
+//                    company.put("createtime", cr.getString(2));
+//                    company.saveInBackground(new SaveCallback() {
+//                        @Override
+//                        public void done(AVException e) {
+//                            if (e == null) {
+//                                ToastUtils.show(SynActivity.this, "ok");
+//                            } else {
+//                                ToastUtils.show(SynActivity.this, "error");
+//                                Log.i("ERROR", e.toString());
+//                            }
+//                        }
+//                    });
+//                }
                 break;
         }
     }

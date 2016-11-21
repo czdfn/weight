@@ -236,8 +236,8 @@ public class ReservationActivity extends BaseActivity {
         itemReservationHospital.setOnClickListener(new OnContinuousClickListener() {
             @Override
             public void onContinuousClick(View v) {
-                Intent intent = new Intent(ReservationActivity.this, HospitalListActivity.class);
-                startActivityForResult(intent, REQUEST_CODE_SELECT_HOSPITAL);
+//                Intent intent = new Intent(ReservationActivity.this, HospitalListActivity.class);
+//                startActivityForResult(intent, REQUEST_CODE_SELECT_HOSPITAL);
             }
         });
 
@@ -554,9 +554,9 @@ public class ReservationActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (REQUEST_CODE_SELECT_HOSPITAL == requestCode && resultCode == RESULT_OK) {
-            hospitalBean = (HospitalBean) data.getSerializableExtra(HospitalListActivity.KEY_SELECT_HOSPITAL);
-            itemReservationHospital.setContent(hospitalBean.getName());
-            initReservationInfo();
+//            hospitalBean = (HospitalBean) data.getSerializableExtra(HospitalListActivity.KEY_SELECT_HOSPITAL);
+//            itemReservationHospital.setContent(hospitalBean.getName());
+//            initReservationInfo();
         }else if(REQUEST_CODE_SELECT_DOCTOR == requestCode && resultCode == RESULT_OK){
             mCurDoctor = (DoctorBean) data.getSerializableExtra(KEY_RESERVATION_DOCTOR);
             mCurTime = (ReservationTime) data.getSerializableExtra(KEY_RESERVATION_TIME);

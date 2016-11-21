@@ -19,10 +19,6 @@ import com.chengsi.weightcalc.fragment.BaseFragment;
 //import com.chengsi.pregnancy.manager.UserManager;
 import com.chengsi.weightcalc.widget.PreferenceRightDetailView;
 import com.chengsi.weightcalc.R;
-import com.umeng.update.UmengUpdateAgent;
-import com.umeng.update.UmengUpdateListener;
-import com.umeng.update.UpdateResponse;
-import com.umeng.update.UpdateStatus;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -75,23 +71,6 @@ public class MeFragment extends BaseFragment implements View.OnClickListener{
         itemMyHospitalList.setOnClickListener(this);
         initViews();
         initDataSource();
-        UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
-
-            @Override
-            public void onUpdateReturned(int arg0, UpdateResponse arg1) {
-                switch (arg0) {
-                    case UpdateStatus.No: // has no update
-                        showToast("当前已是最新版本");
-                        break;
-                    case UpdateStatus.NoneWifi: // none wifi
-                        showToast("没有wifi连接， 只在wifi下更新");
-                        break;
-                    case UpdateStatus.Timeout: // time out
-                        showToast("无法连接网络服务器");
-                        break;
-                }
-            }
-        });
         return view;
     }
 
@@ -214,7 +193,6 @@ public class MeFragment extends BaseFragment implements View.OnClickListener{
                     startActivity(intent);
                     break;
                 case R.id.item_version:
-                    UmengUpdateAgent.forceUpdate(getActivity());
                     break;
             }
         }

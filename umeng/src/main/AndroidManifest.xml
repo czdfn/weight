@@ -1,7 +1,0 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.jclick.umeng">
-
-    <application android:allowBackup="true">
-
-    </application>
-
-</manifest>

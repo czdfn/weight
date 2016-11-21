@@ -41,9 +41,6 @@ import com.chengsi.weightcalc.widget.JDLoadingView;
 import com.chengsi.weightcalc.widget.JDToast;
 import com.chengsi.weightcalc.widget.dialog.FanrAlertDialog;
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.update.UmengUpdateAgent;
-import com.umeng.update.UmengUpdateListener;
-import com.umeng.update.UpdateResponse;
 
 
 public class BaseActivity extends AppCompatActivity implements StartActivityForResultInterface {
@@ -457,21 +454,8 @@ public class BaseActivity extends AppCompatActivity implements StartActivityForR
 	protected void onResume() {
 		super.onResume();
 		MobclickAgent.onResume(this);
-
 		lastCheckUpdateTime = JDStorage.getInstance().getLongValue(StorageConstants.KEY_LAST_UPDATE_TIME, 0);
-		if (System.currentTimeMillis() / 1000 - lastCheckUpdateTime > 180 * 60){
-			UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
 
-				@Override
-				public void onUpdateReturned(int arg0, UpdateResponse arg1) {
-				}
-			});
-			lastCheckUpdateTime = System.currentTimeMillis() / 1000;
-			JDStorage.getInstance().storeLongValue(StorageConstants.KEY_LAST_UPDATE_TIME, lastCheckUpdateTime);
-			UmengUpdateAgent.update(this);
-			UmengUpdateAgent.silentUpdate(this);
-
-		}
 	}
 	
 	

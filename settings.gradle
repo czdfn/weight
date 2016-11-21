@@ -1,1 +1,1 @@
-include ':app', ':corelibs', ':umeng'
+include ':app', ':corelibs'

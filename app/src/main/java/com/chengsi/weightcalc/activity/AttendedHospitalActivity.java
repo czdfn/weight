@@ -95,12 +95,12 @@ public class AttendedHospitalActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_add) {
-            Intent intent = new Intent(AttendedHospitalActivity.this, HospitalListActivity.class);
-            intent.putExtra(HospitalListActivity.KEY_IS_FOR_INDEX_PAGE, true);
-            startActivity(intent);
-            return true;
-        }
+//        if (id == R.id.action_add) {
+//            Intent intent = new Intent(AttendedHospitalActivity.this, HospitalListActivity.class);
+//            intent.putExtra(HospitalListActivity.KEY_IS_FOR_INDEX_PAGE, true);
+//            startActivity(intent);
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }

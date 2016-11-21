@@ -24,11 +24,9 @@ import android.view.WindowManager;
 import com.chengsi.weightcalc.constants.IntentConstants;
 import com.chengsi.weightcalc.exception.CrashHandler;
 import com.chengsi.weightcalc.manager.AlbumManager;
-//import com.jclick.pregnancy.manager.UserManager;
 import com.chengsi.weightcalc.receiver.LogReceiver;
 import com.chengsi.weightcalc.utils.LogUtil;
 import com.chengsi.weightcalc.utils.imageloader.ImageLoaderUtils;
-import com.umeng.update.UmengUpdateAgent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -143,8 +141,6 @@ public class MyApplication extends Application{
         registerLogReceiver();
 
         CrashHandler.getInstance().init(this);
-        UmengUpdateAgent.setUpdateOnlyWifi(false);
-        UmengUpdateAgent.setDeltaUpdate(true);
     }
 
     private void registerLogReceiver(){
