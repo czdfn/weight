@@ -124,23 +124,23 @@ public class PrintPDF {
                                 cell2.addElement(pname);
                                 cell2.setBorder(Rectangle.NO_BORDER);
                                 cell2.setCellEvent(border);
-                                cell2.setColspan(3);
+                                cell2.setColspan(2);
                                 table.addCell(cell2);
                                 break;
-                            case 5:
+                            case 4:
                                 Paragraph pd = new Paragraph("Date: ", bold_normal_P);
                                 pd.setAlignment(Element.ALIGN_CENTER);
                                 cell3.addElement(pd);
                                 cell3.setBorder(Rectangle.NO_BORDER);
                                 table.addCell(cell3);
                                 break;
-                            case 6:
+                            case 5:
                                 Paragraph ptime =new Paragraph(map.get("check_time_f")+" - "+map.get("check_time_b"), bold_normal_P);
                                 ptime.setAlignment(Element.ALIGN_CENTER);
                                 cell4.addElement(ptime);
                                 cell4.setBorder(Rectangle.NO_BORDER);
                                 cell4.setCellEvent(border);
-                                cell4.setColspan(3);
+                                cell4.setColspan(4);
                                 table.addCell(cell4);
                                 break;
                         }

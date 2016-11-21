@@ -94,7 +94,7 @@ public class BackMeasurementFragment extends BaseFragment {
     private String tihuoliang;
     private String paiwuliang;
     private String dianzichengliang;
-    private String kongzhizongliang;
+//    private String kongzhizongliang;
     private String qiancejiandinghuoliang;
     private String qiancepaishiuliang;
     private String qiancechuanyongwuliao;
@@ -139,7 +139,7 @@ public class BackMeasurementFragment extends BaseFragment {
                     tihuoliang = cursor.getString(cursor.getColumnIndex("tihuoliang"));
                     paiwuliang = cursor.getString(cursor.getColumnIndex("paiwuliang"));
                     dianzichengliang = cursor.getString(cursor.getColumnIndex("dianzichengliang"));
-                    kongzhizongliang = cursor.getString(cursor.getColumnIndex("kongzhizongliang"));
+//                    kongzhizongliang = cursor.getString(cursor.getColumnIndex("kongzhizongliang"));
                     qiancejiandinghuoliang = cursor.getString(cursor.getColumnIndex("qiancejiandinghuoliang"));
                     qiancepaishiuliang = cursor.getString(cursor.getColumnIndex("qiancepaishiuliang"));
                     qiancechuanyongwuliao = cursor.getString(cursor.getColumnIndex("qiancechuanyongwuliao"));
@@ -355,7 +355,7 @@ public class BackMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tv34)).setText(tihuoliang);
         ((TextView) view.findViewById(R.id.tv35)).setText(paiwuliang);
         ((TextView) view.findViewById(R.id.tv36)).setText(dianzichengliang);
-        ((TextView) view.findViewById(R.id.tv37)).setText(kongzhizongliang);
+//        ((TextView) view.findViewById(R.id.tv37)).setText(kongzhizongliang);
         ((TextView) view.findViewById(R.id.tv38)).setText(qiancejiandinghuoliang);
         ((TextView) view.findViewById(R.id.tv39)).setText(qiancepaishiuliang);
         ((TextView) view.findViewById(R.id.tv40)).setText(qiancechuanyongwuliao);
@@ -388,7 +388,7 @@ public class BackMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tvv27)).setText(new DecimalFormat("0.0").format(qingzaijidingliangbeiliao));
         ((TextView) view.findViewById(R.id.tvv28)).setText(new DecimalFormat("0.0").format(qiancepsl));
         ((TextView) view.findViewById(R.id.tvv29)).setText(new DecimalFormat("0.0").format(qiancecywl));
-        ((TextView) view.findViewById(R.id.tvv50)).setText(new DecimalFormat("0.0").format(Double.valueOf(jianwuyoupaifang_back)));
+        ((TextView) view.findViewById(R.id.tvv50)).setText(new DecimalFormat("0.0").format(Double.valueOf(jianwuyoupaifang_back==null?"0":jianwuyoupaifang_back)));
 //        ((TextView) view.findViewById(R.id.tv_jizhongliang)).setText(jizhongliang);
         ((CheckBox) view.findViewById(R.id.jdms_cb)).setChecked(Boolean.valueOf(jiandingmoshi));
         ((CheckBox) view.findViewById(R.id.sfdz_cb)).setChecked(Boolean.valueOf(shifouduanzhong));

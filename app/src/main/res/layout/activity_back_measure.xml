@@ -1565,7 +1565,7 @@
                  android:background="@color/text_reservation_num"
                  android:gravity="center"
 
-                 android:text="@string/content_label"
+                 android:text="@string/mt_label"
                  android:textColor="@color/black"
                  android:textSize="15sp" />
 

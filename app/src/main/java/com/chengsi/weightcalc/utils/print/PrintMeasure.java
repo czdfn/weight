@@ -620,7 +620,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")) - Double.valueOf(map.get("jianchuanyongwuliao")))));
                                 break;
                             case "CONSTANT":
-                                cell = new PdfPCell(new Phrase(""));
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("qz")) + Double.valueOf(map.get("cs")))));
                                 break;
                         }cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
@@ -733,6 +733,21 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(""));
                                 cell.setBorder(Rectangle.NO_BORDER);
                                 table.addCell(cell);
+                                cell = new PdfPCell(new Phrase("卸载重量", bold_chinese));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0").format(Double.valueOf(map.get("weight_package")))));
+                                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell.setVerticalAlignment(Element.ALIGN_CENTER);
+                                cell.setPadding(2f);
+                                cell.setColspan(2);
+                                table.addCell(cell);
+                                doc.add(table);
+                                break;
+                            case "CONSTANT":
                                 cell = new PdfPCell(new Phrase("卸载重量", bold_chinese));
                                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                                 cell.setVerticalAlignment(Element.ALIGN_CENTER);

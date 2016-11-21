@@ -337,7 +337,7 @@ public class MidMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tvv20)).setText(new DecimalFormat("0.0").format(weight_after));
         ((TextView) view.findViewById(R.id.tv28)).setText(new DecimalFormat("0.0").format(Double.valueOf(shijipaishuiliang_front==null?"0":shijipaishuiliang_front)));
         ((TextView) view.findViewById(R.id.tv29)).setText(new DecimalFormat("0.0").format(Double.valueOf(jianchuanyongwuliao_front==null?"0":jianchuanyongwuliao_front)));
-        ((TextView) view.findViewById(R.id.tv50)).setText(new DecimalFormat("0.0").format(Double.valueOf(jianwuyoupaifang_mid)));
+        ((TextView) view.findViewById(R.id.tv50)).setText(new DecimalFormat("0.0").format(Double.valueOf(jianwuyoupaifang_mid==null?"0":jianwuyoupaifang_mid)));
         ((TextView) view.findViewById(R.id.tvv22)).setText(new DecimalFormat("0").format(weight_package));
         ((TextView) view.findViewById(R.id.tvv23)).setText(new DecimalFormat("0.000").format(jiaozhenghou_average));
         ((TextView) view.findViewById(R.id.tvv24)).setText(new DecimalFormat("0.0").format(weight_after));
