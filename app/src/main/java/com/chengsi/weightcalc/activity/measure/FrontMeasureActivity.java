@@ -514,9 +514,9 @@ public class FrontMeasureActivity extends BaseActivity implements TextWatcher,Te
             near_weight = new DecimalFormat("0.0").format(Double.valueOf(editText15.getText().toString().trim().equals("")?"0":editText15.getText().toString().trim()));
             tpc = new DecimalFormat("0.000").format(Double.valueOf(editText16.getText().toString().trim().equals("")?"0":editText16.getText().toString().trim()));
             LCF = new DecimalFormat("0.000").format(Double.valueOf(editText17.getText().toString().trim().equals("")?"0":editText17.getText().toString().trim()));
-            DZ = new DecimalFormat("0.000").format(Double.valueOf(editText18.getText().toString().trim().equals("")?"0":editText18.getText().toString().trim()));
-            M1 = new DecimalFormat("0.000").format(Double.valueOf(editText19.getText().toString().trim().equals("")?"0":editText19.getText().toString().trim()));
-            M2 = new DecimalFormat("0.000").format(Double.valueOf(editText20.getText().toString().trim().equals("")?"0":editText20.getText().toString().trim()));
+            DZ = new DecimalFormat("0").format(Double.valueOf(editText18.getText().toString().trim().equals("")?"0":editText18.getText().toString().trim()));
+            M1 = new DecimalFormat("0").format(Double.valueOf(editText19.getText().toString().trim().equals("")?"0":editText19.getText().toString().trim()));
+            M2 = new DecimalFormat("0.0").format(Double.valueOf(editText20.getText().toString().trim().equals("")?"0":editText20.getText().toString().trim()));
             zy = new DecimalFormat("0.0").format(Double.valueOf(editText21.getText().toString().trim().equals("")?"0":editText21.getText().toString().trim()));
             qy = new DecimalFormat("0.0").format(Double.valueOf(editText22.getText().toString().trim().equals("")?"0":editText22.getText().toString().trim()));
             rhy = new DecimalFormat("0.0").format(Double.valueOf(editText23.getText().toString().trim().equals("")?"0":editText23.getText().toString().trim()));
@@ -524,8 +524,8 @@ public class FrontMeasureActivity extends BaseActivity implements TextWatcher,Te
             ycs = new DecimalFormat("0.0").format(Double.valueOf(editText25.getText().toString().trim().equals("")?"0":editText25.getText().toString().trim()));
             bzmd = new DecimalFormat("0.0000").format(Double.valueOf(editText26.getText().toString().trim().equals("")?"0":editText26.getText().toString().trim()));
             scmd = new DecimalFormat("0.0000").format(Double.valueOf(editText27.getText().toString().trim().equals("")?"0":editText27.getText().toString().trim()));
-            qz = new DecimalFormat("0.000").format(Double.valueOf(editText28.getText().toString().trim().equals("")?"0":editText28.getText().toString().trim()));
-            cs = new DecimalFormat("0.000").format(Double.valueOf(editText29.getText().toString().trim().equals("")?"0":editText29.getText().toString().trim()));
+            qz = new DecimalFormat("0.0").format(Double.valueOf(editText28.getText().toString().trim().equals("")?"0":editText28.getText().toString().trim()));
+            cs = new DecimalFormat("0").format(Double.valueOf(editText29.getText().toString().trim().equals("")?"0":editText29.getText().toString().trim()));
             average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
             average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
             average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
@@ -533,11 +533,11 @@ public class FrontMeasureActivity extends BaseActivity implements TextWatcher,Te
             alter_front = chishuicha_before * Double.valueOf(biaojijuli_front) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
             alter_mid = chishuicha_before * Double.valueOf(biaojijuli_mid) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
             alter_back = chishuicha_before * Double.valueOf(biaojijuli_back) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
-            afteralter_front = average_front + alter_front;
-            afteralter_mid = average_mid + alter_mid;
-            afteralter_back = average_back + alter_back;
+            afteralter_front = Double.valueOf(new DecimalFormat("0.000").format(average_front + alter_front));
+            afteralter_mid = Double.valueOf(new DecimalFormat("0.000").format(average_mid + alter_mid));
+            afteralter_back = Double.valueOf(new DecimalFormat("0.000").format(average_back + alter_back));
             chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
-            jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
+            jiaozhenghou_average = Double.valueOf(new DecimalFormat("0.000").format((afteralter_back + afteralter_front + 6 * afteralter_mid))) / 8;
             chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
             chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
             shijishuichi = jiaozhenghou_average;
@@ -545,7 +545,7 @@ public class FrontMeasureActivity extends BaseActivity implements TextWatcher,Te
             jianchuanyongwuliao = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
             if (checkbox.isChecked()) {
                 zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
-                jiaozhi = (100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length);
+                jiaozhi = jiaozhi = Double.valueOf(new DecimalFormat("0.0").format((100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length)));
             } else {
                 zongqingliju = 0;
                 jiaozhi = 0;
@@ -688,7 +688,7 @@ public class FrontMeasureActivity extends BaseActivity implements TextWatcher,Te
             textView14.setText(String.valueOf(new DecimalFormat("0.000").format(shijishuichi)));
             textView15.setText(String.valueOf(new DecimalFormat("0.0").format(shijipaishuizaizhong)));
             textView21.setText(String.valueOf(new DecimalFormat("0.0").format(jianchuanyongwuliao)));
-            textView16.setText(String.valueOf(new DecimalFormat("0.000").format(zongqingliju)));
+            textView16.setText(String.valueOf(new DecimalFormat("0.0").format(zongqingliju)));
             textView17.setText(String.valueOf(new DecimalFormat("0.0").format(jiaozhi)));
             textView19.setText(String.valueOf(new DecimalFormat("0.0").format(alterpaishui)));
             textView18.setText(String.valueOf(new DecimalFormat("0.0").format(weight_before)));
@@ -728,8 +728,8 @@ public class FrontMeasureActivity extends BaseActivity implements TextWatcher,Te
 //            editText25.setText(ycs);
 //            editText26.setText(bzmd);
 //            editText27.setText(scmd);
-//            editText28.setText(qz);
-//            editText29.setText(cs);
+            editText28.setText(String.valueOf(new DecimalFormat("0.0").format(Double.valueOf(qz))));
+            editText29.setText(String.valueOf(new DecimalFormat("0").format(Double.valueOf(cs))));
         }
     }
 
@@ -767,11 +767,11 @@ public class FrontMeasureActivity extends BaseActivity implements TextWatcher,Te
         alter_front = chishuicha_before * Double.valueOf(biaojijuli_front) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
         alter_mid = chishuicha_before * Double.valueOf(biaojijuli_mid) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
         alter_back = chishuicha_before * Double.valueOf(biaojijuli_back) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
-        afteralter_front = average_front + alter_front;
-        afteralter_mid = average_mid + alter_mid;
-        afteralter_back = average_back + alter_back;
+        afteralter_front = Double.valueOf(new DecimalFormat("0.000").format(average_front + alter_front));
+        afteralter_mid = Double.valueOf(new DecimalFormat("0.000").format(average_mid + alter_mid));
+        afteralter_back = Double.valueOf(new DecimalFormat("0.000").format(average_back + alter_back));
         chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
-        jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
+        jiaozhenghou_average = Double.valueOf(new DecimalFormat("0.000").format((afteralter_back + afteralter_front + 6 * afteralter_mid))) / 8;
         chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
         textView4.setText(new DecimalFormat("0.000").format(alter_front));
         textView5.setText(new DecimalFormat("0.000").format(alter_mid));

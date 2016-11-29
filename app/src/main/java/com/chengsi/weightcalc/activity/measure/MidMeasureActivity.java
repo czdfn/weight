@@ -531,9 +531,9 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
             near_weight = new DecimalFormat("0.0").format(Double.valueOf(editText15.getText().toString().trim().equals("")?0:Double.valueOf(editText15.getText().toString().trim())));
             tpc = new DecimalFormat("0.000").format(Double.valueOf(editText16.getText().toString().trim().equals("")?0:Double.valueOf(editText16.getText().toString().trim())));
             LCF = new DecimalFormat("0.000").format(Double.valueOf(editText17.getText().toString().trim().equals("")?0:Double.valueOf(editText17.getText().toString().trim())));
-            DZ = new DecimalFormat("0.000").format(Double.valueOf(editText18.getText().toString().trim().equals("")?0:Double.valueOf(editText18.getText().toString().trim())));
-            M1 = new DecimalFormat("0.000").format(Double.valueOf(editText19.getText().toString().trim().equals("")?0:Double.valueOf(editText19.getText().toString().trim())));
-            M2 = new DecimalFormat("0.000").format(Double.valueOf(editText20.getText().toString().trim().equals("")?0:Double.valueOf(editText20.getText().toString().trim())));
+            DZ = new DecimalFormat("0").format(Double.valueOf(editText18.getText().toString().trim().equals("")?0:Double.valueOf(editText18.getText().toString().trim())));
+            M1 = new DecimalFormat("0").format(Double.valueOf(editText19.getText().toString().trim().equals("")?0:Double.valueOf(editText19.getText().toString().trim())));
+            M2 = new DecimalFormat("0.0").format(Double.valueOf(editText20.getText().toString().trim().equals("")?0:Double.valueOf(editText20.getText().toString().trim())));
             zy = new DecimalFormat("0.0").format(Double.valueOf(editText21.getText().toString().trim().equals("")?0:Double.valueOf(editText21.getText().toString().trim())));
             qy = new DecimalFormat("0.0").format(Double.valueOf(editText22.getText().toString().trim().equals("")?0:Double.valueOf(editText22.getText().toString().trim())));
             rhy = new DecimalFormat("0.0").format(Double.valueOf(editText23.getText().toString().trim().equals("")?0:Double.valueOf(editText23.getText().toString().trim())));
@@ -563,7 +563,7 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
             jianchuanyongwuliao = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
             if (checkbox.isChecked()) {
                 zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
-                jiaozhi = (100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length);
+                jiaozhi = Double.valueOf(new DecimalFormat("0.0").format((100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length)));
             } else {
                 zongqingliju = 0;
                 jiaozhi = 0;
@@ -711,7 +711,7 @@ public class MidMeasureActivity extends BaseActivity implements TextWatcher,Text
             textView14.setText(String.valueOf(new DecimalFormat("0.000").format(shijishuichi)));
             textView15.setText(String.valueOf(new DecimalFormat("0.0").format(shijipaishuizaizhong)));
 //            textView21.setText(String.valueOf(new DecimalFormat("0.000").format(jianchuanyongwuliao)));
-            textView16.setText(String.valueOf(new DecimalFormat("0.000").format(zongqingliju)));
+            textView16.setText(String.valueOf(new DecimalFormat("0.0").format(zongqingliju)));
             textView17.setText(String.valueOf(new DecimalFormat("0.0").format(jiaozhi)));
             textView19.setText(String.valueOf(new DecimalFormat("0.000").format(alterpaishui)));
             textView18.setText(String.valueOf(new DecimalFormat("0.0").format(weight_before)));

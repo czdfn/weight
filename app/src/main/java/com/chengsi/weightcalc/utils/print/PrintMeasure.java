@@ -501,8 +501,20 @@ public class PrintMeasure {
                         cell.setPadding(2f);
                         cell.setColspan(2);
                         table.addCell(cell);
-                        cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("alterpaishui")))));
-                        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                        switch (type){
+                            case "FRONT":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qz")))));
+                                break;
+                            case "MID":
+//                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("shijipaishuizaizhong")))));
+                                break;
+                            case "BACK":
+                                cell = new PdfPCell(new Phrase(""));
+                                break;
+                            case "CONSTANT":
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qz")))));
+                                break;
+                        }cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cell.setVerticalAlignment(Element.ALIGN_CENTER);
                         cell.setPadding(2f);
                         cell.setColspan(2);
@@ -611,7 +623,7 @@ public class PrintMeasure {
                         table.addCell(cell);
                         switch (type){
                             case "FRONT":
-                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("qz")) + Double.valueOf(map.get("cs")))));
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qz"))) + "+" + map.get("cs")));
                                 break;
                             case "MID":
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")) - Double.valueOf(map.get("jianchuanyongwuliao")))));
@@ -796,7 +808,7 @@ public class PrintMeasure {
     }
 
 
-    public static PdfPTable createTable1() throws DocumentException, IOException {
+    public PdfPTable createTable1() throws DocumentException, IOException {
         BaseFont bfChinese = BaseFont.createFont("assets/fonts/STSONG.TTF", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
         Font normal_chinese = new Font(bfChinese, 12);
         Font bold_chinese = new Font(bfChinese, 14, Font.BOLD);
@@ -810,22 +822,35 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_CENTER);
         cell.setPadding(2f);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase("米", normal_chinese));
+        cell = new PdfPCell(new Phrase(map.get("LCF")+"米", normal_chinese));
         cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
-        cell.setColspan(2);
+        cell.setColspan(1);
         cell.setVerticalAlignment(Element.ALIGN_CENTER);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase("", normal_chinese));
-        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-        cell.setVerticalAlignment(Element.ALIGN_CENTER);
-        cell.setColspan(3);
-        table1.addCell(cell);
-        cell = new PdfPCell(new Phrase("校正值Z=(Tc*LCF*TPC*100)/LBP+(50*Tc*Tc/LBP)*dM/dZ", normal_chinese));
+        cell = new PdfPCell(new Phrase("纵倾力矩(M2-M1)/Dz =("+map.get("M2")+"-"+map.get("M1")+")/"+map.get("DZ")+"="+map.get("zongqingliju"), normal_chinese));
         cell.setHorizontalAlignment(Element.ALIGN_LEFT);
-        cell.setVerticalAlignment(Element.ALIGN_LEFT);
-        cell.setPadding(20);
+        cell.setVerticalAlignment(Element.ALIGN_CENTER);
+        cell.setPaddingLeft(10);
+        cell.setColspan(4);
+        table1.addCell(cell);
+        String wording = "             =("+map.get("chishuicha_after") +"*"+map.get("LCF")+"*"+map.get("tpc")+"*100)/"+ new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")))+ "50*"+map.get("chishuicha_after")+"*"+ map.get("chishuicha_after")+"*"+map.get("zongqingliju") +"/" + new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")));
+        Phrase jiaozhengphrase3 = new Phrase("             = " + map.get("jiaozhi"),normal_chinese);
+        Phrase jiaozhengphrase2 = new Phrase(wording,normal_chinese);
+        Phrase jiaozhengphrase1 = new Phrase("校正值Z=(Tc*LCF*TPC*100)/LBP+(50*Tc*Tc/LBP)*dM/dZ", normal_chinese);
+        Paragraph pp = new Paragraph();
+        pp.add(jiaozhengphrase1);
+        pp.add(spaceline);
+        pp.add(jiaozhengphrase2);
+        pp.add(spaceline);
+        pp.add(jiaozhengphrase3);
+        cell = new PdfPCell(pp);
+        cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+        cell.setPaddingLeft(10);
+        cell.setPaddingTop(5);
+        cell.setPaddingBottom(5);
         cell.setColspan(6);
         table1.addCell(cell);
+
         cell = new PdfPCell(table1);
         cell.setColspan(6);
         table.setSpacingBefore(10);
@@ -1138,7 +1163,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_CENTER);
         cell.setPadding(2f);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(map.get("ship_length")));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_CENTER);
         cell.setPadding(2f);

@@ -167,18 +167,18 @@ public class DBHelper extends SQLiteOpenHelper {
             alter_front = chishuicha_before * Double.valueOf(biaojijuli_front) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
             alter_mid = chishuicha_before * Double.valueOf(biaojijuli_mid) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
             alter_back = chishuicha_before * Double.valueOf(biaojijuli_back) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
-            afteralter_front = average_front + alter_front;
-            afteralter_mid = average_mid + alter_mid;
-            afteralter_back = average_back + alter_back;
+            afteralter_front = Double.valueOf(new DecimalFormat("0.000").format(average_front + alter_front));
+            afteralter_mid = Double.valueOf(new DecimalFormat("0.000").format(average_mid + alter_mid));
+            afteralter_back = Double.valueOf(new DecimalFormat("0.000").format(average_back + alter_back));
             chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
-            jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
+            jiaozhenghou_average = Double.valueOf(new DecimalFormat("0.000").format((afteralter_back + afteralter_front + 6 * afteralter_mid))) / 8;
             chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
             chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
             shijishuichi = jiaozhenghou_average;
             shijipaishuizaizhong = Double.valueOf(near_weight) + Double.valueOf(new DecimalFormat("0.0").format(chaezhongliang));
             if (cursor.getString(cursor.getColumnIndex("check_status")).equals("1")) {
                 zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
-                jiaozhi = (100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length);
+                jiaozhi = Double.valueOf(new DecimalFormat("0.0").format((100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length)));
             } else {
                 zongqingliju = 0;
                 jiaozhi = 0;
@@ -191,7 +191,7 @@ public class DBHelper extends SQLiteOpenHelper {
             if (checkType == 1 || checkType == 4) {
                 qz = cursor.getString(cursor.getColumnIndex("qz"));
                 cs = cursor.getString(cursor.getColumnIndex("cs"));
-                mData.put("jianchuanyongwuliao", new DecimalFormat("0.000").format(jianchuanyongwuliao));
+                mData.put("jianchuanyongwuliao", new DecimalFormat("0.0").format(jianchuanyongwuliao));
                 weight_package = (shijipaishuizaizhong + jiaozhi) * Double.valueOf(scmd) / Double.valueOf(bzmd) - jianchuanyongwuliao - Double.valueOf(qz) - Double.valueOf(cs);
             } else if (checkType == 3) {
                 jianwuyoupaifang_back = cursor.getString(cursor.getColumnIndex("jianwuyoupaifang_back"));
@@ -221,15 +221,15 @@ public class DBHelper extends SQLiteOpenHelper {
                 qingzaijidingliangbeiliao = shijipaishuiliang - jianchuanyongwuliao;
                 jianqingzai_beiliao = qingzaijidingliangbeiliao;
                 mData.put("qingzaijidingliangbeiliang", new DecimalFormat("0.000").format(qingzaijidingliangbeiliao));
-                mData.put("shijipaishuiliang_back", new DecimalFormat("0.000").format(shijipaishuiliang));
+                mData.put("shijipaishuiliang_back", new DecimalFormat("0.0").format(shijipaishuiliang));
 //                jianqingzai_beiliao = qingzaijidingliangbeiliao;
                 qiancepsl = Double.valueOf(qiancepaishiuliang);
                 qiancecywl = Double.valueOf(qiancechuanyongwuliao);
-                mData.put("qingzaijidingliangbeiliao", new DecimalFormat("0.000").format(qingzaijidingliangbeiliao));
-                mData.put("qiancepsl", new DecimalFormat("0.000").format(qiancepsl));
-                mData.put("qiancecywl", new DecimalFormat("0.000").format(qiancecywl));
+                mData.put("qingzaijidingliangbeiliao", new DecimalFormat("0.0").format(qingzaijidingliangbeiliao));
+                mData.put("qiancepsl", new DecimalFormat("0.0").format(qiancepsl));
+                mData.put("qiancecywl", new DecimalFormat("0.0").format(qiancecywl));
                 mData.put("jianwuyoupaifang_back",new DecimalFormat("0.0").format(Double.valueOf(jianwuyoupaifang_back)));
-                mData.put("jianchuanyongwuliao_back", new DecimalFormat("0.000").format(jianchuanyongwuliao));
+                mData.put("jianchuanyongwuliao_back", new DecimalFormat("0.0").format(jianchuanyongwuliao));
                 weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao - Double.valueOf(jianwuyoupaifang_back);
             } else {
                 jianwuyoupaifang_mid = cursor.getString(cursor.getColumnIndex("jianwuyoupaifang_mid"));
@@ -239,7 +239,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 jianqingzai_beiliao = qingzaijidingliangbeiliao;
                 weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao - Double.valueOf(jianwuyoupaifang_mid);
                 mData.put("qingzaijidingliangbeiliao", new DecimalFormat("0.000").format(qingzaijidingliangbeiliao));
-                mData.put("jianchuanyongwuliao", new DecimalFormat("0.000").format(jianchuanyongwuliao));
+                mData.put("jianchuanyongwuliao", new DecimalFormat("0.0").format(jianchuanyongwuliao));
                 mData.put("qiancepaishiuliang", new DecimalFormat("0.000").format(Double.valueOf(qiancepaishiuliang)));
                 mData.put("qiancechuanyongwuliao", new DecimalFormat("0.000").format(Double.valueOf(qiancechuanyongwuliao)));
             }
@@ -290,11 +290,11 @@ public class DBHelper extends SQLiteOpenHelper {
             mData.put("chaezhongliang", new DecimalFormat("0.0").format(chaezhongliang));
             mData.put("shijishuichi", new DecimalFormat("0.000").format(shijishuichi));
             mData.put("shijipaishuizaizhong", new DecimalFormat("0.0").format(shijipaishuizaizhong));
-            mData.put("zongqingliju", new DecimalFormat("0.000").format(zongqingliju));
+            mData.put("zongqingliju", new DecimalFormat("0.0").format(zongqingliju));
             mData.put("jiaozhi", new DecimalFormat("0.0").format(jiaozhi));
-            mData.put("alterpaishui", new DecimalFormat("0.000").format(alterpaishui));
+            mData.put("alterpaishui", new DecimalFormat("0.0").format(alterpaishui));
             mData.put("weight_before", new DecimalFormat("0.0").format(weight_before));
-            mData.put("weight_after", new DecimalFormat("0.000").format(weight_after));
+            mData.put("weight_after", new DecimalFormat("0.0").format(weight_after));
             mData.put("jiaozhenghou_average", new DecimalFormat("0.000").format(jiaozhenghou_average));
             mData.put("weight_package", new DecimalFormat("0").format(weight_package));
             mData.put("check_status", cursor.getString(cursor.getColumnIndex("check_status")));

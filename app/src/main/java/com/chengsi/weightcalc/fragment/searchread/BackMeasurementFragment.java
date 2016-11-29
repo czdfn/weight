@@ -209,11 +209,11 @@ public class BackMeasurementFragment extends BaseFragment {
                     alter_front = chishuicha_before * Double.valueOf(biaojijuli_front) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
                     alter_mid = chishuicha_before * Double.valueOf(biaojijuli_mid) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
                     alter_back = chishuicha_before * Double.valueOf(biaojijuli_back) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
-                    afteralter_front = average_front + alter_front;
-                    afteralter_mid = average_mid + alter_mid;
-                    afteralter_back = average_back + alter_back;
+                    afteralter_front = Double.valueOf(new DecimalFormat("0.000").format(average_front + alter_front));
+                    afteralter_mid = Double.valueOf(new DecimalFormat("0.000").format(average_mid + alter_mid));
+                    afteralter_back = Double.valueOf(new DecimalFormat("0.000").format(average_back + alter_back));
                     chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
-                    jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
+                    jiaozhenghou_average = Double.valueOf(new DecimalFormat("0.000").format((afteralter_back + afteralter_front + 6 * afteralter_mid))) / 8;
                     chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
                     chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
                     shijishuichi = jiaozhenghou_average;
@@ -221,7 +221,7 @@ public class BackMeasurementFragment extends BaseFragment {
                     jianchuanyongwuliao_back = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
                     if (mData.get("check_status").equals("1")) {
                         zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
-                        jiaozhi = (100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length);
+                        jiaozhi = Double.valueOf(new DecimalFormat("0.0").format((100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length)));
                     } else {
                         zongqingliju = 0;
                         jiaozhi = 0;
@@ -328,9 +328,9 @@ public class BackMeasurementFragment extends BaseFragment {
                 cb_jiaozhi.setChecked(true);
                 cb_jiaozhi.setEnabled(false);
                 ((TextView) view.findViewById(R.id.tv17)).setText(mData.get("LCF") == null ? "000.000" : mData.get("LCF"));
-                ((TextView) view.findViewById(R.id.tv18)).setText(mData.get("DZ") == null ? "000.000" : mData.get("DZ"));
-                ((TextView) view.findViewById(R.id.tv19)).setText(mData.get("M1") == null ? "000.000" : mData.get("M1"));
-                ((TextView) view.findViewById(R.id.tv20)).setText(mData.get("M2") == null ? "000.000" : mData.get("M2"));
+                ((TextView) view.findViewById(R.id.tv18)).setText(mData.get("DZ") == null ? "0" : mData.get("DZ"));
+                ((TextView) view.findViewById(R.id.tv19)).setText(mData.get("M1") == null ? "0" : mData.get("M1"));
+                ((TextView) view.findViewById(R.id.tv20)).setText(mData.get("M2") == null ? "0.0" : mData.get("M2"));
             } else {
                 CheckBox cb_jiaozhi = ((CheckBox) view.findViewById(R.id.checkBox));
                 cb_jiaozhi.setChecked(false);
@@ -375,7 +375,7 @@ public class BackMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tvv13)).setText(new DecimalFormat("0.0").format(chaezhongliang));
         ((TextView) view.findViewById(R.id.tvv14)).setText(new DecimalFormat("0.000").format(shijishuichi));
         ((TextView) view.findViewById(R.id.tvv15)).setText(new DecimalFormat("0.0").format(shijipaishuizaizhong));
-        ((TextView) view.findViewById(R.id.tvv16)).setText(new DecimalFormat("0.000").format(zongqingliju));
+        ((TextView) view.findViewById(R.id.tvv16)).setText(new DecimalFormat("0.0").format(zongqingliju));
         ((TextView) view.findViewById(R.id.tvv17)).setText(new DecimalFormat("0.0").format(jiaozhi));
         ((TextView) view.findViewById(R.id.tvv18)).setText(new DecimalFormat("0.0").format(weight_before));
         ((TextView) view.findViewById(R.id.tvv19)).setText(new DecimalFormat("0.0").format(alterpaishui));

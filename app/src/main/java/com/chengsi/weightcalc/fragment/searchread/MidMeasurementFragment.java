@@ -295,9 +295,9 @@ public class MidMeasurementFragment extends BaseFragment {
                 cb_jiaozhi.setChecked(true);
                 cb_jiaozhi.setEnabled(false);
                 ((TextView) view.findViewById(R.id.tv17)).setText(mData.get("LCF") == null ? "000.000" : mData.get("LCF"));
-                ((TextView) view.findViewById(R.id.tv18)).setText(mData.get("DZ") == null ? "000.000" : mData.get("DZ"));
-                ((TextView) view.findViewById(R.id.tv19)).setText(mData.get("M1") == null ? "000.000" : mData.get("M1"));
-                ((TextView) view.findViewById(R.id.tv20)).setText(mData.get("M2") == null ? "000.000" : mData.get("M2"));
+                ((TextView) view.findViewById(R.id.tv18)).setText(mData.get("DZ") == null ? "0" : mData.get("DZ"));
+                ((TextView) view.findViewById(R.id.tv19)).setText(mData.get("M1") == null ? "0" : mData.get("M1"));
+                ((TextView) view.findViewById(R.id.tv20)).setText(mData.get("M2") == null ? "0.0" : mData.get("M2"));
             } else {
                 CheckBox cb_jiaozhi = ((CheckBox) view.findViewById(R.id.checkBox));
                 cb_jiaozhi.setChecked(false);
@@ -330,7 +330,7 @@ public class MidMeasurementFragment extends BaseFragment {
         ((TextView) view.findViewById(R.id.tvv13)).setText(new DecimalFormat("0.0").format(chaezhongliang));
         ((TextView) view.findViewById(R.id.tvv14)).setText(new DecimalFormat("0.000").format(shijishuichi));
         ((TextView) view.findViewById(R.id.tvv15)).setText(new DecimalFormat("0.0").format(shijipaishuizaizhong));
-        ((TextView) view.findViewById(R.id.tvv16)).setText(new DecimalFormat("0.000").format(zongqingliju));
+        ((TextView) view.findViewById(R.id.tvv16)).setText(new DecimalFormat("0.0").format(zongqingliju));
         ((TextView) view.findViewById(R.id.tvv17)).setText(new DecimalFormat("0.0").format(jiaozhi));
         ((TextView) view.findViewById(R.id.tvv18)).setText(new DecimalFormat("0.0").format(weight_before));
         ((TextView) view.findViewById(R.id.tvv19)).setText(new DecimalFormat("0.0").format(alterpaishui));

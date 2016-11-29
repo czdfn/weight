@@ -524,8 +524,8 @@ public class ConstantActivity extends BaseActivity implements TextWatcher,TextVi
             ycs = new DecimalFormat("0.0").format(Double.valueOf(editText25.getText().toString().trim().equals("")?"0":editText25.getText().toString().trim()));
             bzmd = new DecimalFormat("0.0000").format(Double.valueOf(editText26.getText().toString().trim().equals("")?"0":editText26.getText().toString().trim()));
             scmd = new DecimalFormat("0.0000").format(Double.valueOf(editText27.getText().toString().trim().equals("")?"0":editText27.getText().toString().trim()));
-            qz = new DecimalFormat("0.000").format(Double.valueOf(editText28.getText().toString().trim().equals("")?"0":editText28.getText().toString().trim()));
-            cs = new DecimalFormat("0.000").format(Double.valueOf(editText29.getText().toString().trim().equals("")?"0":editText29.getText().toString().trim()));
+            qz = new DecimalFormat("0.0").format(Double.valueOf(editText28.getText().toString().trim().equals("")?"0":editText28.getText().toString().trim()));
+            cs = new DecimalFormat("0").format(Double.valueOf(editText29.getText().toString().trim().equals("")?"0":editText29.getText().toString().trim()));
             average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
             average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
             average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
@@ -545,7 +545,7 @@ public class ConstantActivity extends BaseActivity implements TextWatcher,TextVi
             jianchuanyongwuliao = Double.valueOf(zy) + Double.valueOf(qy) + Double.valueOf(rhy) + Double.valueOf(ds) + Double.valueOf(ycs);
             if (checkbox.isChecked()) {
                 zongqingliju = (Double.valueOf(M2) - Double.valueOf(M1)) / Double.valueOf(DZ);
-                jiaozhi = (100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length);
+                jiaozhi = Double.valueOf(new DecimalFormat("0.0").format((100 * chishuicha_after * Double.valueOf(tpc) * Double.valueOf(LCF) + 50 * chishuicha_after * chishuicha_after * zongqingliju) / Double.valueOf(ship_length)));
             } else {
                 zongqingliju = 0;
                 jiaozhi = 0;
@@ -728,8 +728,9 @@ public class ConstantActivity extends BaseActivity implements TextWatcher,TextVi
 //            editText25.setText(ycs);
 //            editText26.setText(bzmd);
 //            editText27.setText(scmd);
-//            editText28.setText(qz);
-//            editText29.setText(cs);
+
+            editText28.setText(String.valueOf(new DecimalFormat("0.0").format(Double.valueOf(qz))));
+            editText29.setText(String.valueOf(new DecimalFormat("0").format(Double.valueOf(cs))));
         }
     }
 

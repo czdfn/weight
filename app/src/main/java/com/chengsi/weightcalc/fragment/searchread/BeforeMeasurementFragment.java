@@ -177,11 +177,11 @@ public class BeforeMeasurementFragment extends BaseFragment {
                     alter_front = chishuicha_before * Double.valueOf(biaojijuli_front) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
                     alter_mid = chishuicha_before * Double.valueOf(biaojijuli_mid) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
                     alter_back = chishuicha_before * Double.valueOf(biaojijuli_back) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
-                    afteralter_front = average_front + alter_front;
-                    afteralter_mid = average_mid + alter_mid;
-                    afteralter_back = average_back + alter_back;
+                    afteralter_front = Double.valueOf(new DecimalFormat("0.000").format(average_front + alter_front));
+                    afteralter_mid = Double.valueOf(new DecimalFormat("0.000").format(average_mid + alter_mid));
+                    afteralter_back = Double.valueOf(new DecimalFormat("0.000").format(average_back + alter_back));
                     chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
-                    jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
+                    jiaozhenghou_average = Double.valueOf(new DecimalFormat("0.000").format((afteralter_back + afteralter_front + 6 * afteralter_mid))) / 8;
                     chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
                     chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
                     shijishuichi = jiaozhenghou_average;
@@ -288,9 +288,9 @@ public class BeforeMeasurementFragment extends BaseFragment {
                 cb_jiaozhi.setChecked(true);
                 cb_jiaozhi.setEnabled(false);
                 ((TextView) view.findViewById(R.id.tv17)).setText(mData.get("LCF") == null ? "000.000" : mData.get("LCF"));
-                ((TextView) view.findViewById(R.id.tv18)).setText(mData.get("DZ") == null ? "000.000" : mData.get("DZ"));
-                ((TextView) view.findViewById(R.id.tv19)).setText(mData.get("M1") == null ? "000.000" : mData.get("M1"));
-                ((TextView) view.findViewById(R.id.tv20)).setText(mData.get("M2") == null ? "000.000" : mData.get("M2"));
+                ((TextView) view.findViewById(R.id.tv18)).setText(mData.get("DZ") == null ? "0" : mData.get("DZ"));
+                ((TextView) view.findViewById(R.id.tv19)).setText(mData.get("M1") == null ? "0" : mData.get("M1"));
+                ((TextView) view.findViewById(R.id.tv20)).setText(mData.get("M2") == null ? "0.0" : mData.get("M2"));
             } else {
                 CheckBox cb_jiaozhi = ((CheckBox) view.findViewById(R.id.checkBox));
                 cb_jiaozhi.setChecked(false);

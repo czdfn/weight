@@ -112,14 +112,14 @@ public class PrintPDF {
                     for (int i = 1; i <= 8; i++) {
                         switch (i) {
                             case 1:
-                                Paragraph pmv = new Paragraph("M.V:.", bold_normal_P);
+                                Paragraph pmv = new Paragraph("M.V:.", bold_normal);
                                 pmv.setAlignment(Element.ALIGN_CENTER);
                                 cell1.addElement(pmv);
                                 cell1.setBorder(Rectangle.NO_BORDER);
                                 table.addCell(cell1);
                                 break;
                             case 2:
-                                Paragraph pname = new Paragraph(map.get("ship_name"), bold_normal_P);
+                                Paragraph pname = new Paragraph(map.get("ship_name"), bold_normal);
                                 pname.setAlignment(Element.ALIGN_CENTER);
                                 cell2.addElement(pname);
                                 cell2.setBorder(Rectangle.NO_BORDER);
@@ -128,14 +128,25 @@ public class PrintPDF {
                                 table.addCell(cell2);
                                 break;
                             case 4:
-                                Paragraph pd = new Paragraph("Date: ", bold_normal_P);
+                                Paragraph pd = new Paragraph("Date: ", bold_normal);
                                 pd.setAlignment(Element.ALIGN_CENTER);
                                 cell3.addElement(pd);
                                 cell3.setBorder(Rectangle.NO_BORDER);
                                 table.addCell(cell3);
                                 break;
                             case 5:
-                                Paragraph ptime =new Paragraph(map.get("check_time_f")+" - "+map.get("check_time_b"), bold_normal_P);
+                                String from,to;
+                                if(map.get("check_time_f") != null){
+                                    from = map.get("check_time_f").substring(0,10);
+                                }else{
+                                    from = "unknown";
+                                }
+                                if(map.get("check_time_b") != null){
+                                    to = map.get("check_time_b").substring(0,10);
+                                }else{
+                                    to = "unknown";
+                                }
+                                Paragraph ptime =new Paragraph(from + " - " + to, bold_normal);
                                 ptime.setAlignment(Element.ALIGN_CENTER);
                                 cell4.addElement(ptime);
                                 cell4.setBorder(Rectangle.NO_BORDER);
@@ -309,7 +320,7 @@ public class PrintPDF {
                                 break;
                             case 2:
                                 Chunk chunk_row63 = new Chunk(map.get("alter_m_qian") == null ? "000.000" : map.get("alter_m_qian"),normal);
-                                Chunk chunk_row64 = new Chunk("M",normal);
+                                Chunk chunk_row64 = new Chunk("    M",normal);
                                 Paragraph phrase_row62 = new Paragraph();
                                 phrase_row62.add(chunk_row63);
                                 phrase_row62.add(chunk_row64);
