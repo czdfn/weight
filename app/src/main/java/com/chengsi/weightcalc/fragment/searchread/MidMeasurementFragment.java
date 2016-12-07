@@ -182,11 +182,11 @@ public class MidMeasurementFragment extends BaseFragment {
                     alter_front = chishuicha_before * Double.valueOf(biaojijuli_front) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
                     alter_mid = chishuicha_before * Double.valueOf(biaojijuli_mid) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
                     alter_back = chishuicha_before * Double.valueOf(biaojijuli_back) / (Double.valueOf(ship_length) + Double.valueOf(biaojijuli_front) - Double.valueOf(biaojijuli_back));
-                    afteralter_front = average_front + alter_front;
-                    afteralter_mid = average_mid + alter_mid;
-                    afteralter_back = average_back + alter_back;
+                    afteralter_front = Double.valueOf(new DecimalFormat("0.000").format(average_front + alter_front));
+                    afteralter_mid = Double.valueOf(new DecimalFormat("0.000").format(average_mid + alter_mid));
+                    afteralter_back = Double.valueOf(new DecimalFormat("0.000").format(average_back + alter_back));
                     chishuicha_after = Double.valueOf(new DecimalFormat("0.000").format(afteralter_back - afteralter_front));
-                    jiaozhenghou_average = (afteralter_back + afteralter_front + 6 * afteralter_mid) / 8;
+                    jiaozhenghou_average = Double.valueOf(new DecimalFormat("0.000").format((afteralter_back + afteralter_front + 6 * afteralter_mid))) / 8;
                     chaeshuichi = (jiaozhenghou_average - Double.valueOf(near_shuichi)) * 100;
                     chaezhongliang = new BigDecimal(chaeshuichi).setScale(1,BigDecimal.ROUND_HALF_UP).doubleValue()* Double.valueOf(tpc);
                     shijishuichi = jiaozhenghou_average;

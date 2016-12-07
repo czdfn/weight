@@ -226,7 +226,7 @@
     <string name="jcywl">减船用物料</string>
     <string name="yjshz">预计算货重</string>
     <string name="jzhzl">校正后重量</string>
-    <string name="jwypf">减污油排放</string>
+    <string name="jwypf">减污油、污水排放</string>
     <string name="scmd">实测密度</string>
     <string name="bzmd">表载密度</string>
     <string name="gsmdjz">港水密度校正</string>

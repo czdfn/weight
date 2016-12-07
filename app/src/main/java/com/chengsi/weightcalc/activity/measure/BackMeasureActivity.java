@@ -697,9 +697,9 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
             paiwuliang = new DecimalFormat("0.000").format(Double.valueOf(editText35.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText35.getText().toString().trim())));
             dianzichengliang = new DecimalFormat("0.000").format(Double.valueOf(editText36.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText36.getText().toString().trim())));
 //            kongzhizongliang = new DecimalFormat("0.000").format(Double.valueOf(editText37.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText37.getText().toString().trim())));
-            qiancejiandinghuoliang = new DecimalFormat("0.000").format(Double.valueOf(editText38.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText38.getText().toString().trim())));
-            qiancepaishiuliang = new DecimalFormat("0.000").format(Double.valueOf(editText39.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText39.getText().toString().trim())));
-            qiancechuanyongwuliao = new DecimalFormat("0.000").format(Double.valueOf(editText40.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText40.getText().toString().trim())));
+            qiancejiandinghuoliang = new DecimalFormat("0.0").format(Double.valueOf(editText38.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText38.getText().toString().trim())));
+            qiancepaishiuliang = new DecimalFormat("0.0").format(Double.valueOf(editText39.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText39.getText().toString().trim())));
+            qiancechuanyongwuliao = new DecimalFormat("0.0").format(Double.valueOf(editText40.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText40.getText().toString().trim())));
             ceshishuichi_frontLeft = new DecimalFormat("0.00").format(Double.valueOf(editText4.getText().toString().trim()));
             ceshishuichi_frontRight = new DecimalFormat("0.00").format(Double.valueOf(editText5.getText().toString().trim()));
             ceshishuichi_midLeft = new DecimalFormat("0.00").format(Double.valueOf(editText6.getText().toString().trim()));

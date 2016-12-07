@@ -91,6 +91,8 @@ public class CheckReportFragment extends BaseFragment {
     String scmd;
     String qz;
     String cs;
+    String jianwuyoupaifang_back;
+    String jianwuyoupaifang_mid;
     double jianchuanyongwuliao_back;
     double shijipaishuiliang_back;
     double qiancepsl;
@@ -223,6 +225,7 @@ public class CheckReportFragment extends BaseFragment {
                     scmd = cursor1.getString(cursor1.getColumnIndex("scmd"));
                     qiancepaishiuliang = cursor1.getString(cursor1.getColumnIndex("qiancepaishiuliang"));
                     qiancechuanyongwuliao = cursor1.getString(cursor1.getColumnIndex("qiancechuanyongwuliao"));
+                    jianwuyoupaifang_back = cursor1.getString(cursor1.getColumnIndex("jianwuyoupaifang_back"));
 
                     average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
                     average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
@@ -273,6 +276,7 @@ public class CheckReportFragment extends BaseFragment {
                     mData.put("ycs_hou", ycs);
                     mData.put("other_hou", "/");
                     mData.put("weight_package", new DecimalFormat("0").format(weight_package));
+                    mData.put("jianwuyoupaifang_back", jianwuyoupaifang_back);
                 }
 
                 while (cursor2.moveToNext()) {
@@ -304,6 +308,7 @@ public class CheckReportFragment extends BaseFragment {
                     qiancepaishiuliang = cursor2.getString(cursor2.getColumnIndex("qiancepaishiuliang"));
                     qiancechuanyongwuliao = cursor2.getString(cursor2.getColumnIndex("qiancechuanyongwuliao"));
 
+                    jianwuyoupaifang_mid = cursor2.getString(cursor2.getColumnIndex("jianwuyoupaifang_mid"));
                     average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
                     average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
                     average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
@@ -351,6 +356,7 @@ public class CheckReportFragment extends BaseFragment {
                     mData.put("ds_zhong", ds);
                     mData.put("ycs_zhong", ycs);
                     mData.put("other_zhong", "/");
+                    mData.put("jianwuyoupaifang_mid", jianwuyoupaifang_mid);
                 }
                 msg.what = 0;
             } else {
@@ -417,6 +423,8 @@ public class CheckReportFragment extends BaseFragment {
         ((EditText) view.findViewById(R.id.mdjzhpsl_qian_report)).setText(mData.get("weight_after_qian") == null ? "000.000" : mData.get("weight_after_qian"));
         ((EditText) view.findViewById(R.id.you_qian_report)).setText(mData.get("oil_qian") == null ? "000.000" : mData.get("oil_qian"));
         ((EditText) view.findViewById(R.id.danshui_f_report)).setText(mData.get("ds_qian") == null ? "000.000" : mData.get("ds_qian"));
+        ((EditText) view.findViewById(R.id.jianwu_zhong_report)).setText(mData.get("jianwuyoupaifang_mid") == null ? "000.0" : mData.get("jianwuyoupaifang_mid"));
+        ((EditText) view.findViewById(R.id.jianwu_b_report)).setText(mData.get("jianwuyoupaifang_back") == null ? "000.0" : mData.get("jianwuyoupaifang_back"));
         ((TextView) view.findViewById(R.id.ycs_f_report)).setText(mData.get("ycs_qian") == null ? "000.000" : mData.get("ycs_qian"));
         ((TextView) view.findViewById(R.id.other_f_report)).setText(mData.get("other_qian"));
 //        ((EditText) view.findViewById(R.id.date_report)).setText(mData.get("check_time"));

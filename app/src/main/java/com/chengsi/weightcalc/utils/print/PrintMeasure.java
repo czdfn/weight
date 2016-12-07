@@ -676,7 +676,7 @@ public class PrintMeasure {
                                 doc.add(table);
                                 break;
                             case "MID":
-                                cell = new PdfPCell(new Phrase("减污油排放", bold_chinese));
+                                cell = new PdfPCell(new Phrase("减污油、污水排放", bold_chinese));
                                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                                 cell.setVerticalAlignment(Element.ALIGN_CENTER);
                                 cell.setPadding(2f);
@@ -718,7 +718,7 @@ public class PrintMeasure {
                                 doc.add(table);
                                 break;
                             case "BACK":
-                                cell = new PdfPCell(new Phrase("减污油排放", bold_chinese));
+                                cell = new PdfPCell(new Phrase("减污油、污水排放", bold_chinese));
                                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                                 cell.setVerticalAlignment(Element.ALIGN_CENTER);
                                 cell.setPadding(2f);

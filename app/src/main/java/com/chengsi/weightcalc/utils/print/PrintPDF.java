@@ -96,7 +96,7 @@ public class PrintPDF {
         doc.add(spaceline);
         CustomCell border = new CustomCell();
 
-        for (int row = 1; row < 27; row++) {
+        for (int row = 1; row < 28; row++) {
             switch (row) {
                 case 1:
 //                    Paragraph shipname = new Paragraph("船名", blue_chinese);
@@ -124,7 +124,7 @@ public class PrintPDF {
                                 cell2.addElement(pname);
                                 cell2.setBorder(Rectangle.NO_BORDER);
                                 cell2.setCellEvent(border);
-                                cell2.setColspan(2);
+                                cell2.setColspan(3);
                                 table.addCell(cell2);
                                 break;
                             case 4:
@@ -151,7 +151,7 @@ public class PrintPDF {
                                 cell4.addElement(ptime);
                                 cell4.setBorder(Rectangle.NO_BORDER);
                                 cell4.setCellEvent(border);
-                                cell4.setColspan(4);
+                                cell4.setColspan(3);
                                 table.addCell(cell4);
                                 break;
                         }
@@ -1104,7 +1104,7 @@ public class PrintPDF {
                     for (int i = 1; i <= 6; i++) {
                         switch (i) {
                             case 1:
-                                Chunk chunk_row221 = new Chunk("Ballast water",normal);
+                                Chunk chunk_row221 = new Chunk("Sludge oil/Bilge Water",normal);
                                 Chunk chunk_row222 = new Chunk("",blue_chinese);
                                 Paragraph phrase_row221 = new Paragraph();
                                 phrase_row221.add(chunk_row221);
@@ -1114,15 +1114,14 @@ public class PrintPDF {
                                 table22.addCell(cell221);
                                 break;
                             case 2:
-                                Chunk chunk_row223 = new Chunk(map.get("ycs_qian") == null ? "000.000" : map.get("ycs_qian"),normal);
-                                Chunk chunk_row224 = new Chunk("M/T",normal);
+                                Chunk chunk_row223 = new Chunk("",normal);
+                                Chunk chunk_row224 = new Chunk("",normal);
                                 Paragraph phrase_row222 = new Paragraph();
                                 phrase_row222.add(chunk_row223);
                                 phrase_row222.add(chunk_row224);
                                 phrase_row222.setAlignment(Element.ALIGN_CENTER);
                                 cell222.addElement(phrase_row222);
                                 cell222.setBorder(Rectangle.NO_BORDER);
-                                cell222.setCellEvent(border);
                                 table22.addCell(cell222);
                                 break;
                             case 3:
@@ -1133,8 +1132,8 @@ public class PrintPDF {
                                 table22.addCell(cell223);
                                 break;
                             case 4:
-                                if(map.get("ycs_zhong") != null){
-                                    Chunk chunk_row225 = new Chunk(map.get("ycs_zhong") == null ? "000.000" : map.get("ycs_zhong"),normal);
+                                if(map.get("jianwuyoupaifang_mid") != null){
+                                    Chunk chunk_row225 = new Chunk(map.get("jianwuyoupaifang_mid") == null ? "000.0" : map.get("jianwuyoupaifang_mid"),normal);
                                     Chunk chunk_row226 = new Chunk("M/T",normal);
                                     Paragraph phrase_row223 = new Paragraph();
                                     phrase_row223.add(chunk_row225);
@@ -1164,7 +1163,7 @@ public class PrintPDF {
                                 table22.addCell(cell225);
                                 break;
                             case 6:
-                                Chunk chunk_row227 = new Chunk(map.get("ycs_hou") == null ? "000.000" : map.get("ycs_hou"),normal);
+                                Chunk chunk_row227 = new Chunk(map.get("jianwuyoupaifang_back") == null ? "000.0" : map.get("jianwuyoupaifang_back"),normal);
                                 Chunk chunk_row228 = new Chunk("M/T",normal);
                                 Paragraph phrase_row224 = new Paragraph();
                                 phrase_row224.add(chunk_row227);
@@ -1192,7 +1191,7 @@ public class PrintPDF {
                     for (int i = 1; i <= 6; i++) {
                         switch (i) {
                             case 1:
-                                Chunk chunk_row231 = new Chunk("other cargo",normal);
+                                Chunk chunk_row231 = new Chunk("Ballast water",normal);
                                 Chunk chunk_row232 = new Chunk("",blue_chinese);
                                 Paragraph phrase_row231 = new Paragraph();
                                 phrase_row231.add(chunk_row231);
@@ -1202,11 +1201,11 @@ public class PrintPDF {
                                 table23.addCell(cell231);
                                 break;
                             case 2:
-                                Chunk chunk_row233 = new Chunk(map.get("other_qian") == null ? "/" : map.get("other_qian"),normal);
-//                                Chunk chunk_row234 = new Chunk("M",normal);
+                                Chunk chunk_row233 = new Chunk(map.get("ycs_qian") == null ? "000.000" : map.get("ycs_qian"),normal);
+                                Chunk chunk_row234 = new Chunk("M/T",normal);
                                 Paragraph phrase_row232 = new Paragraph();
                                 phrase_row232.add(chunk_row233);
-//                                phrase_row232.add(chunk_row234);
+                                phrase_row232.add(chunk_row234);
                                 phrase_row232.setAlignment(Element.ALIGN_CENTER);
                                 cell232.addElement(phrase_row232);
                                 cell232.setBorder(Rectangle.NO_BORDER);
@@ -1214,55 +1213,53 @@ public class PrintPDF {
                                 table23.addCell(cell232);
                                 break;
                             case 3:
-                                cell233.addElement(new Paragraph("", bold_normal));
+                                cell233.addElement(new Paragraph("        ", bold_normal));
                                 cell233.setBorder(Rectangle.NO_BORDER);
                                 cell233.setHorizontalAlignment(Element.ALIGN_CENTER);
                                 cell233.setVerticalAlignment(Element.ALIGN_MIDDLE);
                                 table23.addCell(cell233);
                                 break;
                             case 4:
-                                if(map.get("other_zhong") != null){
-                                    Chunk chunk_row235 = new Chunk(map.get("other_zhong") == null ? "/" : map.get("other_zhong"),normal);
+                                if(map.get("ycs_zhong") != null){
+                                    Chunk chunk_row235 = new Chunk(map.get("ycs_zhong") == null ? "000.000" : map.get("ycs_zhong"),normal);
+                                    Chunk chunk_row236 = new Chunk("M/T",normal);
                                     Paragraph phrase_row233 = new Paragraph();
                                     phrase_row233.add(chunk_row235);
+                                    phrase_row233.add(chunk_row236);
                                     phrase_row233.setAlignment(Element.ALIGN_CENTER);
                                     cell234.addElement(phrase_row233);
                                     cell234.setBorder(Rectangle.NO_BORDER);
                                     cell234.setCellEvent(border);
-                                    cell234.setHorizontalAlignment(Element.ALIGN_CENTER);
-                                    cell234.setVerticalAlignment(Element.ALIGN_MIDDLE);
                                     table23.addCell(cell234);
                                 }else{
                                     Chunk chunk_row235 = new Chunk("",normal);
+                                    Chunk chunk_row236 = new Chunk("",normal);
                                     Paragraph phrase_row233 = new Paragraph();
                                     phrase_row233.add(chunk_row235);
+                                    phrase_row233.add(chunk_row236);
                                     phrase_row233.setAlignment(Element.ALIGN_CENTER);
                                     cell234.addElement(phrase_row233);
                                     cell234.setBorder(Rectangle.NO_BORDER);
-                                    cell234.setHorizontalAlignment(Element.ALIGN_CENTER);
-                                    cell234.setVerticalAlignment(Element.ALIGN_MIDDLE);
                                     table23.addCell(cell234);
                                 }
                                 break;
                             case 5:
-                                cell235.addElement(new Paragraph("", bold_normal));
+                                cell235.addElement(new Paragraph("        ", bold_normal));
                                 cell235.setBorder(Rectangle.NO_BORDER);
                                 cell235.setHorizontalAlignment(Element.ALIGN_CENTER);
                                 cell235.setVerticalAlignment(Element.ALIGN_MIDDLE);
                                 table23.addCell(cell235);
                                 break;
                             case 6:
-                                Chunk chunk_row237 = new Chunk(map.get("other_hou") == null ? "/" : map.get("other_hou"),normal);
-//                                Chunk chunk_row238 = new Chunk("M",normal);
+                                Chunk chunk_row237 = new Chunk(map.get("ycs_hou") == null ? "000.000" : map.get("ycs_hou"),normal);
+                                Chunk chunk_row238 = new Chunk("M/T",normal);
                                 Paragraph phrase_row234 = new Paragraph();
                                 phrase_row234.add(chunk_row237);
-//                                phrase_row234.add(chunk_row238);
+                                phrase_row234.add(chunk_row238);
                                 phrase_row234.setAlignment(Element.ALIGN_CENTER);
                                 cell236.addElement(phrase_row234);
                                 cell236.setBorder(Rectangle.NO_BORDER);
                                 cell236.setCellEvent(border);
-                                cell236.setHorizontalAlignment(Element.ALIGN_CENTER);
-                                cell236.setVerticalAlignment(Element.ALIGN_MIDDLE);
                                 table23.addCell(cell236);
                                 break;
                         }
@@ -1271,16 +1268,20 @@ public class PrintPDF {
                     doc.add(table23);
                     break;
                 case 24:
-                    PdfPTable table24 = new PdfPTable(new float[]{0.7f,0.3f});
+                    PdfPTable table24 = new PdfPTable(widthc);
                     table24.setWidthPercentage(100);
                     PdfPCell cell241 = new PdfPCell();
                     PdfPCell cell242 = new PdfPCell();
-                    for(int i=1;i<3;i++){
-                        switch (i){
+                    PdfPCell cell243 = new PdfPCell();
+                    PdfPCell cell244 = new PdfPCell();
+                    PdfPCell cell245 = new PdfPCell();
+                    PdfPCell cell246 = new PdfPCell();
+                    for (int i = 1; i <= 6; i++) {
+                        switch (i) {
                             case 1:
-                                Chunk chunk_row241 = new Chunk("5   WEIGHT OF CARGO LOAD/ DISCHARGED",bold_underlined);
+                                Chunk chunk_row241 = new Chunk("other cargo",normal);
                                 Chunk chunk_row242 = new Chunk("",blue_chinese);
-                                Phrase phrase_row241 = new Phrase();
+                                Paragraph phrase_row241 = new Paragraph();
                                 phrase_row241.add(chunk_row241);
                                 phrase_row241.add(chunk_row242);
                                 cell241.addElement(phrase_row241);
@@ -1288,16 +1289,68 @@ public class PrintPDF {
                                 table24.addCell(cell241);
                                 break;
                             case 2:
-                                Chunk chunk_row243 = new Chunk(map.get("weight_package") == null ? "000.000" : map.get("weight_package"),normal);
-                                Chunk chunk_row244 = new Chunk("M/T",normal);
+                                Chunk chunk_row243 = new Chunk(map.get("other_qian") == null ? "/" : map.get("other_qian"),normal);
+//                                Chunk chunk_row244 = new Chunk("M",normal);
                                 Paragraph phrase_row242 = new Paragraph();
                                 phrase_row242.add(chunk_row243);
-                                phrase_row242.add(chunk_row244);
+//                                phrase_row242.add(chunk_row244);
                                 phrase_row242.setAlignment(Element.ALIGN_CENTER);
                                 cell242.addElement(phrase_row242);
                                 cell242.setBorder(Rectangle.NO_BORDER);
                                 cell242.setCellEvent(border);
                                 table24.addCell(cell242);
+                                break;
+                            case 3:
+                                cell243.addElement(new Paragraph("", bold_normal));
+                                cell243.setBorder(Rectangle.NO_BORDER);
+                                cell243.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell243.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                                table24.addCell(cell243);
+                                break;
+                            case 4:
+                                if(map.get("other_zhong") != null){
+                                    Chunk chunk_row245 = new Chunk(map.get("other_zhong") == null ? "/" : map.get("other_zhong"),normal);
+                                    Paragraph phrase_row243 = new Paragraph();
+                                    phrase_row243.add(chunk_row245);
+                                    phrase_row243.setAlignment(Element.ALIGN_CENTER);
+                                    cell244.addElement(phrase_row243);
+                                    cell244.setBorder(Rectangle.NO_BORDER);
+                                    cell244.setCellEvent(border);
+                                    cell244.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                    cell244.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                                    table24.addCell(cell244);
+                                }else{
+                                    Chunk chunk_row245 = new Chunk("",normal);
+                                    Paragraph phrase_row243 = new Paragraph();
+                                    phrase_row243.add(chunk_row245);
+                                    phrase_row243.setAlignment(Element.ALIGN_CENTER);
+                                    cell244.addElement(phrase_row243);
+                                    cell244.setBorder(Rectangle.NO_BORDER);
+                                    cell244.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                    cell244.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                                    table24.addCell(cell244);
+                                }
+                                break;
+                            case 5:
+                                cell245.addElement(new Paragraph("", bold_normal));
+                                cell245.setBorder(Rectangle.NO_BORDER);
+                                cell245.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell245.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                                table24.addCell(cell245);
+                                break;
+                            case 6:
+                                Chunk chunk_row247 = new Chunk(map.get("other_hou") == null ? "/" : map.get("other_hou"),normal);
+//                                Chunk chunk_row248 = new Chunk("M",normal);
+                                Paragraph phrase_row244 = new Paragraph();
+                                phrase_row244.add(chunk_row247);
+//                                phrase_row244.add(chunk_row248);
+                                phrase_row244.setAlignment(Element.ALIGN_CENTER);
+                                cell246.addElement(phrase_row244);
+                                cell246.setBorder(Rectangle.NO_BORDER);
+                                cell246.setCellEvent(border);
+                                cell246.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell246.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                                table24.addCell(cell246);
                                 break;
                         }
                     }
@@ -1305,88 +1358,122 @@ public class PrintPDF {
                     doc.add(table24);
                     break;
                 case 25:
-                    PdfPTable table25 = new PdfPTable(new float[]{0.15f,0.85f});
+                    PdfPTable table25 = new PdfPTable(new float[]{0.7f,0.3f});
                     table25.setWidthPercentage(100);
                     PdfPCell cell251 = new PdfPCell();
                     PdfPCell cell252 = new PdfPCell();
                     for(int i=1;i<3;i++){
                         switch (i){
                             case 1:
-                                Chunk chunk_row251 = new Chunk("REMARK",normal);
-                                Paragraph phrase_row251 = new Paragraph();
+                                Chunk chunk_row251 = new Chunk("5   WEIGHT OF CARGO LOAD/ DISCHARGED",bold_underlined);
+                                Chunk chunk_row252 = new Chunk("",blue_chinese);
+                                Phrase phrase_row251 = new Phrase();
                                 phrase_row251.add(chunk_row251);
-                                phrase_row251.setAlignment(Element.ALIGN_CENTER);
-                                cell251.setBorder(Rectangle.NO_BORDER);
+                                phrase_row251.add(chunk_row252);
                                 cell251.addElement(phrase_row251);
+                                cell251.setBorder(Rectangle.NO_BORDER);
                                 table25.addCell(cell251);
                                 break;
                             case 2:
-                                Chunk chunk_row253 = new Chunk("***",normal);
-                                Phrase phrase_row252 = new Phrase();
+                                Chunk chunk_row253 = new Chunk(map.get("weight_package") == null ? "000.000" : map.get("weight_package"),normal);
+                                Chunk chunk_row254 = new Chunk("M/T",normal);
+                                Paragraph phrase_row252 = new Paragraph();
                                 phrase_row252.add(chunk_row253);
+                                phrase_row252.add(chunk_row254);
+                                phrase_row252.setAlignment(Element.ALIGN_CENTER);
                                 cell252.addElement(phrase_row252);
                                 cell252.setBorder(Rectangle.NO_BORDER);
                                 cell252.setCellEvent(border);
-                                cell252.setHorizontalAlignment(Element.ALIGN_CENTER);
-                                cell252.setVerticalAlignment(Element.ALIGN_MIDDLE);
                                 table25.addCell(cell252);
                                 break;
                         }
                     }
-                    table25.setSpacingBefore(40f);
+                    table25.setSpacingBefore(10f);
                     doc.add(table25);
                     break;
                 case 26:
-                    PdfPTable table26 = new PdfPTable(new float[]{0.15f,0.3f,0.25f,0.3f});
+                    PdfPTable table26 = new PdfPTable(new float[]{0.15f,0.85f});
                     table26.setWidthPercentage(100);
                     PdfPCell cell261 = new PdfPCell();
                     PdfPCell cell262 = new PdfPCell();
-                    PdfPCell cell263 = new PdfPCell();
-                    PdfPCell cell264 = new PdfPCell();
-                    for(int i=1;i<5;i++){
+                    for(int i=1;i<3;i++){
                         switch (i){
                             case 1:
-                                Chunk chunk_row261 = new Chunk("Surveyor:",normal);
+                                Chunk chunk_row261 = new Chunk("REMARK",normal);
                                 Paragraph phrase_row261 = new Paragraph();
                                 phrase_row261.add(chunk_row261);
                                 phrase_row261.setAlignment(Element.ALIGN_CENTER);
-                                cell261.addElement(phrase_row261);
                                 cell261.setBorder(Rectangle.NO_BORDER);
+                                cell261.addElement(phrase_row261);
                                 table26.addCell(cell261);
                                 break;
                             case 2:
-                                Chunk chunk_row262 = new Chunk(" ",normal);
+                                Chunk chunk_row263 = new Chunk("***",normal);
                                 Phrase phrase_row262 = new Phrase();
-                                phrase_row262.add(chunk_row262);
+                                phrase_row262.add(chunk_row263);
                                 cell262.addElement(phrase_row262);
                                 cell262.setBorder(Rectangle.NO_BORDER);
                                 cell262.setCellEvent(border);
+                                cell262.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell262.setVerticalAlignment(Element.ALIGN_MIDDLE);
                                 table26.addCell(cell262);
-                                break;
-                            case 3:
-                                Chunk chunk_row263 = new Chunk("Surveyor on duty:",normal);
-                                Paragraph phrase_row263 = new Paragraph();
-                                phrase_row263.add(chunk_row263);
-                                phrase_row263.setAlignment(Element.ALIGN_CENTER);
-                                cell263.addElement(phrase_row263);
-                                cell263.setBorder(Rectangle.NO_BORDER);
-                                table26.addCell(cell263);
-                                break;
-                            case 4:
-                                Chunk chunk_row264 = new Chunk("",normal);
-                                Phrase phrase_row264 = new Phrase();
-                                phrase_row264.add(chunk_row264);
-                                cell264.addElement(phrase_row264);
-                                cell264.setBorder(Rectangle.NO_BORDER);
-                                cell264.setCellEvent(border);
-                                cell264.setHorizontalAlignment(Element.ALIGN_CENTER);
-                                cell264.setVerticalAlignment(Element.ALIGN_MIDDLE);
-                                table26.addCell(cell264);
                                 break;
                         }
                     }
-                    table26.setSpacingBefore(10f);
+                    table26.setSpacingBefore(40f);
                     doc.add(table26);
+                    break;
+                case 27:
+                    PdfPTable table27 = new PdfPTable(new float[]{0.15f,0.3f,0.25f,0.3f});
+                    table27.setWidthPercentage(100);
+                    PdfPCell cell271 = new PdfPCell();
+                    PdfPCell cell272 = new PdfPCell();
+                    PdfPCell cell273 = new PdfPCell();
+                    PdfPCell cell274 = new PdfPCell();
+                    for(int i=1;i<5;i++){
+                        switch (i){
+                            case 1:
+                                Chunk chunk_row271 = new Chunk("Surveyor:",normal);
+                                Paragraph phrase_row271 = new Paragraph();
+                                phrase_row271.add(chunk_row271);
+                                phrase_row271.setAlignment(Element.ALIGN_CENTER);
+                                cell271.addElement(phrase_row271);
+                                cell271.setBorder(Rectangle.NO_BORDER);
+                                table27.addCell(cell271);
+                                break;
+                            case 2:
+                                Chunk chunk_row272 = new Chunk(" ",normal);
+                                Phrase phrase_row272 = new Phrase();
+                                phrase_row272.add(chunk_row272);
+                                cell272.addElement(phrase_row272);
+                                cell272.setBorder(Rectangle.NO_BORDER);
+                                cell272.setCellEvent(border);
+                                table27.addCell(cell272);
+                                break;
+                            case 3:
+                                Chunk chunk_row273 = new Chunk("Surveyor on duty:",normal);
+                                Paragraph phrase_row273 = new Paragraph();
+                                phrase_row273.add(chunk_row273);
+                                phrase_row273.setAlignment(Element.ALIGN_CENTER);
+                                cell273.addElement(phrase_row273);
+                                cell273.setBorder(Rectangle.NO_BORDER);
+                                table27.addCell(cell273);
+                                break;
+                            case 4:
+                                Chunk chunk_row274 = new Chunk("",normal);
+                                Phrase phrase_row274 = new Phrase();
+                                phrase_row274.add(chunk_row274);
+                                cell274.addElement(phrase_row274);
+                                cell274.setBorder(Rectangle.NO_BORDER);
+                                cell274.setCellEvent(border);
+                                cell274.setHorizontalAlignment(Element.ALIGN_CENTER);
+                                cell274.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                                table27.addCell(cell274);
+                                break;
+                        }
+                    }
+                    table27.setSpacingBefore(10f);
+                    doc.add(table27);
                     break;
             }
         }

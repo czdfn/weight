@@ -220,7 +220,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 mData.put("qiancechuanyongwuliao", qiancechuanyongwuliao);
                 qingzaijidingliangbeiliao = shijipaishuiliang - jianchuanyongwuliao;
                 jianqingzai_beiliao = qingzaijidingliangbeiliao;
-                mData.put("qingzaijidingliangbeiliang", new DecimalFormat("0.000").format(qingzaijidingliangbeiliao));
+                mData.put("qingzaijidingliangbeiliang", new DecimalFormat("0.0").format(qingzaijidingliangbeiliao));
                 mData.put("shijipaishuiliang_back", new DecimalFormat("0.0").format(shijipaishuiliang));
 //                jianqingzai_beiliao = qingzaijidingliangbeiliao;
                 qiancepsl = Double.valueOf(qiancepaishiuliang);
@@ -238,10 +238,11 @@ public class DBHelper extends SQLiteOpenHelper {
                 qingzaijidingliangbeiliao = shijipaishuiliang - jianchuanyongwuliao;
                 jianqingzai_beiliao = qingzaijidingliangbeiliao;
                 weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao - Double.valueOf(jianwuyoupaifang_mid);
-                mData.put("qingzaijidingliangbeiliao", new DecimalFormat("0.000").format(qingzaijidingliangbeiliao));
+                mData.put("qingzaijidingliangbeiliao", new DecimalFormat("0.0").format(qingzaijidingliangbeiliao));
                 mData.put("jianchuanyongwuliao", new DecimalFormat("0.0").format(jianchuanyongwuliao));
-                mData.put("qiancepaishiuliang", new DecimalFormat("0.000").format(Double.valueOf(qiancepaishiuliang)));
-                mData.put("qiancechuanyongwuliao", new DecimalFormat("0.000").format(Double.valueOf(qiancechuanyongwuliao)));
+                mData.put("qiancepaishiuliang", new DecimalFormat("0.0").format(Double.valueOf(qiancepaishiuliang)));
+                mData.put("qiancechuanyongwuliao", new DecimalFormat("0.0").format(Double.valueOf(qiancechuanyongwuliao)));
+                mData.put("jianwuyoupaifang_mid", new DecimalFormat("0.0").format(Double.valueOf(jianwuyoupaifang_mid)));
             }
             mData.put("_id", _id);
             mData.put("ship_name", ship_name);

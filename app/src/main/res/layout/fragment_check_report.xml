@@ -111,7 +111,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="80dp"
                     android:text="BEF.LOAD/DISCHARGE"
                     android:textColor="@color/black"
                     android:textSize="15sp"
@@ -188,6 +188,14 @@
                         android:textSize="13sp"
                         android:id="@+id/souzhong_report" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mi_eng"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
+
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -261,6 +269,13 @@
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp"
                         android:id="@+id/zhongzhong_report" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mi_eng"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -335,6 +350,14 @@
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp"
                         android:id="@+id/weizhong_report" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mi_eng"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -419,6 +442,14 @@
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp"
                         android:id="@+id/pingjunzhong_report" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mi_eng"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -507,12 +538,12 @@
                 android:padding="10dp"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/md_z_report"
-                android:layout_marginLeft="100dp" />
+                android:layout_marginLeft="120dp" />
             
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
+                android:layout_marginLeft="140dp"
                 android:layout_gravity="center_vertical">
                 <TextView
                     android:layout_width="wrap_content"
@@ -605,6 +636,13 @@
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp"
                         android:id="@+id/sjpsl_zhong_report" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mt"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -686,6 +724,13 @@
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp"
                         android:id="@+id/jzhpsl_zhong_report" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mt"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -766,6 +811,13 @@
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp"
                         android:id="@+id/mdjzhpsl_zhong_report" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mt"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -851,6 +903,13 @@
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp"
                         android:id="@+id/you_zhong_report" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mt"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -925,6 +984,13 @@
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp"
                         android:id="@+id/danshui_zhong_report" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mt"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -999,6 +1065,13 @@
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp"
                         android:id="@+id/ycs_zhong_report" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mt"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -1022,7 +1095,66 @@
                 </LinearLayout>
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sludge oil/Bilge Water"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="200dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="263dp"
+                        android:minWidth="150dp"
+                        android:editable="false"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp"
+                        android:id="@+id/jianwu_zhong_report" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mt"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="35dp"
+                        android:minWidth="150dp"
+                        android:editable="false"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp"
+                        android:id="@+id/jianwu_b_report" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mt"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -1074,6 +1206,13 @@
                         android:textSize="13sp"
                         android:id="@+id/other_zhong_report" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mt"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13sp" />
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
