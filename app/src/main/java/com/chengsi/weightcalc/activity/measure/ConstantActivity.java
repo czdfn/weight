@@ -491,9 +491,7 @@ public class ConstantActivity extends BaseActivity implements TextWatcher,TextVi
         if (!pattern.matcher(editText4.getText().toString()).matches()
                 || !pattern.matcher(editText5.getText().toString()).matches() || !pattern.matcher(editText6.getText().toString()).matches()
                 || !pattern.matcher(editText7.getText().toString()).matches() || !pattern.matcher(editText8.getText().toString()).matches()
-                || !pattern.matcher(editText9.getText().toString()).matches() || !pattern.matcher(editText10.getText().toString()).matches()
-                || !pattern.matcher(editText11.getText().toString()).matches() || !pattern.matcher(editText12.getText().toString()).matches()
-                || !pattern.matcher(editText13.getText().toString()).matches()) {
+                || !pattern.matcher(editText9.getText().toString()).matches() || !pattern.matcher(editText13.getText().toString()).matches()) {
             Toast.makeText(this, "请输入正确的数字", Toast.LENGTH_SHORT).show();
             return false;
         } else {
@@ -514,9 +512,9 @@ public class ConstantActivity extends BaseActivity implements TextWatcher,TextVi
             near_weight = new DecimalFormat("0.0").format(Double.valueOf(editText15.getText().toString().trim().equals("")?"0":editText15.getText().toString().trim()));
             tpc = new DecimalFormat("0.000").format(Double.valueOf(editText16.getText().toString().trim().equals("")?"0":editText16.getText().toString().trim()));
             LCF = new DecimalFormat("0.000").format(Double.valueOf(editText17.getText().toString().trim().equals("")?"0":editText17.getText().toString().trim()));
-            DZ = new DecimalFormat("0.000").format(Double.valueOf(editText18.getText().toString().trim().equals("")?"0":editText18.getText().toString().trim()));
-            M1 = new DecimalFormat("0.000").format(Double.valueOf(editText19.getText().toString().trim().equals("")?"0":editText19.getText().toString().trim()));
-            M2 = new DecimalFormat("0.000").format(Double.valueOf(editText20.getText().toString().trim().equals("")?"0":editText20.getText().toString().trim()));
+            DZ = new DecimalFormat("0").format(Double.valueOf(editText18.getText().toString().trim().equals("")?"0":editText18.getText().toString().trim()));
+            M1 = new DecimalFormat("0.0").format(Double.valueOf(editText19.getText().toString().trim().equals("")?"0":editText19.getText().toString().trim()));
+            M2 = new DecimalFormat("0.0").format(Double.valueOf(editText20.getText().toString().trim().equals("")?"0":editText20.getText().toString().trim()));
             zy = new DecimalFormat("0.0").format(Double.valueOf(editText21.getText().toString().trim().equals("")?"0":editText21.getText().toString().trim()));
             qy = new DecimalFormat("0.0").format(Double.valueOf(editText22.getText().toString().trim().equals("")?"0":editText22.getText().toString().trim()));
             rhy = new DecimalFormat("0.0").format(Double.valueOf(editText23.getText().toString().trim().equals("")?"0":editText23.getText().toString().trim()));
@@ -755,9 +753,7 @@ public class ConstantActivity extends BaseActivity implements TextWatcher,TextVi
         average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
         average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
         average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
-        if(!pattern.matcher(editText10.getText().toString()).matches()
-                || !pattern.matcher(editText11.getText().toString()).matches()
-                || !pattern.matcher(editText12.getText().toString()).matches()){
+        if(!pattern.matcher(editText13.getText().toString()).matches()){
         }else {
             biaojijuli_front = new DecimalFormat("0.000").format(Double.valueOf(editText10.getText().toString().trim().equals("") ? "0" : editText10.getText().toString().trim()));
             biaojijuli_mid = new DecimalFormat("0.000").format(Double.valueOf(editText11.getText().toString().trim().equals("") ? "0" : editText11.getText().toString().trim()));

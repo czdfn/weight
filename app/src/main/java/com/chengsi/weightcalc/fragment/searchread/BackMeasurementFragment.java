@@ -260,6 +260,7 @@ public class BackMeasurementFragment extends BaseFragment {
                     mData.put("weight_package", String.valueOf(weight_package));
                     mData.put("qiancepaishuiliang", String.valueOf(qiancepaishiuliang));
                     mData.put("qiancechuanyongwuliao", String.valueOf(qiancechuanyongwuliao));
+                    mData.get("check_status");
                 }
                 msg.what = 0;
             } else {
@@ -329,7 +330,7 @@ public class BackMeasurementFragment extends BaseFragment {
                 cb_jiaozhi.setEnabled(false);
                 ((TextView) view.findViewById(R.id.tv17)).setText(mData.get("LCF") == null ? "000.000" : mData.get("LCF"));
                 ((TextView) view.findViewById(R.id.tv18)).setText(mData.get("DZ") == null ? "0" : mData.get("DZ"));
-                ((TextView) view.findViewById(R.id.tv19)).setText(mData.get("M1") == null ? "0" : mData.get("M1"));
+                ((TextView) view.findViewById(R.id.tv19)).setText(mData.get("M1") == null ? "0.0" : mData.get("M1"));
                 ((TextView) view.findViewById(R.id.tv20)).setText(mData.get("M2") == null ? "0.0" : mData.get("M2"));
             } else {
                 CheckBox cb_jiaozhi = ((CheckBox) view.findViewById(R.id.checkBox));

@@ -320,7 +320,7 @@ public class PrintPDF {
                                 break;
                             case 2:
                                 Chunk chunk_row63 = new Chunk(map.get("alter_m_qian") == null ? "000.000" : map.get("alter_m_qian"),normal);
-                                Chunk chunk_row64 = new Chunk("    M",normal);
+                                Chunk chunk_row64 = new Chunk("M",normal);
                                 Paragraph phrase_row62 = new Paragraph();
                                 phrase_row62.add(chunk_row63);
                                 phrase_row62.add(chunk_row64);
@@ -572,70 +572,91 @@ public class PrintPDF {
                     }
                     doc.add(table9);
                     break;
-//            case 10:
-//                Paragraph DENSITY = new Paragraph("2   DENSITY OF HARBOUR", bold_underlined);
-//                DENSITY.setPaddingTop(20);
-//                doc.add(DENSITY);
-//                break;
-                case 11:
-                    PdfPTable table11 = new PdfPTable(width1);
-                    table11.setWidthPercentage(100);
-                    PdfPCell cell111 = new PdfPCell();
-                    PdfPCell cell112 = new PdfPCell();
-                    PdfPCell cell113 = new PdfPCell();
-                    PdfPCell cell114 = new PdfPCell();
-                    for (int i = 1; i <= 4; i++) {
-                        switch (i) {
-                            case 1:
-                                Chunk chunk_row111 = new Chunk("2   DENSITY OF HARBOUR WATER AT BERT",bold_underlined);
-                                Paragraph phrase_row111 = new Paragraph();
-                                phrase_row111.add(chunk_row111);
-                                cell111.addElement(phrase_row111);
-                                cell111.setBorder(Rectangle.NO_BORDER);
-                                table11.addCell(cell111);
-                                break;
-                            case 2:
-                                Chunk chunk_row112 = new Chunk(map.get("scmd_qian") == null ? "000.000" : map.get("scmd_qian"),normal);
-                                Paragraph phrase_row112 = new Paragraph();
-                                phrase_row112.add(chunk_row112);
-                                phrase_row112.setAlignment(Element.ALIGN_CENTER);
-                                cell113.addElement(phrase_row112);
-                                cell113.setBorder(Rectangle.NO_BORDER);
-                                table11.addCell(cell113);
-                                break;
-                            case 3:
-                                if(map.get("scmd_zhong") != null) {
-                                    Chunk chunk_row114 = new Chunk(map.get("scmd_zhong") == null ? "000.000" : map.get("scmd_zhong"), normal);
-                                    Paragraph phrase_row114 = new Paragraph();
-                                    phrase_row114.add(chunk_row114);
-                                    phrase_row114.setAlignment(Element.ALIGN_CENTER);
-                                    cell112.addElement(phrase_row114);
-                                    cell112.setBorder(Rectangle.NO_BORDER);
-                                    table11.addCell(cell112);
-                                }else{
-                                    Chunk chunk_row114 = new Chunk("", normal);
-                                    Paragraph phrase_row114 = new Paragraph();
-                                    phrase_row114.add(chunk_row114);
-                                    phrase_row114.setAlignment(Element.ALIGN_CENTER);
-                                    cell112.addElement(phrase_row114);
-                                    cell112.setBorder(Rectangle.NO_BORDER);
-                                    table11.addCell(cell112);
-                                }
-                                break;
-                            case 4:
-                                Chunk chunk_row113 = new Chunk(map.get("scmd_hou") == null ? "000.000" : map.get("scmd_hou"),normal);
-                                Paragraph phrase_row113 = new Paragraph();
-                                phrase_row113.add(chunk_row113);
-                                phrase_row113.setAlignment(Element.ALIGN_CENTER);
-                                cell114.addElement(phrase_row113);
+            case 10:
+                Paragraph DENSITY = new Paragraph("2   DENSITY OF HARBOUR", bold_underlined);
+                DENSITY.setPaddingTop(10);
+                doc.add(DENSITY);
+                break;
+            case 11:
+                PdfPTable table11 = new PdfPTable(widthc);
+                table11.setWidthPercentage(100);
+                PdfPCell cell111 = new PdfPCell();
+                PdfPCell cell112 = new PdfPCell();
+                PdfPCell cell113 = new PdfPCell();
+                PdfPCell cell114 = new PdfPCell();
+                PdfPCell cell115 = new PdfPCell();
+                PdfPCell cell116 = new PdfPCell();
+                for (int i = 1; i <= 6; i++) {
+                    switch (i) {
+                        case 1:
+                            Chunk chunk_row111 = new Chunk("WATER AT BERT",bold_underlined);
+                            Paragraph phrase_row111 = new Paragraph();
+                            phrase_row111.add(chunk_row111);
+                            cell111.addElement(phrase_row111);
+                            cell111.setBorder(Rectangle.NO_BORDER);
+                            table11.addCell(cell111);
+                            break;
+                        case 2:
+                            Chunk chunk_row112 = new Chunk(map.get("scmd_qian") == null ? "000.000" : map.get("scmd_qian"),normal);
+                            Paragraph phrase_row112 = new Paragraph();
+                            phrase_row112.add(chunk_row112);
+                            phrase_row112.setAlignment(Element.ALIGN_CENTER);
+                            cell112.addElement(phrase_row112);
+                            cell112.setBorder(Rectangle.NO_BORDER);
+                            table11.addCell(cell112);
+                            break;
+                        case 3:
+                            Chunk chunk_row113 = new Chunk("",normal);
+                            Paragraph phrase_row113 = new Paragraph();
+                            phrase_row113.add(chunk_row113);
+                            phrase_row113.setAlignment(Element.ALIGN_CENTER);
+                            cell113.addElement(phrase_row113);
+                            cell113.setBorder(Rectangle.NO_BORDER);
+                            table11.addCell(cell113);
+                            break;
+                        case 4:
+                            if(map.get("scmd_zhong") != null) {
+                                Chunk chunk_row114 = new Chunk(map.get("scmd_zhong") == null ? "000.000" : map.get("scmd_zhong"), normal);
+                                Paragraph phrase_row114 = new Paragraph();
+                                phrase_row114.add(chunk_row114);
+                                phrase_row114.setAlignment(Element.ALIGN_CENTER);
+                                cell114.addElement(phrase_row114);
                                 cell114.setBorder(Rectangle.NO_BORDER);
                                 table11.addCell(cell114);
-                                break;
-                        }
+                            }else{
+                                Chunk chunk_row114 = new Chunk("", normal);
+                                Paragraph phrase_row114 = new Paragraph();
+                                phrase_row114.add(chunk_row114);
+                                phrase_row114.setAlignment(Element.ALIGN_CENTER);
+                                cell114.addElement(phrase_row114);
+                                cell114.setBorder(Rectangle.NO_BORDER);
+                                table11.addCell(cell114);
+                            }
+                            break;
+
+                        case 5:
+                            Chunk chunk_row115 = new Chunk("",normal);
+                            Paragraph phrase_row115 = new Paragraph();
+                            phrase_row115.add(chunk_row115);
+                            phrase_row115.setAlignment(Element.ALIGN_CENTER);
+                            cell115.addElement(phrase_row115);
+                            cell115.setBorder(Rectangle.NO_BORDER);
+                            table11.addCell(cell115);
+                            break;
+                        case 6:
+                            Chunk chunk_row116 = new Chunk(map.get("scmd_hou") == null ? "000.000" : map.get("scmd_hou"),normal);
+                            Paragraph phrase_row116 = new Paragraph();
+                            phrase_row116.add(chunk_row116);
+                            phrase_row116.setAlignment(Element.ALIGN_CENTER);
+                            cell116.addElement(phrase_row116);
+                            cell116.setBorder(Rectangle.NO_BORDER);
+                            table11.addCell(cell116);
+                            break;
                     }
-                    table11.setSpacingBefore(10f);
-                    doc.add(table11);
-                    break;
+                }
+                table11.setSpacingBefore(10f);
+                doc.add(table11);
+                break;
                 case 12:
                     Paragraph DISPLACEMENT = new Paragraph("3   DISPLACEMENT", bold_underlined);
                     DISPLACEMENT.setSpacingBefore(10f);
@@ -822,9 +843,9 @@ public class PrintPDF {
                     doc.add(table16);
                     break;
                 case 17:
-//                    Paragraph correction = new Paragraph("After correction for density Of harbour water", small_black);
-//                    correction.setSpacingBefore(10f);
-//                    doc.add(correction);
+                    Paragraph correction = new Paragraph("After correction for density Of", blue_english);
+                    correction.setSpacingBefore(10f);
+                    doc.add(correction);
                     break;
                 case 18:
                     PdfPTable table18 = new PdfPTable(widthc);
@@ -838,7 +859,7 @@ public class PrintPDF {
                     for (int i = 1; i <= 6; i++) {
                         switch (i) {
                             case 1:
-                                Chunk chunk_row181 = new Chunk("After correction for density Of harbour water",blue_english);
+                                Chunk chunk_row181 = new Chunk("harbour water",blue_english);
                                 Paragraph phrase_row181 = new Paragraph();
                                 phrase_row181.add(chunk_row181);
                                 cell181.addElement(phrase_row181);
@@ -1104,7 +1125,7 @@ public class PrintPDF {
                     for (int i = 1; i <= 6; i++) {
                         switch (i) {
                             case 1:
-                                Chunk chunk_row221 = new Chunk("Sludge oil/Bilge Water",normal);
+                                Chunk chunk_row221 = new Chunk("Sludge oil/Bilge water",normal);
                                 Chunk chunk_row222 = new Chunk("",blue_chinese);
                                 Paragraph phrase_row221 = new Paragraph();
                                 phrase_row221.add(chunk_row221);

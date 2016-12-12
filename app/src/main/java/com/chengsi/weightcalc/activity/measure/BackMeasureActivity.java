@@ -680,9 +680,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
         if (!pattern.matcher(editText4.getText().toString()).matches()
                 || !pattern.matcher(editText5.getText().toString()).matches() || !pattern.matcher(editText6.getText().toString()).matches()
                 || !pattern.matcher(editText7.getText().toString()).matches() || !pattern.matcher(editText8.getText().toString()).matches()
-                || !pattern.matcher(editText9.getText().toString()).matches() || !pattern.matcher(editText10.getText().toString()).matches()
-                || !pattern.matcher(editText11.getText().toString()).matches() || !pattern.matcher(editText12.getText().toString()).matches()
-                || !pattern.matcher(editText13.getText().toString()).matches()) {
+                || !pattern.matcher(editText9.getText().toString()).matches() || !pattern.matcher(editText13.getText().toString()).matches()) {
             Toast.makeText(this, "请输入正确的数字", Toast.LENGTH_SHORT).show();
             return false;
         } else {
@@ -706,16 +704,16 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
             ceshishuichi_midRight = new DecimalFormat("0.00").format(Double.valueOf(editText7.getText().toString().trim()));
             ceshishuichi_backLeft = new DecimalFormat("0.00").format(Double.valueOf(editText8.getText().toString().trim()));
             ceshishuichi_backRight = new DecimalFormat("0.00").format(Double.valueOf(editText9.getText().toString().trim()));
-            biaojijuli_front = new DecimalFormat("0.000").format(Double.valueOf(editText10.getText().toString().trim()));
-            biaojijuli_mid = new DecimalFormat("0.000").format(Double.valueOf(editText11.getText().toString().trim()));
-            biaojijuli_back = new DecimalFormat("0.000").format(Double.valueOf(editText12.getText().toString().trim()));
+            biaojijuli_front = new DecimalFormat("0.000").format(Double.valueOf(editText10.getText().toString().trim().equals("") ? "0" : editText10.getText().toString().trim()));
+            biaojijuli_mid = new DecimalFormat("0.000").format(Double.valueOf(editText11.getText().toString().trim().equals("") ? "0" : editText11.getText().toString().trim()));
+            biaojijuli_back = new DecimalFormat("0.000").format(Double.valueOf(editText12.getText().toString().trim().equals("") ? "0" : editText12.getText().toString().trim()));
             ship_length = new DecimalFormat("0.000").format(Double.valueOf(editText13.getText().toString().trim()));
             near_shuichi = new DecimalFormat("0.000").format(Double.valueOf(editText14.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText14.getText().toString().trim())));
             near_weight = new DecimalFormat("0.0").format(Double.valueOf(editText15.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText15.getText().toString().trim())));
             tpc = new DecimalFormat("0.000").format(Double.valueOf(editText16.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText16.getText().toString().trim())));
             LCF = new DecimalFormat("0.000").format(Double.valueOf(editText17.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText17.getText().toString().trim())));
             DZ = new DecimalFormat("0").format(Double.valueOf(editText18.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText18.getText().toString().trim())));
-            M1 = new DecimalFormat("0").format(Double.valueOf(editText19.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText19.getText().toString().trim())));
+            M1 = new DecimalFormat("0.0").format(Double.valueOf(editText19.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText19.getText().toString().trim())));
             M2 = new DecimalFormat("0.0").format(Double.valueOf(editText20.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText20.getText().toString().trim())));
             zy = new DecimalFormat("0.0").format(Double.valueOf(editText21.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText21.getText().toString().trim())));
             qy = new DecimalFormat("0.0").format(Double.valueOf(editText22.getText().toString().trim().equals("") ? 0 : Double.valueOf(editText22.getText().toString().trim())));
@@ -902,6 +900,17 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
             editText11.setText(biaojijuli_mid);
             editText12.setText(biaojijuli_back);
             editText13.setText(ship_length);
+            if(checkbox.isChecked()){
+                editText17.setText(LCF);
+                editText18.setText(DZ);
+                editText19.setText(M1);
+                editText20.setText(M2);
+            }else{
+                editText17.setText("");
+                editText18.setText("");
+                editText19.setText("");
+                editText20.setText("");
+            }
 //            editText14.setText(near_shuichi);
 //            editText15.setText(near_weight);
 //            editText16.setText(tpc);
@@ -954,9 +963,7 @@ public class BackMeasureActivity extends BaseActivity implements TextWatcher,Tex
         average_front = (Double.valueOf(ceshishuichi_frontLeft) + Double.valueOf(ceshishuichi_frontRight)) / 2;
         average_mid = (Double.valueOf(ceshishuichi_midLeft) + Double.valueOf(ceshishuichi_midRight)) / 2;
         average_back = (Double.valueOf(ceshishuichi_backLeft) + Double.valueOf(ceshishuichi_backRight)) / 2;
-        if (!pattern.matcher(editText10.getText().toString()).matches()
-                || !pattern.matcher(editText11.getText().toString()).matches() || !pattern.matcher(editText12.getText().toString()).matches()
-                || !pattern.matcher(editText13.getText().toString()).matches()) {
+        if (!pattern.matcher(editText13.getText().toString()).matches()) {
 
         } else {
             biaojijuli_front = new DecimalFormat("0.000").format(Double.valueOf(editText10.getText().toString().trim().equals("") ? "0" : editText10.getText().toString().trim()));

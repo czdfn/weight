@@ -203,7 +203,7 @@ public class PrintMeasure {
                         doc.add(table);
                         break;
                     case 9:
-                        title = new Paragraph("纵倾校正后排水量/载重量 = "+ new DecimalFormat("0.000").format(Double.valueOf(map.get("weight_before"))), bold_chinese);// 设置标题
+                        title = new Paragraph("纵倾校正后排水量/载重量 = "+ new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_before"))), bold_chinese);// 设置标题
                         title.setAlignment(Element.ALIGN_LEFT);// 设置对齐方式
                         title.setLeading(1f);// 设置行间距
                         title.setSpacingBefore(15f);
@@ -506,6 +506,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qz")))));
                                 break;
                             case "MID":
+                                cell = new PdfPCell(new Phrase(""));
 //                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("shijipaishuizaizhong")))));
                                 break;
                             case "BACK":
@@ -533,7 +534,7 @@ public class PrintMeasure {
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("weight_after")))));
                                 break;
                             case "MID":
-                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("shijipaishuizaizhong")))));
+                                cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qiancepaishiuliang")))));
                                 break;
                             case "BACK":
                                 cell = new PdfPCell(new Phrase(new DecimalFormat("0.0").format(Double.valueOf(map.get("qiancepaishuiliang")))));
@@ -827,22 +828,28 @@ public class PrintMeasure {
         cell.setColspan(1);
         cell.setVerticalAlignment(Element.ALIGN_CENTER);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase("纵倾力矩(M2-M1)/Dz =("+map.get("M2")+"-"+map.get("M1")+")/"+map.get("DZ")+"="+map.get("zongqingliju"), normal_chinese));
+        if (map.get("check_status").equals("1")){
+            cell = new PdfPCell(new Phrase("纵倾力矩(M2-M1)/Dz =("+map.get("M2")+"-"+map.get("M1")+")/"+map.get("DZ")+"="+new DecimalFormat("0.0").format(Double.valueOf(map.get("zongqingliju"))), normal_chinese));
+        }else{
+            cell = new PdfPCell(new Phrase("纵倾力矩(M2-M1)/Dz", normal_chinese));
+        }
         cell.setHorizontalAlignment(Element.ALIGN_LEFT);
         cell.setVerticalAlignment(Element.ALIGN_CENTER);
         cell.setPaddingLeft(10);
         cell.setColspan(4);
         table1.addCell(cell);
-        String wording = "             =("+map.get("chishuicha_after") +"*"+map.get("LCF")+"*"+map.get("tpc")+"*100)/"+ new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")))+ "50*"+map.get("chishuicha_after")+"*"+ map.get("chishuicha_after")+"*"+map.get("zongqingliju") +"/" + new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")));
-        Phrase jiaozhengphrase3 = new Phrase("             = " + map.get("jiaozhi"),normal_chinese);
+        String wording = "             =("+map.get("chishuicha_after") +"*"+map.get("LCF")+"*"+map.get("tpc")+"*100)/"+ new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")))+ "+50*"+map.get("chishuicha_after")+"*"+ map.get("chishuicha_after")+"*"+map.get("zongqingliju") +"/" + new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")));
+        Phrase jiaozhengphrase3 = new Phrase("             = " + new DecimalFormat("0.0").format(Double.valueOf(map.get("jiaozhi"))), normal_chinese);
         Phrase jiaozhengphrase2 = new Phrase(wording,normal_chinese);
         Phrase jiaozhengphrase1 = new Phrase("校正值Z=(Tc*LCF*TPC*100)/LBP+(50*Tc*Tc/LBP)*dM/dZ", normal_chinese);
         Paragraph pp = new Paragraph();
         pp.add(jiaozhengphrase1);
-        pp.add(spaceline);
-        pp.add(jiaozhengphrase2);
-        pp.add(spaceline);
-        pp.add(jiaozhengphrase3);
+        if (map.get("check_status").equals("1")) {
+            pp.add(spaceline);
+            pp.add(jiaozhengphrase2);
+            pp.add(spaceline);
+            pp.add(jiaozhengphrase3);
+        }
         cell = new PdfPCell(pp);
         cell.setHorizontalAlignment(Element.ALIGN_LEFT);
         cell.setPaddingLeft(10);

@@ -211,6 +211,31 @@
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
                          android:layout_gravity="center"
+                         android:text="@string/kszl"
+                         android:textColor="@color/black" />
+
+                     <EditText
+                         android:id="@+id/et33"
+                         android:layout_width="180dp"
+                         android:maxWidth="300dp"
+                         android:gravity="center"
+                         android:layout_height="wrap_content"
+                         android:textColor="@color/black"
+                         android:hint="@string/default0"
+                         android:textSize="13sp"
+                         android:singleLine="true" />
+                 </LinearLayout>
+
+                 <LinearLayout
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:orientation="horizontal">
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
                          android:text="@string/thl"
                          android:textColor="@color/black" />
 
@@ -279,30 +304,6 @@
                          android:inputType="numberDecimal" />
                  </LinearLayout>
 
-                 <LinearLayout
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_weight="1"
-                     android:orientation="horizontal">
-
-                     <TextView
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:layout_gravity="center"
-                         android:text="@string/kszl"
-                         android:textColor="@color/black" />
-
-                     <EditText
-                         android:id="@+id/et33"
-                         android:layout_width="180dp"
-                         android:maxWidth="300dp"
-                         android:gravity="center"
-                         android:layout_height="wrap_content"
-                         android:textColor="@color/black"
-                         android:hint="@string/default0"
-                         android:textSize="13sp"
-                         android:singleLine="true" />
-                 </LinearLayout>
                  <LinearLayout
                      android:layout_width="wrap_content"
                      android:layout_height="match_parent"
@@ -784,7 +785,6 @@
                  android:background="@color/white"
                  android:gravity="center"
                  android:hint="@string/content_label"
-                 android:text="@string/default0"
                  android:textColor="@color/black"
                  android:textSize="15sp"
                  android:layout_row="4"
@@ -801,7 +801,6 @@
                  android:background="@color/white"
                  android:gravity="center"
                  android:hint="@string/content_label"
-                 android:text="@string/default0"
                  android:textColor="@color/black"
                  android:textSize="15sp"
                  android:layout_row="4"
@@ -820,7 +819,6 @@
                  android:background="@color/white"
                  android:gravity="center"
                  android:hint="@string/content_label"
-                 android:text="@string/default0"
                  android:textColor="@color/black"
                  android:textSize="15sp"
                  android:layout_row="4"
