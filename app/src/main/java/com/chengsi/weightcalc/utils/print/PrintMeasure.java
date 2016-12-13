@@ -838,7 +838,7 @@ public class PrintMeasure {
         cell.setPaddingLeft(10);
         cell.setColspan(4);
         table1.addCell(cell);
-        String wording = "             =("+map.get("chishuicha_after") +"*"+map.get("LCF")+"*"+map.get("tpc")+"*100)/"+ new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")))+ "+50*"+map.get("chishuicha_after")+"*"+ map.get("chishuicha_after")+"*"+map.get("zongqingliju") +"/" + new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")));
+        String wording = "             =("+map.get("chishuicha_after") +"*"+map.get("LCF")+"*"+map.get("tpc")+"*100)/"+ new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")))+ "+50*"+map.get("chishuicha_after")+"*"+ map.get("chishuicha_after")+"*" + new DecimalFormat("0.0").format(Double.valueOf(map.get("zongqingliju"))) +"/" + new DecimalFormat("0.00").format(Double.valueOf(map.get("ship_length")));
         Phrase jiaozhengphrase3 = new Phrase("             = " + new DecimalFormat("0.0").format(Double.valueOf(map.get("jiaozhi"))), normal_chinese);
         Phrase jiaozhengphrase2 = new Phrase(wording,normal_chinese);
         Phrase jiaozhengphrase1 = new Phrase("校正值Z=(Tc*LCF*TPC*100)/LBP+(50*Tc*Tc/LBP)*dM/dZ", normal_chinese);
@@ -849,6 +849,12 @@ public class PrintMeasure {
             pp.add(jiaozhengphrase2);
             pp.add(spaceline);
             pp.add(jiaozhengphrase3);
+        }else{
+            pp.add(spaceline);
+            pp.add(new Phrase(""));
+            pp.add(spaceline);
+            pp.add(new Phrase(""));
+            pp.add(spaceline);
         }
         cell = new PdfPCell(pp);
         cell.setHorizontalAlignment(Element.ALIGN_LEFT);

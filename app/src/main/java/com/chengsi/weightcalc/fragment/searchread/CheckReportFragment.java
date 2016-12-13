@@ -260,7 +260,7 @@ public class CheckReportFragment extends BaseFragment {
                     jianqingzai_beiliao = qingzaijidingliangbeiliao;
                     qiancepsl = Double.valueOf(qiancepaishiuliang);
                     qiancecywl = Double.valueOf(qiancechuanyongwuliao);
-                    weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao;
+                    weight_package = Double.valueOf(qiancepaishiuliang) - Double.valueOf(qiancechuanyongwuliao) - jianqingzai_beiliao-Double.valueOf(jianwuyoupaifang_back);
 
                     mData.put("check_time_b", cursor1.getString(cursor1.getColumnIndex("check_time")));
                     mData.put("alter_f_hou", new DecimalFormat("0.000").format(afteralter_front));
