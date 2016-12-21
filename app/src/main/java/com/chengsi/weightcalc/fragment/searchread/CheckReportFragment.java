@@ -423,7 +423,6 @@ public class CheckReportFragment extends BaseFragment {
         ((EditText) view.findViewById(R.id.mdjzhpsl_qian_report)).setText(mData.get("weight_after_qian") == null ? "000.000" : mData.get("weight_after_qian"));
         ((EditText) view.findViewById(R.id.you_qian_report)).setText(mData.get("oil_qian") == null ? "000.000" : mData.get("oil_qian"));
         ((EditText) view.findViewById(R.id.danshui_f_report)).setText(mData.get("ds_qian") == null ? "000.000" : mData.get("ds_qian"));
-        ((EditText) view.findViewById(R.id.jianwu_zhong_report)).setText(mData.get("jianwuyoupaifang_mid") == null ? "000.0" : mData.get("jianwuyoupaifang_mid"));
         ((EditText) view.findViewById(R.id.jianwu_b_report)).setText(mData.get("jianwuyoupaifang_back") == null ? "000.0" : mData.get("jianwuyoupaifang_back"));
         ((TextView) view.findViewById(R.id.ycs_f_report)).setText(mData.get("ycs_qian") == null ? "000.000" : mData.get("ycs_qian"));
         ((TextView) view.findViewById(R.id.other_f_report)).setText(mData.get("other_qian"));
@@ -440,20 +439,51 @@ public class CheckReportFragment extends BaseFragment {
         ((EditText) view.findViewById(R.id.danshui_b_report)).setText(mData.get("ds_hou") == null ? "000.000" : mData.get("ds_hou"));
         ((TextView) view.findViewById(R.id.ycs_b_report)).setText(mData.get("ycs_hou") == null ? "000.000" : mData.get("ycs_hou"));
         ((TextView) view.findViewById(R.id.other_b_report)).setText(mData.get("other_hou"));
-
-        ((EditText) view.findViewById(R.id.souzhong_report)).setText(mData.get("alter_f_zhong") == null ? "000.000" : mData.get("alter_f_zhong"));
-        ((EditText) view.findViewById(R.id.weizhong_report)).setText(mData.get("alter_h_zhong") == null ? "000.000" : mData.get("alter_h_zhong"));
-        ((EditText) view.findViewById(R.id.zhongzhong_report)).setText(mData.get("alter_m_zhong") == null ? "000.000" : mData.get("alter_m_zhong"));
-        ((EditText) view.findViewById(R.id.pingjunzhong_report)).setText(mData.get("jiaozhenghou_average_zhong") == null ? "000.000" : mData.get("jiaozhenghou_average_zhong"));
-        ((TextView) view.findViewById(R.id.md_z_report)).setText(mData.get("scmd_zhong") == null ? "000.000" : mData.get("scmd_zhong"));
-        ((EditText) view.findViewById(R.id.sjpsl_zhong_report)).setText(mData.get("shijipaishuizaizhong_zhong") == null ? "000.000" : mData.get("shijipaishuizaizhong_zhong"));
-        ((EditText) view.findViewById(R.id.jzhpsl_zhong_report)).setText(mData.get("alterpaishui_zhong") == null ? "000.000" : mData.get("alterpaishui_zhong"));
-        ((EditText) view.findViewById(R.id.mdjzhpsl_zhong_report)).setText(mData.get("weight_after_zhong") == null ? "000.000" : mData.get("weight_after_zhong"));
-        ((EditText) view.findViewById(R.id.you_zhong_report)).setText(mData.get("oil_zhong") == null ? "000.000" : mData.get("oil_zhong"));
-        ((EditText) view.findViewById(R.id.danshui_zhong_report)).setText(mData.get("ds_zhong") == null ? "000.000" : mData.get("ds_zhong"));
-        ((TextView) view.findViewById(R.id.ycs_zhong_report)).setText(mData.get("ycs_zhong") == null ? "000.000" : mData.get("ycs_zhong"));
-        ((TextView) view.findViewById(R.id.other_zhong_report)).setText(mData.get("other_zhong"));
         ((TextView) view.findViewById(R.id.weight_package)).setText(mData.get("weight_package"));
+        if(mData.get("alter_f_zhong") != null || mData.get("alter_h_zhong") != null || mData.get("alter_m_zhong") != null){
+            ((EditText) view.findViewById(R.id.souzhong_report)).setText(mData.get("alter_f_zhong") == null ? "000.000" : mData.get("alter_f_zhong"));
+            ((EditText) view.findViewById(R.id.weizhong_report)).setText(mData.get("alter_h_zhong") == null ? "000.000" : mData.get("alter_h_zhong"));
+            ((EditText) view.findViewById(R.id.zhongzhong_report)).setText(mData.get("alter_m_zhong") == null ? "000.000" : mData.get("alter_m_zhong"));
+            ((EditText) view.findViewById(R.id.pingjunzhong_report)).setText(mData.get("jiaozhenghou_average_zhong") == null ? "000.000" : mData.get("jiaozhenghou_average_zhong"));
+            ((TextView) view.findViewById(R.id.md_z_report)).setText(mData.get("scmd_zhong") == null ? "000.000" : mData.get("scmd_zhong"));
+            ((EditText) view.findViewById(R.id.sjpsl_zhong_report)).setText(mData.get("shijipaishuizaizhong_zhong") == null ? "000.000" : mData.get("shijipaishuizaizhong_zhong"));
+            ((EditText) view.findViewById(R.id.jzhpsl_zhong_report)).setText(mData.get("alterpaishui_zhong") == null ? "000.000" : mData.get("alterpaishui_zhong"));
+            ((EditText) view.findViewById(R.id.mdjzhpsl_zhong_report)).setText(mData.get("weight_after_zhong") == null ? "000.000" : mData.get("weight_after_zhong"));
+            ((EditText) view.findViewById(R.id.you_zhong_report)).setText(mData.get("oil_zhong") == null ? "000.000" : mData.get("oil_zhong"));
+            ((EditText) view.findViewById(R.id.danshui_zhong_report)).setText(mData.get("ds_zhong") == null ? "000.000" : mData.get("ds_zhong"));
+            ((TextView) view.findViewById(R.id.ycs_zhong_report)).setText(mData.get("ycs_zhong") == null ? "000.000" : mData.get("ycs_zhong"));
+            ((TextView) view.findViewById(R.id.other_zhong_report)).setText(mData.get("other_zhong"));
+            ((TextView) view.findViewById(R.id.weight_package)).setText(mData.get("weight_package"));
+            ((EditText) view.findViewById(R.id.jianwu_zhong_report)).setText(mData.get("jianwuyoupaifang_mid") == null ? "000.0" : mData.get("jianwuyoupaifang_mid"));
+        }else{
+            ((EditText) view.findViewById(R.id.jianwu_zhong_report)).setVisibility(View.INVISIBLE);
+            ((EditText) view.findViewById(R.id.souzhong_report)).setVisibility(View.INVISIBLE);
+            ((EditText) view.findViewById(R.id.weizhong_report)).setVisibility(View.INVISIBLE);
+            ((EditText) view.findViewById(R.id.zhongzhong_report)).setVisibility(View.INVISIBLE);
+            ((EditText) view.findViewById(R.id.pingjunzhong_report)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.md_z_report)).setVisibility(View.INVISIBLE);
+            ((EditText) view.findViewById(R.id.sjpsl_zhong_report)).setVisibility(View.INVISIBLE);
+            ((EditText) view.findViewById(R.id.jzhpsl_zhong_report)).setVisibility(View.INVISIBLE);
+            ((EditText) view.findViewById(R.id.mdjzhpsl_zhong_report)).setVisibility(View.INVISIBLE);
+            ((EditText) view.findViewById(R.id.you_zhong_report)).setVisibility(View.INVISIBLE);
+            ((EditText) view.findViewById(R.id.danshui_zhong_report)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.ycs_zhong_report)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.other_zhong_report)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.mid_title)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_1)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_2)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_3)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_4)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_5)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_6)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_7)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_8)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_9)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_10)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_11)).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.zhong_12)).setVisibility(View.INVISIBLE);
+        }
+
     }
 
 

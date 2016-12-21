@@ -1031,7 +1031,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("biaojijuli_front")))));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("biaojijuli_front")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
@@ -1084,7 +1084,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("biaojijuli_mid")))));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("biaojijuli_mid")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
@@ -1138,7 +1138,7 @@ public class PrintMeasure {
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);
         table1.addCell(cell);
-        cell = new PdfPCell(new Phrase(new DecimalFormat("0.00").format(Double.valueOf(map.get("biaojijuli_back")))));
+        cell = new PdfPCell(new Phrase(new DecimalFormat("0.000").format(Double.valueOf(map.get("biaojijuli_back")))));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
         cell.setRowspan(2);

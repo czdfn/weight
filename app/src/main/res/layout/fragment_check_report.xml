@@ -69,16 +69,17 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:minWidth="160dp"
+                    android:minWidth="250dp"
                     android:editable="false"
                     android:gravity="center"
                     android:textColor="@color/black"
-                    android:id="@+id/shipname_report" />
+                    android:id="@+id/shipname_report"
+                    android:layout_marginLeft="30dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="70dp"
                     android:text="DATE:"
                     android:textStyle="bold"
                     android:textColor="@color/black" />
@@ -86,11 +87,12 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:minWidth="160dp"
+                    android:minWidth="400dp"
                     android:editable="false"
                     android:gravity="center"
                     android:textColor="@color/black"
-                    android:id="@+id/date_report" />
+                    android:id="@+id/date_report"
+                    android:layout_marginLeft="30dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -111,13 +113,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
+                    android:layout_marginLeft="100dp"
                     android:text="BEF.LOAD/DISCHARGE"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/mid_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="100dp"
@@ -129,7 +132,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="90dp"
+                    android:layout_marginLeft="110dp"
                     android:text="AFT.LOAD/ DISCHARGE"
                     android:textColor="@color/black"
                     android:textSize="15sp"
@@ -159,7 +162,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="95dp"
+                        android:layout_marginLeft="115dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -179,7 +182,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="40dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -189,6 +192,7 @@
                         android:id="@+id/souzhong_report" />
 
                     <TextView
+                        android:id="@+id/zhong_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/mi_eng"
@@ -241,7 +245,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp"
+                        android:layout_marginLeft="121dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -261,7 +265,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="40dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -275,7 +279,8 @@
                         android:text="@string/mi_eng"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_2" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -322,7 +327,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp"
+                        android:layout_marginLeft="123dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -342,7 +347,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="40dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -357,7 +362,8 @@
                         android:text="@string/mi_eng"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_3" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -414,7 +420,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="115dp"
+                        android:layout_marginLeft="140dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -434,7 +440,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="40dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -449,7 +455,8 @@
                         android:text="@string/mi_eng"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_4" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -506,7 +513,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="90dp"
                 android:layout_gravity="center_vertical">
                 <TextView
                     android:layout_width="wrap_content"
@@ -608,7 +615,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="13dp"
+                        android:layout_marginLeft="35dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -628,7 +635,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -642,12 +649,13 @@
                         android:text="@string/mt"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_5" />
 
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -696,7 +704,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="42dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -716,7 +724,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -730,12 +738,13 @@
                         android:text="@string/mt"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_6" />
 
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -783,7 +792,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="40dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -803,7 +812,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -817,12 +826,13 @@
                         android:text="@string/mt"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_7" />
 
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -875,7 +885,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="80dp"
+                        android:layout_marginLeft="102dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -895,7 +905,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -909,12 +919,13 @@
                         android:text="@string/mt"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_8" />
 
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -956,7 +967,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="112dp"
+                        android:layout_marginLeft="135dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -976,7 +987,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -990,12 +1001,13 @@
                         android:text="@string/mt"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_9" />
 
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -1037,7 +1049,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="105dp"
+                        android:layout_marginLeft="128dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -1057,7 +1069,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -1071,12 +1083,13 @@
                         android:text="@string/mt"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_10" />
 
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -1117,7 +1130,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="263dp"
+                        android:layout_marginLeft="278dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -1131,12 +1144,13 @@
                         android:text="@string/mt"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_11" />
 
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -1177,7 +1191,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="112dp"
+                        android:layout_marginLeft="135dp"
                         android:textColor="@color/black"
                         android:minWidth="150dp"
                         android:editable="false"
@@ -1197,7 +1211,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -1212,11 +1226,12 @@
                         android:text="@string/mt"
                         android:textColor="@color/black"
                         android:layout_gravity="center_vertical"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:id="@+id/zhong_12" />
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
+                        android:layout_marginLeft="25dp"
                         android:minWidth="150dp"
                         android:editable="false"
                         android:gravity="center"
@@ -1252,8 +1267,8 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
-                    android:minWidth="150dp"
+                    android:layout_marginLeft="300dp"
+                    android:minWidth="200dp"
                     android:editable="false"
                     android:gravity="center"
                     android:textColor="@color/black"
@@ -1290,10 +1305,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
-                    android:minWidth="500dp"
+                    android:minWidth="850dp"
                     android:editable="false"
                     android:gravity="center"
-                    android:layout_gravity="center_vertical"
                     android:textSize="13sp"
                     android:text="***" />
             </LinearLayout>
@@ -1322,7 +1336,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/black"
-                        android:minWidth="180dp"
+                        android:minWidth="300dp"
                         android:editable="false"
                         android:gravity="center"
                         android:layout_gravity="center_vertical"
@@ -1333,7 +1347,7 @@
                         android:layout_height="wrap_content"
                         android:text="Surveyor on duty:"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="50dp"
                         android:layout_gravity="center_vertical"
                         android:textSize="13sp" />
 
@@ -1341,7 +1355,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:minWidth="180dp"
+                        android:minWidth="380dp"
                         android:editable="false"
                         android:gravity="center"
                         android:textColor="@color/black"
